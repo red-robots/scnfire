@@ -1274,21 +1274,6 @@ a{color:#0999f3}
 a:hover,a:focus,a:active{color:midnightblue}
 a:focus{outline:thin dotted}
 a:hover,a:active{outline:0}
-.main-navigation{clear:both;display:block;float:left;width:100%}
-.main-navigation ul{display:none;list-style:none;margin:0;padding-left:0}
-.main-navigation ul ul{box-shadow:0 3px 3px rgba(0,0,0,0.2);float:left;position:absolute;top:1.5em;left:-999em;z-index:99999}
-.main-navigation ul ul ul{left:-999em;top:0}
-.main-navigation ul ul li:hover>ul,.main-navigation ul ul li.focus>ul{left:100%}
-.main-navigation ul ul a{width:200px}
-.main-navigation ul li:hover>ul,.main-navigation ul li.focus>ul{left:auto}
-.main-navigation li{float:left;position:relative}
-.main-navigation a{display:block;text-decoration:none}
-.menu-toggle,.main-navigation.toggled ul{display:block}
-@media screen and (min-width:37.5em){.menu-toggle{display:none}
-.main-navigation ul{display:block}
-}.site-main .comment-navigation,.site-main .posts-navigation,.site-main .post-navigation{margin:0 0 1.5em;overflow:hidden}
-.comment-navigation .nav-previous,.posts-navigation .nav-previous,.post-navigation .nav-previous{float:left;width:50%}
-.comment-navigation .nav-next,.posts-navigation .nav-next,.post-navigation .nav-next{float:right;text-align:right;width:50%}
 .navigation{width:100%;margin:20px 0 30px 0;clear:both;float:left}
 .navigation ul{margin:0;padding:0}
 .navigation li{margin:0;display:inline;list-style:none}
@@ -1388,9 +1373,9 @@ html[xmlns] .flexslider .slides{display:block}
 @media screen and (min-width:600px){#main{-webkit-flex-wrap:nowrap;-ms-flex-wrap:nowrap;flex-wrap:nowrap}
 }#main #main-sidebar{width:100%}
 @media screen and (min-width:600px){#main #main-sidebar{width:31%;min-width:300px}
-}#main #main-sidebar.home-sidebar>.row-1{position:relative}
-@media screen and (min-width:600px){#main #main-sidebar.home-sidebar>.row-1{padding-bottom:70px}
-}@media screen and (min-width:600px){#main #main-sidebar footer{position:absolute;bottom:0;left:0}
+}#main #main-sidebar .row-1{position:relative}
+@media screen and (min-width:600px){#main #main-sidebar .row-1{padding-bottom:80px}
+}@media screen and (min-width:600px){#main #main-sidebar .row-1 footer{position:absolute;bottom:0;left:0}
 }#main article{width:100%}
 @media screen and (max-width:600px){#main article{background-image:none !important}
 }@media screen and (min-width:600px){#main article{width:69%}

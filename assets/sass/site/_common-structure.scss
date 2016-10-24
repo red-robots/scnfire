@@ -22,10 +22,6 @@
     }
     &.home-sidebar {
       >.row-1 {
-        position: relative;
-        @media screen and (min-width: $tabwidth) {
-          padding-bottom: 70px;
-        }
         >.row-1 {
           .tag {
 
@@ -41,11 +37,17 @@
     }
     header {
     }
-    footer {
+    .row-1 {
+      position: relative;
       @media screen and (min-width: $tabwidth) {
-        position: absolute;
-        bottom: 0;
-        left: 0;
+        padding-bottom: 80px;
+      }
+      footer {
+        @media screen and (min-width: $tabwidth) {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+        }
       }
     }
   }
