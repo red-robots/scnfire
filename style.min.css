@@ -1373,10 +1373,11 @@ html[xmlns] .flexslider .slides{display:block}
 @media screen and (min-width:600px){#main{-webkit-flex-wrap:nowrap;-ms-flex-wrap:nowrap;flex-wrap:nowrap}
 }#main #main-sidebar{width:100%}
 @media screen and (min-width:600px){#main #main-sidebar{width:31%;min-width:300px}
-}#main #main-sidebar .row-1{position:relative}
+}#main #main-sidebar .row-1{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;-webkit-box-align:stretch;-webkit-align-items:stretch;-ms-flex-align:stretch;align-items:stretch;-webkit-align-content:stretch;-ms-flex-line-pack:stretch;align-content:stretch;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap}
 @media screen and (min-width:600px){#main #main-sidebar .row-1{padding-bottom:80px}
-}@media screen and (min-width:600px){#main #main-sidebar .row-1 footer{position:absolute;bottom:0;left:0}
-}#main article{width:100%}
+}#main #main-sidebar .row-1 #site-navigation{width:100%;-webkit-align-self:flex-start;-ms-flex-item-align:start;align-self:flex-start}
+#main #main-sidebar .row-1 footer{width:100%;-webkit-align-self:flex-end;-ms-flex-item-align:end;align-self:flex-end}
+#main article{width:100%}
 @media screen and (max-width:600px){#main article{background-image:none !important}
 }@media screen and (min-width:600px){#main article{width:69%}
 }.template-index img{display:block}

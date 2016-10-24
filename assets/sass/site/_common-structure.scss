@@ -38,16 +38,21 @@
     header {
     }
     .row-1 {
-      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: stretch;
+      align-content: stretch;
+      flex-wrap: wrap;
       @media screen and (min-width: $tabwidth) {
         padding-bottom: 80px;
       }
+      #site-navigation {
+        width: 100%;
+        align-self:flex-start;
+      }
       footer {
-        @media screen and (min-width: $tabwidth) {
-          position: absolute;
-          bottom: 0;
-          left: 0;
-        }
+        width: 100%;
+        align-self: flex-end;
       }
     }
   }
