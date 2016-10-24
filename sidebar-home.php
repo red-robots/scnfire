@@ -8,7 +8,7 @@
  */
 
 ?>
-<aside id="main-sidebar" class="sidebar" role="complementary">
+<aside id="main-sidebar" class="home-sidebar" role="complementary">
     <header id="masthead" class="site-header" role="banner">
         <div class="wrapper">
             <?php if (is_home()) { ?>
@@ -22,10 +22,23 @@
             <?php } ?>
         </div><!-- wrapper -->
     </header><!-- #masthead -->
+    <?php $tag = get_field("tagline");
+    $sub_1 = get_field("sub_heading_1");
+    $sub_2 = get_field("sub_heading_2"); ?>
     <div class="row-1">
-        <nav id="site-navigation" class="main-navigation" role="navigation">
-            <?php wp_nav_menu(array('theme_location' => 'primary', 'menu_id' => 'primary-menu')); ?>
-        </nav><!-- #site-navigation -->
+        <?php if ($tag || $sub_1 || $sub_2): ?>
+            <div class="row-1">
+                <?php if ($tag): ?>
+                    <div class="tag"><?php echo $tag;?></div>
+                <?php endif; ?>
+                <?php if ($sub_1): ?>
+                    <div class="sub-1"><?php echo $sub_1;?></div>
+                <?php endif; ?>
+                <?php if ($sub_2): ?>
+                    <div class="sub-2"><?php echo $sub_2;?></div>
+                <?php endif; ?>
+            </div><!--.row-1-->
+        <?php endif; ?>
         <?php get_sidebar("footer"); ?>
     </div><!--.row-1-->
 </aside><!-- #secondary -->

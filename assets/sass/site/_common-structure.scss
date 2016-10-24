@@ -1,92 +1,61 @@
-
-div {
-	/* These are technically the same, but use both */
-	overflow-wrap: break-word;
-	word-wrap: break-word;
-
-	-ms-word-break: break-all;
-	/* This is the dangerous one in WebKit, as it breaks things wherever */
-	word-break: break-all;
-	/* Instead use this non-standard one: */
-	word-break: break-word;
-
-	/* Adds a hyphen where the word breaks, if supported (No Blink) */
-	-ms-hyphens: auto;
-	-moz-hyphens: auto;
-	-webkit-hyphens: auto;
-	hyphens: auto;
+.clear-bottom {
+  &:after {
+    clear:both;
+    content: "";
+    display: block;
+  }
 }
-.clear {clear: both;}
-.wrapper {
-	width: 100%;
-	margin: 0px auto;
-	padding: 20px;
-	
-	@media screen and (min-width: $tabwidth) {
-		width: 100%;
-	}
-	@media screen and (min-width: $deskwidth) {
-		width: 1200px;
-		padding: 0px;
-	}
-}
+#main {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  align-content: stretch;
+  flex-wrap: wrap;
+  @media screen and (min-width: $tabwidth) {
+    flex-wrap: nowrap;
+  }
+  #main-sidebar {
+    width: 100%;
+    @media screen and (min-width: $tabwidth) {
+      width: 31%;
+      min-width: 300px;
+    }
+    &.home-sidebar {
+      >.row-1 {
+        position: relative;
+        @media screen and (min-width: $tabwidth) {
+          padding-bottom: 70px;
+        }
+        >.row-1 {
+          .tag {
 
-.content-area {
-	width: 100%;
-	margin: 0px auto;
-	
-	@media screen and (min-width: $tabwidth) {
-		width: 66%;
-		float: left;
-		margin: 0;
-	}
-	@media screen and (min-width: $deskwidth) {
-		/*width: 1200px;*/
-	}
-}
+          }
+          .sub-1 {
 
-.widget-area {
-	width: 100%;
-	margin: 0px auto;
-	
-	@media screen and (min-width: $tabwidth) {
-		width: 26%;
-		float: right;
-		margin: 0;
-	}
-	@media screen and (min-width: $deskwidth) {
-		/*width: 1200px;*/
-	}
-}
+          }
+          .sub-2 {
 
-/* Logo */
-.logo , h1.logo {
-	width: 300px;
-	height: 200px;
-	background-image: url(images/logo.png);	
-	margin: 10px auto;
-
-	@media screen and (min-width: $tabwidth) {
-		width: 300px;
-		height: 200px;
-		float: left;
-		margin: 0;
-	}
-	@media screen and (min-width: $deskwidth) {
-		/*width: 1200px;*/
-	}
-}
-.logo a, h1.logo a {
-	width: 300px;
-	height: 200px;
-	display: block;
-	text-indent: -9000px;
-
-	@media screen and (min-width: $tabwidth) {
-		width: 300px;
-		height: 200px;
-	}
-	@media screen and (min-width: $deskwidth) {
-		/*width: 1200px;*/
-	}
+          }
+        }
+      }
+    }
+    header {
+    }
+    footer {
+      @media screen and (min-width: $tabwidth) {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+      }
+    }
+  }
+  article {
+    width: 100%;
+    @media screen and (max-width: $tabwidth) {
+      background-image: none !important;
+    }
+    @media screen and (min-width: $tabwidth) {
+      width: 69%;
+    }
+  }
 }
