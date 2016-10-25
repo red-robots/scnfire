@@ -56,12 +56,12 @@
       @include flexbox-flex(0,1,auto);
       #site-navigation {
         width: 100%;
-        align-self: flex-start;
+        @include flexbox-align-self(flex-start);
         @include flexbox-flex(0,1,auto);
       }
       footer {
         width: 100%;
-        align-self: flex-end;
+        @include flexbox-align-self(flex-end);
         @include flexbox-flex(0,1,auto);
       }
     }

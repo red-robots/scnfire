@@ -53,3 +53,7 @@
   -webkit-justify-content: $value;
   justify-content: $value;
 }
+@mixin flexbox-align-self($value){
+  -webkit-align-self: $value;
+  align-self: $value;
+}
