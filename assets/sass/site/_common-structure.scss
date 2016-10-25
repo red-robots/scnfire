@@ -7,10 +7,10 @@
 }
 #main {
   @include flexbox;
-  justify-content: center;
-  align-items: stretch;
-  align-content: stretch;
-  flex-wrap: wrap;
+  @include flexbox-align-content(stretch);
+  @include flexbox-align-items(stretch);
+  @include flexbox-justify(center);
+  @include flexbox-wrap(wrap);
   @media screen and (min-width: $tabwidth) {
     flex-wrap: nowrap;
   }
@@ -20,10 +20,10 @@
       width: 31%;
       min-width: 300px;
       @include flexbox;
-      justify-content: center;
-      align-items: stretch;
-      align-content: flex-start;
-      flex-wrap: wrap;
+      @include flexbox-align-content(flex-start);
+      @include flexbox-align-items(stretch);
+      @include flexbox-justify(center);
+      @include flexbox-wrap(wrap);
       height: 100vh;
       @include flexbox-flex(0,1,auto);
     }
@@ -48,10 +48,10 @@
     }
     .row-1 {
       @include flexbox;
-      justify-content: center;
-      align-items: stretch;
-      align-content: stretch;
-      flex-wrap: wrap;
+      @include flexbox-align-content(stretch);
+      @include flexbox-align-items(stretch);
+      @include flexbox-justify(center);
+      @include flexbox-wrap(wrap);
       height: 90%;
       @include flexbox-flex(0,1,auto);
       #site-navigation {
