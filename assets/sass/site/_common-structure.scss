@@ -6,25 +6,21 @@
   }
 }
 #main {
-  @include flexbox;
-  @include flexbox-align-content(stretch);
-  @include flexbox-align-items(stretch);
-  @include flexbox-justify(center);
-  @include flexbox-wrap(wrap);
-  @media screen and (min-width: $tabwidth) {
-    flex-wrap: nowrap;
-  }
   #main-sidebar {
     width: 100%;
     @media screen and (min-width: $tabwidth) {
       width: 31%;
       min-width: 300px;
+      position: fixed;
+      top: 0;
+      left:0;
       @include flexbox;
       @include flexbox-align-content(flex-start);
       @include flexbox-align-items(stretch);
       @include flexbox-justify(center);
       @include flexbox-wrap(wrap);
       height: 100vh;
+      overflow-y: scroll;
       @include flexbox-flex(0,1,auto);
     }
     &.home-sidebar {
