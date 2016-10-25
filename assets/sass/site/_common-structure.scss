@@ -6,7 +6,7 @@
   }
 }
 #main {
-  display: flex;
+  @include flexbox;
   justify-content: center;
   align-items: stretch;
   align-content: stretch;
@@ -19,7 +19,7 @@
     @media screen and (min-width: $tabwidth) {
       width: 31%;
       min-width: 300px;
-      display: flex;
+      @include flexbox;
       justify-content: center;
       align-items: stretch;
       align-content: flex-start;
@@ -42,16 +42,14 @@
       }
     }
     header {
-      flex: 0 1 auto;
       height: 10%;
     }
     .row-1 {
-      display: flex;
+      @include flexbox;
       justify-content: center;
       align-items: stretch;
       align-content: stretch;
       flex-wrap: wrap;
-      flex: 1 1 auto;
       height: 90%;
       #site-navigation {
         width: 100%;
