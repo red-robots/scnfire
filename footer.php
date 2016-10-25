@@ -16,5 +16,6 @@
 
 <?php wp_footer(); ?>
 
+<div class="bottom-bar"></div>
 </body>
 </html>

@@ -21,5 +21,6 @@
 </head>
 
 <body <?php body_class(); ?>>
+<div class="top-bar"></div>
 <div id="page" class="site">
 	<div id="content" class="site-content wrapper">

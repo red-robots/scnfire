@@ -1,4 +1,16 @@
 .template-index {
+  background-size: cover;
+  @media screen and (max-width: $tabwidth) {
+    background-image: none !important;
+  }
+  @media screen and (min-width: $tabwidth) {
+    @include flexbox;
+    @include flexbox-align-content(stretch);
+    @include flexbox-align-items(center);
+    @include flexbox-justify(flex-end);
+    @include flexbox-wrap(wrap);
+    background-position: center;
+  }
   img {
     display: block;
     @media screen and (min-width: $tabwidth) {

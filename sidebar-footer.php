@@ -11,7 +11,7 @@
         if($visit_text&&$visit_link):?>
             <div class="row-1">
                 <a href="<?php echo $visit_link;?>" target="_blank"><?php echo $visit_text;?></a>
-            </div><!-- .site-info -->
+            </div><!-- .row-1-->
         <?php endif;?>
         <nav class="row-2" role="navigation">
             <?php wp_nav_menu( array( 'theme_location' => 'footer') ); ?>

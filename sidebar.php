@@ -8,6 +8,7 @@
  */
 
 ?>
+<div class="false-sidebar"></div>
 <aside id="main-sidebar" class="sidebar" role="complementary">
     <header id="masthead" class="site-header" role="banner">
         <div class="wrapper">
@@ -22,10 +23,12 @@
             <?php } ?>
         </div><!-- wrapper -->
     </header><!-- #masthead -->
-    <div class="row-1">
-        <nav id="site-navigation" class="main-navigation" role="navigation">
-            <?php wp_nav_menu(array('theme_location' => 'primary', 'menu_id' => 'primary-menu')); ?>
-        </nav><!-- #site-navigation -->
-        <?php get_sidebar("footer"); ?>
-    </div><!--.row-1-->
+    <div class="outer-wrapper">
+	    <div class="inner-wrapper">
+	        <nav id="site-navigation" class="main-navigation" role="navigation">
+	            <?php wp_nav_menu(array('theme_location' => 'primary', 'menu_id' => 'primary-menu')); ?>
+	        </nav><!-- #site-navigation -->
+	        <?php get_sidebar("footer"); ?>
+	    </div><!--.inner-wrapper-->
+    </div><!--.outter-wrapper-->
 </aside><!-- #secondary -->
