@@ -25,3 +25,42 @@
     }
   }
 }
+
+.template-page, .template-about, .template-team {
+  > header {
+    h1 {
+      font-size: 50px;
+      line-height: 1.2;
+    }
+  }
+}
+
+.template-about, .template-team {
+  #about-navigation {
+    margin-bottom: 20px;
+    ul {
+      margin: 0;
+      padding: 0;
+      text-align: left;
+      line-height: 1.2;
+      li {
+        margin: 0;
+        padding: 0 0 0 30px;
+        display: inline-block;
+        list-style-type: none;
+        &:first-child {
+          padding: 0;
+        }
+        a {
+          text-decoration: none;
+          color: $color__scn-grey;
+          font-weight: 600;
+          font-size: 10px;
+          &.active, &:hover {
+            color: $color__text-main;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,3 +1,59 @@
+h1, h2, h3 {
+  font-weight: 800;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.copy {
+  font-size: 13px;
+  font-weight: 300;
+  > *:first-child {
+    margin-top: 0;
+    padding-top: 0;
+  }
+  > *:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+  p {
+    margin: 10px 0;
+  }
+  strong, b, em {
+    font-weight: 600;
+  }
+  a {
+    text-decoration: none;
+    &:hover {
+    }
+  }
+  h1, h2, h3 {
+    margin: 0 0 10px 0;
+    text-transform: uppercase;
+  }
+  h1 {
+    font-size: 20px;
+  }
+  h2 {
+    font-size: 17px;
+  }
+  h3 {
+    font-size: 15px;
+  }
+  ul, ol {
+    padding: 0;
+    margin: 0 0 10px 10px;
+    font-size: inherit;
+    li {
+      margin: 0 0 0 20px;
+      font-size: inherit;
+      padding: 0;
+      list-style-type: square;
+      ul.sub-menu {
+        margin: 0;
+      }
+    }
+  }
+}
 .clear-bottom {
   &:after {
     clear:both;
@@ -41,9 +97,8 @@
   }
   #main-sidebar {
     width: 100%;
-    padding: 5px 0;
     @media screen and (min-width: $tabwidth) {
-      overflow-y: scroll;
+      //overflow-y: scroll;
       width: 31%;
       min-width: 350px;
       position: fixed;
@@ -186,6 +241,7 @@
                   margin: 0;
                   padding: 0;
                   display: inline-block;
+                  list-style-type: none;
                   &:first-child {
                     a {
                       display: inline-block;
@@ -201,7 +257,7 @@
                     font-size: 10px;
                     &:before {
                       content: "|";
-                      display:inlin-block;
+                      display:inline-block;
                       margin: 0 5px;
                     }
                   }
@@ -220,6 +276,7 @@
       float: right;
       width: 69%;
       @include flexbox-flex(0,1,auto);
+      padding: 10vw 0 0 0;
     }
   }
 }
