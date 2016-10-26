@@ -81,21 +81,31 @@ jQuery(document).ready(function ($) {
 	new WOW().init();
 
     /*custom menu */
-    $('li.menu-item-has-children').click(function(e){
-        e.preventDefault();
+    $('li.menu-item-has-children').each(function(){
         var $this = $(this);
         var $sub_menu = $this.children('.sub-menu');
-        if($sub_menu.css("display")==="block"){
-            $sub_menu.hide();
-            $this.css({
-                paddingBottom:"",
-            });
-        } else {
+        if($sub_menu.find("a.active").length>0){
             $sub_menu.show();
             $this.css({
                 paddingBottom:"0px",
             });
         }
+        $this.click(function(e){
+            if($this.children('a').is(e.target)){
+                e.preventDefault();
+                if($sub_menu.css("display")==="block"){
+                    $sub_menu.hide();
+                    $this.css({
+                        paddingBottom:"",
+                    });
+                } else {
+                    $sub_menu.show();
+                    $this.css({
+                        paddingBottom:"0px",
+                    });
+                }
+            }
+        });
     });
 
 });// END #####################################    END
