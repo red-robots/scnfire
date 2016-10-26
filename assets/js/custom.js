@@ -58,13 +58,13 @@ jQuery(document).ready(function ($) {
 	*	Smooth Scroll to Anchor
 	*
 	------------------------------------*/
-	 $('a').click(function(){
+	 /*$('a').click(function(){
 	    $('html, body').animate({
 	        scrollTop: $('[name="' + $.attr(this, 'href').substr(1) + '"]').offset().top
 	    }, 500);
 	    return false;
 	});
-	
+	*/
 	
 	/*
 	*
@@ -79,5 +79,23 @@ jQuery(document).ready(function ($) {
 	*
 	------------------------------------*/
 	new WOW().init();
+
+    /*custom menu */
+    $('li.menu-item-has-children').click(function(e){
+        e.preventDefault();
+        var $this = $(this);
+        var $sub_menu = $this.children('.sub-menu');
+        if($sub_menu.css("display")==="block"){
+            $sub_menu.hide();
+            $this.css({
+                paddingBottom:"",
+            });
+        } else {
+            $sub_menu.show();
+            $this.css({
+                paddingBottom:"0px",
+            });
+        }
+    });
 
 });// END #####################################    END
