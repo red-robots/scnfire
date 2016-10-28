@@ -6,7 +6,7 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class("template-team"); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class("template-team two-column"); ?>>
 	<header>
         <h1><?php the_title(); ?></h1>
 	</header>

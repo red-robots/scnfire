@@ -10,7 +10,7 @@ else $index = 0;
 $image = $slider[$index]['image']['url'];
 $alt = $slider[$index]['image']['alt']; ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class("template-index"); ?>
+<article id="post-<?php the_ID(); ?>" <?php post_class("template-index two-column"); ?>
     <?php if($image):
         echo 'style="background-image:url('.$image.');"';
     endif;?>>
