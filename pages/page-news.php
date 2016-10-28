@@ -1,10 +1,6 @@
 <?php
 /**
- * The template for displaying archive pages.
- *
- * @link https://codex.wordpress.org/Template_Hierarchy
- *
- * @package ACStarter
+ * Template Name: News
  */
 
 get_header(); ?>
@@ -12,7 +8,7 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main clear-bottom" role="main">
 			<?php
-			get_sidebar();
+            get_sidebar();
 			if ( have_posts() ) : the_post();
 				get_template_part( 'template-parts/content', 'news' );
 			endif; // End of the loop.
