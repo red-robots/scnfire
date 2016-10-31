@@ -14,7 +14,7 @@ get_header(); ?>
 			<?php
 			get_sidebar();
 			if ( have_posts() ) : the_post();
-				get_template_part( 'template-parts/content', 'team-single' );
+				get_template_part( 'template-parts/content', 'news-single' );
 			endif; // End of the loop.?>
 		</main><!-- #main -->
 	</div><!-- #primary -->

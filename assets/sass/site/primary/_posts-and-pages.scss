@@ -26,7 +26,7 @@
   }
 }
 
-.template-page, .template-about, .template-team {
+.template-page, .template-about, .template-team, .template-news, .template-news-single {
   > header {
     h1 {
       font-size: 50px;
@@ -37,7 +37,7 @@
 
 .template-about, .template-team {
   #about-navigation {
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     ul {
       margin: 0;
       padding: 0;
@@ -60,6 +60,193 @@
             color: $color__text-main;
           }
         }
+      }
+    }
+  }
+}
+.template-news {
+  .news-cat {
+    margin-bottom: 30px;
+    ul {
+      margin: 0;
+      padding: 0;
+      text-align: left;
+      line-height: 1.2;
+      li {
+        margin: 0;
+        padding: 0 0 0 30px;
+        display: inline-block;
+        list-style-type: none;
+        &:first-child {
+          padding: 0;
+        }
+        a {
+          text-decoration: none;
+          color: $color__scn-grey;
+          font-weight: 600;
+          font-size: 10px;
+          &.active, &:hover {
+            color: $color__text-main;
+          }
+        }
+      }
+    }
+  }
+  .news.wrapper {
+    width: 100%;
+    @media screen and (min-width: $tabwidth) {
+      width: 60%;
+      float: left;
+    }
+    .news {
+      width: 100%;
+      margin-bottom: 30px;
+      &:last-child {
+        margin: 0;
+      }
+      a {
+        display: block;
+        text-decoration: none;
+        color: $color__text-main;
+        &:hover {
+          color: $color__scn-blue;
+        }
+        >.row-1 {
+          @include flexbox;
+          @include flexbox-align-content(stretch);
+          @include flexbox-align-items(stretch);
+          @include flexbox-justify(flex-start);
+          @include flexbox-wrap(nowrap);
+          >.column-1 {
+            @include flexbox-flex(0, 1, auto);
+            margin-right: 30px;
+            header {
+              h2 {
+                font-size: 13px;
+                font-weight: 600;
+                text-transform: uppercase;
+              }
+            }
+            .dates {
+              font-size: 13px;
+            }
+          }
+          >.column-2 {
+            @include flexbox-flex(0, 0, auto);
+            min-width: 30px;
+            width: 30px;
+          }
+        }
+      }
+    }
+  }
+  .pagi-post {
+    width: 100%;
+    @media screen and (min-width: $tabwidth) {
+      width: 60%;
+      float: left;
+    }
+    .navigation {
+      margin: 45px 0;
+      text-align: center;
+      ul {
+        li {
+          display: inline-block;
+          a {
+            background-color: $color__scn-grey;
+            color: white;
+            &:hover, &.active {
+              background-color: $color__scn-blue;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.template-news-single {
+  .link {
+    margin-bottom: 30px;
+    a {
+      color: $color__scn-grey;
+      text-decoration: none;
+    }
+  }
+  > .row-1 {
+    @include flexbox;
+    @include flexbox-align-content(stretch);
+    @include flexbox-align-items(stretch);
+    @include flexbox-justify(flex-start);
+    @include flexbox-wrap(wrap);
+    @media screen and (min-width: $tabwidth) {
+      display: block;
+    }
+    .recent-news {
+      margin: 0 0 30px 0;
+      order: 2;
+      @media screen and (min-width: $tabwidth) {
+        float: right;
+        width: 30%;
+        min-width: 250px;
+        margin: 0 0 30px 10px;
+      }
+      > header {
+        margin-bottom: 10px;
+        h2 {
+          font-size: 13px;
+          font-weight: 600;
+          text-transform: uppercase;
+        }
+      }
+      .news {
+        margin-bottom : 10px;
+        &:last-child {
+          margin: 0;
+        }
+        a {
+          display: block;
+          text-decoration: none;
+          color: $color__text-main;
+          &:hover {
+            color: $color__scn-blue;
+          }
+          >.row-1 {
+            @include flexbox;
+            @include flexbox-align-content(stretch);
+            @include flexbox-align-items(stretch);
+            @include flexbox-justify(flex-start);
+            @include flexbox-wrap(nowrap);
+            @media screen and (min-width: $tabwidth) {
+              @include flexbox-justify(space-between);
+            }
+            >.column-1 {
+              @include flexbox-flex(0, 1, auto);
+              margin-right: 15px;
+              header {
+                h3 {
+                  font-size: 13px;
+                  font-weight: 600;
+                  text-transform: capitalize;
+                }
+              }
+            }
+            >.column-2 {
+              @include flexbox-flex(0, 0, auto);
+              min-width: 20px;
+              width: 20px;
+            }
+          }
+        }
+      }
+    }
+    .copy {
+      order: 1;
+      margin: 0 0 30px 0;
+      @media screen and (min-width: $tabwidth) {
+        margin: 0;
+      }
+      .dates {
+        font-weight: 600;
       }
     }
   }

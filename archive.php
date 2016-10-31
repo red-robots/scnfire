@@ -13,9 +13,7 @@ get_header(); ?>
 		<main id="main" class="site-main clear-bottom" role="main">
 			<?php
 			get_sidebar();
-			if ( have_posts() ) : the_post();
 				get_template_part( 'template-parts/content', 'news' );
-			endif; // End of the loop.
 			?>
 		</main><!-- #main -->
 	</div><!-- #primary -->

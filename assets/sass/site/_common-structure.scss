@@ -276,7 +276,7 @@ h1, h2, h3 {
       float: right;
       width: 69%;
       @include flexbox-flex(0,1,auto);
-      padding: 10vw 0 0 0;
+      padding: 10vw 40px 0 0;
     }
   }
 }

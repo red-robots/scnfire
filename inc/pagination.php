@@ -1,12 +1,16 @@
 <?php
 // Pagination
 
-function pagi_posts_nav() {
+function pagi_posts_nav($query) {
 
 	if( is_singular() )
 		return;
 
 	global $wp_query;
+
+	if($query!==null){
+		$wp_query = $query;
+	}
 
 	/** Stop execution if there's only 1 page */
 	if( $wp_query->max_num_pages <= 1 )
