@@ -7,16 +7,8 @@
  * @package ACStarter
  */
 
-get_header(); ?>
-
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main clear-bottom" role="main">
-			<?php
-			get_sidebar();
-				get_template_part( 'template-parts/content', 'news' );
-			?>
-		</main><!-- #main -->
-	</div><!-- #primary -->
-
-<?php
-get_footer();
+if(is_category()):
+	get_template_part( 'pages/page', 'news' );
+elseif(is_tax('project_type')):
+	get_template_part('pages/page','portfolio');
+endif;

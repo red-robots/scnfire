@@ -43,10 +43,10 @@ jQuery(document).ready(function ($) {
 	*	Isotope with Images Loaded
 	*
 	------------------------------------*/
-	var $container = $('#container').imagesLoaded( function() {
+	var $container = $('.is-container').imagesLoaded( function() {
   	$container.isotope({
     // options
-	 itemSelector: '.item',
+	 itemSelector: '.is-item',
 		  masonry: {
 			gutter: 15
 			}
