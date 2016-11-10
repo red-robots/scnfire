@@ -13,7 +13,7 @@
                 <a href="<?php echo $visit_link;?>" target="_blank"><?php echo $visit_text;?></a>
             </div><!-- .row-1-->
         <?php endif;?>
-        <nav class="row-2" role="navigation">
+        <nav class="row-2" role="navigation clear-bottom">
             <?php wp_nav_menu( array( 'theme_location' => 'footer') ); ?>
         </nav>
     </div><!-- wrapper -->
