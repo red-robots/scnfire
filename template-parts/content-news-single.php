@@ -10,6 +10,7 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class( "template-news-single two-column" ); ?>>
+	<img src="<?php echo get_template_directory_uri()."/images/logo-bg.png";?>" class="logo-bg">
 	<header>
 		<h1><?php the_title(); ?></h1>
 	</header>

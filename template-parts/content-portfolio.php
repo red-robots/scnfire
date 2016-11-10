@@ -1,21 +1,21 @@
 <?php
 /**
- * Template part for displaying page content in page-about.php.
+ * Template part for displaying page content in page-portfolio.php.
  *
  */
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class( "template-news two-column" ); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class( "template-portfolio two-column" ); ?>>
 	<img src="<?php echo get_template_directory_uri()."/images/logo-bg.png";?>" class="logo-bg">
-	<?php $post = get_post(32);
+	<?php $post = get_post(26);
 	setup_postdata($post);?>
 	<header>
 		<h1><?php the_title(); ?></h1>
 	</header>
 	<?php wp_reset_postdata();?>
 	<?php $args = array(
-		'taxonomy'   => "category",
+		'taxonomy'   => "project-type",
 		'order'      => 'ASC',
 		'orderby'    => 'term_order',
 		'hide_empty' => 0,
@@ -24,7 +24,7 @@
 	$category_name = get_query_var( "category_name", null );
 	$terms      = get_terms( $args );
 	if ( ! is_wp_error( $terms ) && is_array( $terms ) && ! empty( $terms ) ): ?>
-		<nav class="news-cat">
+		<nav class="portfolio-cat">
 			<ul>
 				<?php for($i=0;$i<count($terms);$i++):
 					$term = $terms[$i];?>
@@ -34,10 +34,10 @@
 					</li>
 				<?php endfor; ?>
 			</ul>
-		</nav><!--.news-cat-->
+		</nav><!--.portfolio-cat-->
 	<?php endif;//endif ?>
 	<?php $args    = array(
-		'post_type'      => "post",
+		'post_type'      => "portfolio",
 		"posts_per_page" => 8,
 		"category__not_in"=>array(1)
 	);
@@ -62,28 +62,11 @@
 	endif;
 	$query = new WP_Query($args);
 	if($query->have_posts()):?>
-		<section class="news wrapper">
+		<section class="portfolio wrapper">
 			<?php while($query->have_posts()):$query->the_post();?>
-				<?php $dates = get_field("dates");?>
-				<div class="news clear-bottom">
-					<a href="<?php echo get_the_permalink();?>">
-						<div class="row-1">
-							<div class="column-1">
-								<header>
-									<h2><?php echo get_the_title();?></h2>
-								</header>
-								<?php if($dates):?>
-									<div class="dates"><?php echo $dates;?></div>
-								<?php endif;?>
-							</div><!--.column-1-->
-							<div class="column-2">
-								<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/+.png" alt="plus icon">
-							</div><!--.column-2-->
-						</div><!--.row-1-->
-					</a>
-				</div><!--.news-->
+
 			<?php endwhile;?>
-		</section><!--.news .wrapper-->
+		</section><!--.portfolio .wrapper-->
 		<nav class="pagi-post">
 			<?php pagi_posts_nav($query);?>
 		</nav>
