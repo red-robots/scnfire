@@ -37,9 +37,11 @@
 			</ul>
 		</nav><!--.portfolio-cat-->
 	<?php endif;//endif ?>
-	<?php $args = array(
+	<?php $paged= $paged === 0?1:$paged;
+	$args = array(
 		'post_type'      => "portfolio",
-		"posts_per_page" => 8
+		"posts_per_page" => 8,
+		"paged"=>$paged
 	);
 	if ( $category_name !== null && ! empty( $category_name ) ):
 		$args['tax_query'] =
@@ -70,13 +72,13 @@
 					echo 'style="background-image: url(' . $images[0]['url'] . ');"';
 				endif; ?>>
 					<a href="<?php echo get_the_permalink(); ?>">
-						<div class="row-1">
+						<div class="row-1 clear-bottom">
 							<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/+.png" alt="plus icon">
 						</div>
 						<div class="row-2">
 							<h2><?php echo get_the_title(); ?></h2>
 							<?php if ( $location ): ?>
-								<span><?php echo $location; ?></span>
+								<div class="location"><?php echo $location; ?></div>
 							<?php endif; ?>
 						</div>
 					</a>

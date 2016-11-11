@@ -36,10 +36,12 @@
 			</ul>
 		</nav><!--.news-cat-->
 	<?php endif;//endif ?>
-	<?php $args    = array(
+	<?php $paged= $paged === 0?1:$paged;
+	$args    = array(
 		'post_type'      => "post",
 		"posts_per_page" => 8,
-		"category__not_in"=>array(1)
+		"category__not_in"=>array(1),
+		"paged"=>$paged
 	);
 	if ( $category_name !== null && ! empty( $category_name ) ):
 		$args['tax_query'] =

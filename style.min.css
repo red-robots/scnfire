@@ -1338,15 +1338,11 @@ html[xmlns] .flexslider .slides{display:block}
 .loading .flex-viewport{max-height:300px}
 .carousel li{margin-right:5px}
 .flex-direction-nav{*height:0}
-.flex-direction-nav a{text-decoration:none;display:block;width:40px;height:40px;margin:-20px 0 0;position:absolute;top:50%;z-index:10;overflow:hidden;opacity:0;cursor:pointer;color:rgba(0,0,0,0.8);text-shadow:1px 1px 0 rgba(255,255,255,0.3);-webkit-transition:all .3s ease-in-out;transition:all .3s ease-in-out}
+.flex-direction-nav a{text-decoration:none;display:block;width:40px;height:40px;margin:-20px 0 0;position:absolute;top:50%;z-index:10;overflow:hidden;cursor:pointer;color:rgba(0,0,0,0.8);text-shadow:1px 1px 0 rgba(255,255,255,0.3);-webkit-transition:all .3s ease-in-out;transition:all .3s ease-in-out}
 .flex-direction-nav a:before{font-family:"flexslider-icon";font-size:40px;display:inline-block;content:'\f001';color:rgba(0,0,0,0.8);text-shadow:1px 1px 0 rgba(255,255,255,0.3)}
 .flex-direction-nav a.flex-next:before{content:'\f002'}
-.flex-direction-nav .flex-prev{left:-50px}
-.flex-direction-nav .flex-next{right:-50px;text-align:right}
-.flexslider:hover .flex-direction-nav .flex-prev{opacity:.7;left:10px}
-.flexslider:hover .flex-direction-nav .flex-prev:hover{opacity:1}
-.flexslider:hover .flex-direction-nav .flex-next{opacity:.7;right:10px}
-.flexslider:hover .flex-direction-nav .flex-next:hover{opacity:1}
+.flex-direction-nav .flex-prev{display:none;left:-30px}
+.flex-direction-nav .flex-next{display:none;right:-30px;text-align:right}
 .flex-direction-nav .flex-disabled{opacity:0 !important;filter:alpha(opacity=0);cursor:default}
 .flex-pauseplay a{display:block;width:20px;height:20px;position:absolute;bottom:5px;left:10px;opacity:.8;z-index:10;overflow:hidden;cursor:pointer;color:#000}
 .flex-pauseplay a:before{font-family:"flexslider-icon";font-size:20px;display:inline-block;content:'\f004'}
@@ -1443,6 +1439,19 @@ h1,h2,h3{font-weight:800;margin:0;text-transform:uppercase}
 .template-news .news-cat ul li:first-child,.template-news .portfolio-cat ul li:first-child,.template-portfolio .news-cat ul li:first-child,.template-portfolio .portfolio-cat ul li:first-child{padding:0}
 .template-news .news-cat ul li a,.template-news .portfolio-cat ul li a,.template-portfolio .news-cat ul li a,.template-portfolio .portfolio-cat ul li a{text-decoration:none;color:#959595;font-weight:600;font-size:10px}
 .template-news .news-cat ul li a.active,.template-news .news-cat ul li a:hover,.template-news .portfolio-cat ul li a.active,.template-news .portfolio-cat ul li a:hover,.template-portfolio .news-cat ul li a.active,.template-portfolio .news-cat ul li a:hover,.template-portfolio .portfolio-cat ul li a.active,.template-portfolio .portfolio-cat ul li a:hover{color:#404040}
+.template-news .pagi-post,.template-portfolio .pagi-post{width:100%}
+@media screen and (min-width:700px){.template-news .pagi-post,.template-portfolio .pagi-post{width:60%;float:left}
+}.template-news .pagi-post .navigation,.template-portfolio .pagi-post .navigation{margin:45px 0;text-align:center}
+.template-news .pagi-post .navigation ul li,.template-portfolio .pagi-post .navigation ul li{display:inline-block}
+.template-news .pagi-post .navigation ul li a,.template-portfolio .pagi-post .navigation ul li a{background-color:#959595;color:white}
+.template-news .pagi-post .navigation ul li a:hover,.template-news .pagi-post .navigation ul li a.active,.template-portfolio .pagi-post .navigation ul li a:hover,.template-portfolio .pagi-post .navigation ul li a.active{background-color:#1c65b1}
+.template-portfolio .portfolio.wrapper .portfolio{background-position:center;background-size:cover;background-repeat:no-repeat;width:250px;height:200px}
+.template-portfolio .portfolio.wrapper .portfolio a{display:block;width:100%;height:100%}
+.template-portfolio .portfolio.wrapper .portfolio a .row-1{width:100%;position:absolute;top:0;left:0}
+.template-portfolio .portfolio.wrapper .portfolio a .row-1 img{display:block;float:right}
+.template-portfolio .portfolio.wrapper .portfolio a .row-2{width:100%;text-align:left;position:absolute;bottom:0;left:0;background-color:rgba(33,33,33,0.35);padding:10px 15px}
+.template-portfolio .portfolio.wrapper .portfolio a .row-2 h2{display:block;width:100%;color:white;font-size:13px;text-transform:capitalize;font-weight:600}
+.template-portfolio .portfolio.wrapper .portfolio a .row-2 .location{width:100%;color:white;font-size:13px;text-transform:capitalize;font-weight:600}
 .template-news .news.wrapper{width:100%}
 @media screen and (min-width:700px){.template-news .news.wrapper{width:60%;float:left}
 }.template-news .news.wrapper .news{width:100%;margin-bottom:30px}
@@ -1454,12 +1463,6 @@ h1,h2,h3{font-weight:800;margin:0;text-transform:uppercase}
 .template-news .news.wrapper .news a>.row-1>.column-1 header h2{font-size:13px;font-weight:600;text-transform:uppercase}
 .template-news .news.wrapper .news a>.row-1>.column-1 .dates{font-size:13px}
 .template-news .news.wrapper .news a>.row-1>.column-2{-webkit-box-flex:0 0 auto;-webkit-flex:0 0 auto;-ms-flex:0 0 auto;flex:0 0 auto;min-width:30px;width:30px}
-.template-news .pagi-post{width:100%}
-@media screen and (min-width:700px){.template-news .pagi-post{width:60%;float:left}
-}.template-news .pagi-post .navigation{margin:45px 0;text-align:center}
-.template-news .pagi-post .navigation ul li{display:inline-block}
-.template-news .pagi-post .navigation ul li a{background-color:#959595;color:white}
-.template-news .pagi-post .navigation ul li a:hover,.template-news .pagi-post .navigation ul li a.active{background-color:#1c65b1}
 .template-news-single .link{margin-bottom:30px}
 .template-news-single .link a{color:#959595;text-decoration:none}
 .template-news-single>.row-1{display:-webkit-box;display:-ms-flexbox;display:-webkit-flex;display:flex;-webkit-align-content:stretch;-ms-flex-line-pack:stretch;align-content:stretch;-webkit-align-items:stretch;-webkit-box-align:stretch;-ms-flex-align:stretch;align-items:stretch;-webkit-justify-content:flex-start;-webkit-box-pack:start;-ms-flex-pack:start;justify-content:flex-start;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap}
