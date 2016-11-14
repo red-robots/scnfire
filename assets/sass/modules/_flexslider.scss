@@ -105,11 +105,8 @@ html[xmlns] #flexslider .slides {
 .loading .flex-viewport {
   max-height: 300px;
 }
-#carousel .slides li:first-child {
-  margin: 0;
-}
 #carousel .slides li {
-  margin-left: 5px;
+  margin: 5px 5px 0 0;
 }
 .flex-direction-nav {
   display: none;
