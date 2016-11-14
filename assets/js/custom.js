@@ -28,15 +28,16 @@ jQuery(document).ready(function ($) {
             controlNav: false,
             animationLoop: false,
             slideshow: false,
-            itemWidth: 210,
+            itemWidth: 70,
             itemMargin: 5,
-            asNavFor: '#slider'
+            asNavFor: '#flexslider'
         });
-        $('#slider').flexslider({
+        $('#flexslider').flexslider({
             animation: "slide",
             controlNav: false,
             animationLoop: false,
             slideshow: false,
+            smoothHeight: true,
             sync: "#carousel"
         });
     $('.slider.wrapper >.flex-next').click(function (e) {
@@ -46,6 +47,16 @@ jQuery(document).ready(function ($) {
     $('.slider.wrapper >.flex-prev').click(function (e) {
         e.preventDefault();
         $('.flex-direction-nav .flex-prev').click();
+    });
+    $('.slider.wrapper .overlay .plus-icon').click(function(){
+        $('.slider.wrapper .overlay .info').css({
+            "display":"block"
+        });
+    });
+    $('.slider.wrapper .overlay .close-icon').click(function(){
+        $('.slider.wrapper .overlay .info').css({
+            "display":"none"
+        });
     });
     /*
      *

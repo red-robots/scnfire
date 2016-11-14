@@ -7,7 +7,7 @@
  * http://www.gnu.org/licenses/gpl-2.0.html
  *
  * Contributing author: Tyler Smith (@mbmufffin)
- * 
+ *
  */
 /* ====================================================================================================================
  * FONT-FACE
@@ -42,19 +42,18 @@
 /* ====================================================================================================================
  * BASE STYLES
  * ====================================================================================================================*/
-.flexslider {
+#flexslider {
   margin: 0;
   padding: 0;
 }
-.flexslider .slides > li {
-  display: none;
+#flexslider .slides > li {
   -webkit-backface-visibility: hidden;
 }
-.flexslider .slides img {
+#flexslider .slides img {
   width: 100%;
   display: block;
 }
-.flexslider .slides:after {
+#flexslider .slides:after {
   content: "\0020";
   display: block;
   clear: both;
@@ -62,19 +61,19 @@
   line-height: 0;
   height: 0;
 }
-html[xmlns] .flexslider .slides {
+html[xmlns] #flexslider .slides {
   display: block;
 }
-* html .flexslider .slides {
+* html #flexslider .slides {
   height: 1%;
 }
-.no-js .flexslider .slides > li:first-child {
+.no-js #flexslider .slides > li:first-child {
   display: block;
 }
 /* ====================================================================================================================
  * DEFAULT THEME
  * ====================================================================================================================*/
-.flexslider {
+#flexslider {
   margin: 0 0 60px;
   background: #ffffff;
   border: 4px solid #ffffff;
@@ -88,11 +87,12 @@ html[xmlns] .flexslider .slides {
   -o-box-shadow: '' 0 1px 4px rgba(0, 0, 0, 0.2);
   box-shadow: '' 0 1px 4px rgba(0, 0, 0, 0.2);
 }
-.flexslider .slides {
+#flexslider .slides {
   zoom: 1;
 }
-.flexslider .slides img {
+#flexslider .slides img {
   height: auto;
+  width: 100%;
 }
 .flex-viewport {
   max-height: 2000px;
@@ -105,11 +105,14 @@ html[xmlns] .flexslider .slides {
 .loading .flex-viewport {
   max-height: 300px;
 }
-.carousel li {
-  margin-right: 5px;
+#carousel .slides li:first-child {
+  margin: 0;
+}
+#carousel .slides li {
+  margin-left: 5px;
 }
 .flex-direction-nav {
-  *height: 0;
+  display: none;
 }
 .flex-direction-nav a {
   text-decoration: none;
@@ -259,3 +262,4 @@ html[xmlns] .flexslider .slides {
     right: 10px;
   }
 }
+

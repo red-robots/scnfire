@@ -10,14 +10,14 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class( "template-portfolio-single" ); ?>>
-	<?php $square_footage_header_text = get_field("square_footage_header_text",26);
-	$project_description_header_text = get_field("project_description_header_text",26);
-	$our_involvement_header_text = get_field("our_involvement_header_text",26);
-	$location = get_field( "location" );
-	$images         = get_field( "gallery" );
-	$our_involvement = get_field("our_involvement");
-	$project_description = get_field("project_description");
-	$square_footage = get_field("square_footage"); ?>
+	<?php $square_footage_header_text = get_field( "square_footage_header_text", 26 );
+	$project_description_header_text  = get_field( "project_description_header_text", 26 );
+	$our_involvement_header_text      = get_field( "our_involvement_header_text", 26 );
+	$location                         = get_field( "location" );
+	$images                           = get_field( "gallery" );
+	$our_involvement                  = get_field( "our_involvement" );
+	$project_description              = get_field( "project_description" );
+	$square_footage                   = get_field( "square_footage" ); ?>
 	<header>
 		<div class="row-1 clear-bottom">
 			<div class="logo">
@@ -34,7 +34,7 @@
 	</header>
 	<?php if ( $images && count( $images ) > 0 ): ?>
 		<div class="slider wrapper">
-			<div id="slider">
+			<div id="flexslider">
 				<ul class="slides">
 					<?php foreach ( $images as $image ): ?>
 						<li>
@@ -42,13 +42,25 @@
 						</li>
 					<?php endforeach; ?>
 				</ul>
-				<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/+.png" alt="plus icon">
-				<div class="info-overlay">
-					<h2><?php echo $square_footage_header_text;?></h2>
-					<h2><?php echo $project_description_header_text;?></h2>
-					<h2><?php echo $our_involvement_header_text;?></h2>
+			</div><!--#flexslider-->
+			<div class="overlay">
+				<img class="plus-icon" src="<?php echo get_stylesheet_directory_uri(); ?>/images/+.png" alt="plus icon">
+				<div class="info">
+					<div class="square-footage copy">
+						<header><h2><?php echo $square_footage_header_text; ?></h2></header>
+						<p><?php echo $square_footage;?></p>
+					</div>
+					<div class="project-description copy">
+						<header><h2><?php echo $project_description_header_text; ?></h2></header>
+						<?php echo $project_description;?>
+					</div>
+					<div class="our-involvement copy">
+						<header><h2><?php echo $our_involvement_header_text; ?></h2></header>
+						<?php echo $our_involvement;?>
+					</div>
+					<img class="close-icon" src="<?php echo get_stylesheet_directory_uri(); ?>/images/+.png" alt="plus icon">
 				</div><!--.info-overlay-->
-			</div>
+			</div><!--.overlay-->
 			<a class="flex-prev" href="#">Prev</a>
 			<a class="flex-next" href="#">Next</a>
 		</div><!--.slider.wrapper-->
