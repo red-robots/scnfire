@@ -50,7 +50,7 @@ jQuery(document).ready(function ($) {
     });
     $('.slider.wrapper .overlay .plus-icon').click(function(){
         $('.slider.wrapper .overlay .info').css({
-            "display":"block"
+            "display":"flex"
         });
     });
     $('.slider.wrapper .overlay .close-icon').click(function(){

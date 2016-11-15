@@ -313,12 +313,30 @@
   padding: 5px 0;
   header {
     > .row-1 {
+      @include flexbox;
+      @include flexbox-wrap(nowrap);
+      @include flexbox-justify(space-between);
+      @include flexbox-align-content(center);
+      @include flexbox-align-items(center);
       .logo {
-        float: left;
         width: 80%;
         @media screen and (min-width: $tabwidth) {
           width: 35%*0.8;
           min-width: 350px*0.8;
+        }
+      }
+      .close-box {
+        margin: 0 3.5% 0 0;
+        max-width: 30px;
+        width: 10%;
+        @media screen and (min-width: $tabwidth) {
+          width: 30px;
+        }
+        a {
+          display: block;
+          .close-icon {
+            width: 100%;
+          }
         }
       }
     }
@@ -370,28 +388,52 @@
         height: 100%;
         overflow-y: scroll;
         width: 100%;
-        padding: 20px;
+        padding: 0;
         font-size: 13px;
         font-weight: 600;
         color: white;
         background-color: $color__scn-blue;
+        @include flexbox-wrap(nowrap);
+        @include flexbox-justify(stretch);
+        @include flexbox-align-content(stretch);
+        @include flexbox-align-items(stretch);
+        @include flex-direction(column);
+        flex-direction: column;
         @media screen and (min-width: $tabwidth) {
           width: 60%;
-          padding: 50px 70px;
         }
         @media screen and (min-width: $midwidth) {
           width: 40%;
         }
-        .square-footage {
+        > .row-1 {
+          padding: 20px 20px;
+          @include flexbox-flex(1, 1, auto);
+          @media screen and (min-width: $tabwidth) {
+            padding: 50px 70px 10px 70px;
+          }
           header {
-            margin: 0;
+            margin: 10px 0 0 0;
+            h2 {
+              font-weight: 800;
+              font-size: 16px;
+            }
+          }
+          .square-footage {
+            header {
+              margin: 0;
+            }
           }
         }
-        header {
-          margin: 10px 0 0 0;
-          h2 {
-            font-weight: 800;
-            font-size: 16px;
+        > .row-2 {
+          @include flexbox-align-self(flex-end);
+          @include flexbox-flex(0, 1, auto);
+          padding: 0 5px 5px 20px;
+          @media screen and (min-width: $tabwidth) {
+            padding: 0 5px 5px 70px;
+          }
+          .close-icon {
+            display: block;
+            margin: 0 0 0 auto;
           }
         }
       }

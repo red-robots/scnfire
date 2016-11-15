@@ -19,11 +19,24 @@
 	$project_description              = get_field( "project_description" );
 	$square_footage                   = get_field( "square_footage" ); ?>
 	<header>
-		<div class="row-1 clear-bottom">
+		<div class="row-1">
 			<div class="logo">
 				<a href="<?php bloginfo( 'url' ); ?>"><img
 						src="<?php echo get_template_directory_uri() . "/images/logo.jpg"; ?>" alt="logo"></a>
 			</div>
+			<div class="close-box">
+				<a href="<?php
+				$terms = get_the_terms( $post->ID,'project_type');
+				if ( ! is_wp_error( $terms ) && is_array( $terms ) && ! empty( $terms ) ):
+						echo get_term_link($terms[0]);
+					elseif(get_post(26)):
+						echo get_the_permalink(26);
+					endif;
+				?>">
+					<img class="close-icon" src="<?php echo get_stylesheet_directory_uri(); ?>/images/x.png"
+				     alt="close icon">
+				</a>
+			</div><!--.close-box-->
 		</div><!--.row-1-->
 		<div class="row-2">
 			<h1><?php the_title(); ?></h1>
@@ -46,19 +59,30 @@
 			<div class="overlay">
 				<img class="plus-icon" src="<?php echo get_stylesheet_directory_uri(); ?>/images/+.png" alt="plus icon">
 				<div class="info">
-					<div class="square-footage copy">
-						<header><h2><?php echo $square_footage_header_text; ?></h2></header>
-						<p><?php echo $square_footage;?></p>
-					</div>
-					<div class="project-description copy">
-						<header><h2><?php echo $project_description_header_text; ?></h2></header>
-						<?php echo $project_description;?>
-					</div>
-					<div class="our-involvement copy">
-						<header><h2><?php echo $our_involvement_header_text; ?></h2></header>
-						<?php echo $our_involvement;?>
-					</div>
-					<img class="close-icon" src="<?php echo get_stylesheet_directory_uri(); ?>/images/+.png" alt="plus icon">
+					<div class="row-1">
+						<?php if ( $square_footage && $square_footage_header_text ): ?>
+							<div class="square-footage copy">
+								<header><h2><?php echo $square_footage_header_text; ?></h2></header>
+								<p><?php echo $square_footage; ?></p>
+							</div><!--.square-footage-->
+						<?php endif; ?>
+						<?php if ( $project_description && $project_description_header_text ): ?>
+							<div class="project-description copy">
+								<header><h2><?php echo $project_description_header_text; ?></h2></header>
+								<?php echo $project_description; ?>
+							</div><!--.project-description-->
+						<?php endif; ?>
+						<?php if ( $our_involvement && $our_involvement_header_text ): ?>
+							<div class="our-involvement copy">
+								<header><h2><?php echo $our_involvement_header_text; ?></h2></header>
+								<?php echo $our_involvement; ?>
+							</div><!--.our-involvement-->
+						<?php endif; ?>
+					</div><!--.row-1-->
+					<div class="row-2">
+						<img class="close-icon" src="<?php echo get_stylesheet_directory_uri(); ?>/images/details-x.png"
+						     alt="close icon">
+					</div><!--.row-2-->
 				</div><!--.info-overlay-->
 			</div><!--.overlay-->
 			<a class="flex-prev" href="#">Prev</a>
