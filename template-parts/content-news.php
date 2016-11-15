@@ -89,5 +89,5 @@
 		<nav class="pagi-post">
 			<?php pagi_posts_nav($query);?>
 		</nav>
-	<?php endif;//if for have posts?>
+	<?php wp_reset_postdata(); endif;//if for have posts?>
 </article><!-- #post-## -->

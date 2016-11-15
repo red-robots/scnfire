@@ -41,6 +41,8 @@
 	$args = array(
 		'post_type'      => "portfolio",
 		"posts_per_page" => 8,
+		"orderby"=>'menu_order',
+		"order"=>'ASC',
 		"paged"=>$paged
 	);
 	if ( $category_name !== null && ! empty( $category_name ) ):
@@ -88,5 +90,5 @@
 		<nav class="pagi-post">
 			<?php pagi_posts_nav( $query ); ?>
 		</nav>
-	<?php endif;//if for have posts?>
+	<?php wp_reset_postdata();endif;//if for have posts?>
 </article><!-- #post-## -->

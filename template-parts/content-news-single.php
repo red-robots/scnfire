@@ -55,7 +55,7 @@
 					</div><!--.news-->
 				<?php endwhile; ?>
 			</div><!--.recent-news-->
-		<?php endif; ?>
+		<?php wp_reset_postdata(); endif; ?>
 		<div class="copy">
 			<?php $dates = get_field( "dates" );
 			if ( $dates ):?>

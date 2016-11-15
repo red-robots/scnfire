@@ -25,12 +25,14 @@
     }
   }
 }
-
-.template-page, .template-about, .template-team, .template-news, .template-news-single, .template-portfolio {
-  > header {
-    h1 {
-      font-size: 50px;
-      line-height: 1.2;
+#content #main {
+  .template-page, .template-about, .template-team, .template-news, .template-news-single, .template-portfolio {
+    padding-right: 4%;
+    > header {
+      h1 {
+        font-size: 50px;
+        line-height: 1.2;
+      }
     }
   }
 }
@@ -62,6 +64,9 @@
         }
       }
     }
+  }
+  .copy {
+    margin-bottom: 20px;
   }
 }
 
@@ -118,14 +123,14 @@
   }
 }
 
-.template-portfolio {
-  .portfolio.wrapper {
-    .portfolio {
+.template-portfolio, .template-team {
+  .portfolio.wrapper, .team.wrapper {
+    .portfolio, .member {
       background-position: center;
       background-size: cover;
       background-repeat: no-repeat;
       width: 250px;
-      height: 200px;
+      height: 250px;
       a {
         display: block;
         width: 100%;
@@ -156,7 +161,7 @@
             text-transform: capitalize;
             font-weight: 600;
           }
-          .location {
+          .location, .position {
             width: 100%;
             color: white;
             font-size: 13px;

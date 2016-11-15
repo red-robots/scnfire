@@ -14,7 +14,9 @@
     <nav id="about-navigation" class="about-navigation" role="navigation">
         <?php wp_nav_menu(array('theme_location' => 'aboutsub' )); ?>
     </nav><!-- #about-navigation -->
-	<div class="copy">
-		<?php the_content();?>
-	</div>
+	<?php if(get_the_content()):?>
+		<div class="copy">
+			<?php the_content();?>
+		</div><!--.copy-->
+	<?php endif;//if for get the content?>
 </article><!-- #post-## -->

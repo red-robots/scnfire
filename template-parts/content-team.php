@@ -14,10 +14,44 @@
     <nav id="about-navigation" class="about-navigation" role="navigation">
         <?php wp_nav_menu(array('theme_location' => 'aboutsub' )); ?>
     </nav><!-- #about-navigation -->
-	<div class="copy">
-		<?php the_content();?>
-	</div><!--.copy-->
-	<div class="team">
-
-	</div><!--.team-->
+	<?php if(get_the_content()):?>
+		<div class="copy">
+			<?php the_content();?>
+		</div><!--.copy-->
+	<?php endif;//if for get the content?>
+	<?php $paged= $paged === 0?1:$paged;
+	$args = array(
+		'post_type'      => "team",
+		"posts_per_page" => 8,
+		"orderby"=>'menu_order',
+		"order"=>'ASC',
+		"paged"=>$paged
+	);
+	$query = new WP_Query( $args );
+	if ( $query->have_posts() ):?>
+		<section class="team wrapper is-container">
+			<?php while ( $query->have_posts() ):$query->the_post();?>
+				<?php $image = get_field("image");
+				$position = get_field("position");?>
+				<div class="member is-item" <?php if ( $image ):
+					echo 'style="background-image: url(' . $image['url'] . ');"';
+				endif; ?>>
+					<a href="<?php echo get_the_permalink(); ?>">
+						<div class="row-1 clear-bottom">
+							<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/+.png" alt="plus icon">
+						</div>
+						<div class="row-2">
+							<h2><?php echo get_the_title(); ?></h2>
+							<?php if ( $position ): ?>
+								<div class="position"><?php echo $position; ?></div>
+							<?php endif; ?>
+						</div>
+					</a>
+				</div><!--.portfolio-->
+			<?php endwhile; ?>
+		</section><!--.team .wrapper-->
+		<nav class="pagi-post">
+			<?php pagi_posts_nav( $query ); ?>
+		</nav>
+	<?php wp_reset_postdata(); endif;//if for have posts?>
 </article><!-- #post-## -->
