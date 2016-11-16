@@ -26,7 +26,7 @@
   }
 }
 #content #main {
-  .template-page, .template-about, .template-team, .template-news, .template-news-single, .template-portfolio {
+  .template-page, .template-about, .template-team, .template-team-single, .template-news, .template-news-single, .template-portfolio {
     padding-right: 4%;
     > header {
       h1 {
@@ -224,7 +224,86 @@
     }
   }
 }
+.template-team-single {
+  .link {
+    margin-bottom: 30px;
+    a {
+      color: $color__scn-grey;
+      text-decoration: none;
+    }
+  }
+  > .row-1 {
+    @include flexbox;
+    @include flexbox-align-content(stretch);
+    @include flexbox-align-items(stretch);
+    @include flexbox-justify(center);
+    @include flexbox-wrap(wrap);
+    >.column-1 {
+      @include flexbox-flex(1,1,auto);
+      @include flexbox;
+      @include flexbox-align-content(flex-start);
+      @include flexbox-align-items(stretch);
+      @include flexbox-justify(center);
+      @include flexbox-wrap(wrap);
+      width: 0%;
+      min-width: 250px;
+      >.row-1 {
+        @include flexbox-flex(0,1,auto);
+        width: 100%;
+        max-width: 250px;
+        img {
+          width: 100%;
+          display: block;
+        }
+      }
+      >.row-2 {
+        @include flexbox;
+        @include flexbox-align-content(center);
+        @include flexbox-align-items(center);
+        @include flexbox-justify(flex-start);
+        @include flexbox-wrap(wrap);
+        @include flexbox-flex(1,1,auto);
+        background-color: $color__scn-blue;
+        color: white;
+        font-size: 13px;
+        >.wrapper {
+          @include flexbox-flex(0,0,auto);
+          .position {
+            font-weight: 800;
+          }
+          .phone {
+            font-weight: 600;
+          }
+          .fax {
+            font-weight: 600;
+          }
+          .font-awesome-icons {
+            a {
+            }
+            .fa-envelope {
 
+            }
+            .fa-linkedin {
+
+            }
+          }
+        }
+      }
+    }
+    >.column-2 {
+      @include flexbox-flex(1,1,auto);
+      width: 60%;
+      @media screen and (min-width: 1200px) {
+        width: 40%;
+      }
+    }
+    >.column-3 {
+      @include flexbox-flex(1,1,auto);
+      width: 0%;
+      min-width: 200px;
+    }
+  }
+}
 .template-news-single {
   .link {
     margin-bottom: 30px;

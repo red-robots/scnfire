@@ -96,7 +96,7 @@ h1, h2, h3 {
     @media screen and (min-width: $tabwidth) {
       width: 31%;
       display: block;
-      min-width: 350px;
+      min-width: $size__sidebar-min-width;
       height: 100vh;
     }
   }
@@ -105,7 +105,7 @@ h1, h2, h3 {
     @media screen and (min-width: $tabwidth) {
       overflow-y: scroll;
       width: 31%;
-      min-width: 350px;
+      min-width: $size__sidebar-min-width;
       position: fixed;
       top: 0;
       left: 0;
@@ -259,6 +259,7 @@ h1, h2, h3 {
               float: left;
               list-style-type: none;
               &:first-child {
+                margin: 0 0 0 5px;
                 a {
                   display: inline-block;
                   &:before {
@@ -296,7 +297,7 @@ h1, h2, h3 {
       @media screen and (min-width: $tabwidth) {
         margin: 0 auto 70px 0;
         width: 31%*.8;
-        min-width: 350px*.8;
+        min-width: $size__sidebar-min-width*.8;
         display: block;
       }
     }

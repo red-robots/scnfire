@@ -14,7 +14,7 @@
 	<header>
 		<h1><?php the_title(); ?></h1>
 	</header>
-	<?php $back_text = get_field( "news_back_text", "option" ); ?>
+	<?php $back_text = get_field( "news_back_text", 32); ?>
 	<?php if ( $back_text && get_post( 32 ) ): ?>
 		<div class="link">
 			<a href="<?php echo get_the_permalink( 32 ); ?>">
@@ -26,12 +26,13 @@
 		<?php $args = array(
 			'post_type'        => "post",
 			"posts_per_page"   => 5,
-			"category__not_in" => array( 1 )
+			"category__not_in" => array( 1 ),
+			"order"=>"ASC"
 		);
 		$query      = new WP_Query( $args );
 		if ( $query->have_posts() ): ?>
 			<div class="recent-news">
-				<?php $recent_text = get_field( "news_recent_text", "option" );
+				<?php $recent_text = get_field( "news_recent_text", 32 );
 				if ( $recent_text ):?>
 					<header>
 						<h2><?php echo $recent_text; ?></h2>

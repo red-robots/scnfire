@@ -4,7 +4,7 @@
  */
 
 ?>
-<footer id="colophon" class="site-footer" role="contentinfo">
+<footer id="colophon" class="site-footer clear-bottom" role="contentinfo">
     <div class="wrapper">
         <?php $visit_text = get_field("visit_text","option");
         $visit_link = get_field("visit_link","option");
