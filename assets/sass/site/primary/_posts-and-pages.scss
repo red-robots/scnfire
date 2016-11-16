@@ -226,48 +226,68 @@
 }
 .template-team-single {
   .link {
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     a {
       color: $color__scn-grey;
       text-decoration: none;
     }
   }
   > .row-1 {
-    @include flexbox;
-    @include flexbox-align-content(stretch);
-    @include flexbox-align-items(stretch);
-    @include flexbox-justify(center);
-    @include flexbox-wrap(wrap);
-    >.column-1 {
-      @include flexbox-flex(1,1,auto);
+    @media screen and (min-width: $tabwidth) {
       @include flexbox;
-      @include flexbox-align-content(flex-start);
+      @include flexbox-align-content(stretch);
       @include flexbox-align-items(stretch);
       @include flexbox-justify(center);
       @include flexbox-wrap(wrap);
-      width: 0%;
-      min-width: 250px;
+    }
+    >.column-1 {
+      width: 80%;
+      margin: 0 auto 10px auto;
+      @media screen and (min-width: $tabwidth) {
+        @include flexbox-flex(1, 1, auto);
+        @include flexbox;
+        @include flexbox-align-content(flex-start);
+        @include flexbox-align-items(stretch);
+        @include flexbox-justify(center);
+        @include flexbox-wrap(wrap);
+        width: 0;
+        padding: 0 10px 0 0;
+        min-width: 250px;
+        margin: 0;
+      }
       >.row-1 {
-        @include flexbox-flex(0,1,auto);
-        width: 100%;
-        max-width: 250px;
+        margin: 0 0 10px 0;
+        @media screen and (min-width: $tabwidth) {
+          @include flexbox-flex(0, 1, auto);
+          width: 100%;
+          max-width: 250px;
+          border-top: 10px solid white;
+          padding: 0 10px 0 0;
+          margin: 0;
+        }
         img {
           width: 100%;
           display: block;
         }
       }
       >.row-2 {
-        @include flexbox;
-        @include flexbox-align-content(center);
-        @include flexbox-align-items(center);
-        @include flexbox-justify(flex-start);
-        @include flexbox-wrap(wrap);
-        @include flexbox-flex(1,1,auto);
         background-color: $color__scn-blue;
         color: white;
         font-size: 13px;
+        @media screen and (min-width: $tabwidth) {
+          @include flexbox;
+          @include flexbox-align-content(center);
+          @include flexbox-align-items(center);
+          @include flexbox-justify(flex-start);
+          @include flexbox-wrap(wrap);
+          @include flexbox-flex(1, 1, auto);
+          border-top: 10px solid white;
+          margin: 0 10px 0 0;
+        }
         >.wrapper {
-          @include flexbox-flex(0,0,auto);
+          @media screen and (min-width: $tabwidth) {
+            @include flexbox-flex(0, 0, auto);
+          }
           .position {
             font-weight: 800;
           }
@@ -291,16 +311,66 @@
       }
     }
     >.column-2 {
-      @include flexbox-flex(1,1,auto);
-      width: 60%;
+      width: 80%;
+      margin: 0 auto 10px auto;
+      @media screen and (min-width: $tabwidth) {
+        @include flexbox-flex(1, 1, auto);
+        width: 60%;
+        padding: 0 20px 0 0;
+        border-top: 10px solid white;
+        margin: 0;
+      }
       @media screen and (min-width: 1200px) {
         width: 40%;
       }
     }
     >.column-3 {
-      @include flexbox-flex(1,1,auto);
-      width: 0%;
-      min-width: 200px;
+      width: 80%;
+      margin: 0 auto;
+      @media screen and (min-width: $tabwidth) {
+        @include flexbox-flex(1, 1, auto);
+        width: 0;
+        padding: 0 20px 0 0;
+        border-top: 10px solid white;
+        margin: 0;
+        min-width: 200px;
+      }
+      header {
+        h2 {
+          padding: 0 5px;
+          font-size: 13px;
+          font-weight: 600;
+          text-transform: uppercase;
+        }
+      }
+      .member {
+        background-position: center;
+        background-size: cover;
+        width: 90px;
+        height: 90px;
+        margin: 0 5px;
+
+        a {
+          @include flexbox;
+          @include flexbox-align-content(center);
+          @include flexbox-align-items(center);
+          @include flexbox-justify(center);
+          @include flexbox-direction(column)
+          @include flexbox-wrap(nowrap);
+          text-decoration: none;
+          height: 100%;
+          &:hover {
+            background-color: rgba(28,101,177,0.65);
+          }
+          .first-name, .last-name {
+            @include flexbox-flex(0, 0, auto);
+            color: white;
+            font-size: 11px;
+            font-weight: 600;
+            text-align: center;
+          }
+        }
+      }
     }
   }
 }
