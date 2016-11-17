@@ -19,19 +19,62 @@
   }
   .home-navigation {
     ul {
+      margin-left: 20px;
+      margin-top: 20px;
+      padding: 0;
+      @media screen and (min-width: $tabwidth) {
+        margin-top: 0;
+      }
       li {
-
+        padding: 0 0 0 5px;
+        margin: 5px 0;
+        list-style-type: none;
+        @media screen and (min-width: $tabwidth) {
+          background-color: rgba(255, 255, 255, 0.35);
+        }
+        &:hover {
+          padding: 0;
+        }
+        a {
+          line-height: 1.2;
+          cursor: pointer;
+          display: block;
+          font-weight: 800;
+          text-transform: uppercase;
+          padding: 10px 20px;
+          text-decoration: none;
+          font-size: 24px;
+          color: $color__scn-blue;
+          @media screen and (min-width: $tabwidth) {
+            padding: 20px 20px;
+            color: white;
+          }
+          &.active, &:hover {
+            border-left: 5px solid $color__scn-blue;
+            background-color: white;
+            color: $color__scn-blue;
+          }
+        }
+        .sub-menu {
+          display: none;
+        }
       }
     }
   }
 }
 #content #main {
   .template-page, .template-about, .template-team, .template-team-single, .template-news, .template-news-single, .template-portfolio {
-    padding-right: 4%;
+    padding: 20px;
+    @media screen and (min-width: $tabwidth) {
+      padding-right: 4%;
+    }
     > header {
       h1 {
-        font-size: 50px;
+        font-size: 25px;
         line-height: 1.2;
+        @media screen and (min-width: $tabwidth) {
+          font-size: 50px;
+        }
       }
     }
   }
@@ -39,7 +82,7 @@
 
 .template-about, .template-team {
   #about-navigation {
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     ul {
       margin: 0;
       padding: 0;
@@ -72,25 +115,34 @@
 
 .template-news, .template-portfolio {
   .news-cat, .portfolio-cat {
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     ul {
       margin: 0;
       padding: 0;
-      text-align: left;
       line-height: 1.2;
+      text-align: center;
+      @media screen and (min-width: $tabwidth) {
+        text-align: left;
+      }
       li {
         margin: 0;
-        padding: 0 0 0 30px;
+        padding: 0 15px 10px 15px;
         display: inline-block;
         list-style-type: none;
+        @media screen and (min-width: $tabwidth) {
+          padding: 0 0 0 30px;
+        }
         &:first-child {
-          padding: 0;
+          padding-left: 0;
         }
         a {
           text-decoration: none;
           color: $color__scn-grey;
           font-weight: 600;
-          font-size: 10px;
+          font-size: 12px;
+          @media screen and (min-width: $tabwidth) {
+            font-size: 10px;
+          }
           &.active, &:hover {
             color: $color__text-main;
           }
@@ -129,6 +181,7 @@
       background-position: center;
       background-size: cover;
       background-repeat: no-repeat;
+      border-top: 10px solid white;
       width: 250px;
       height: 250px;
       a {
@@ -177,6 +230,7 @@
 .template-news {
   .news.wrapper {
     width: 100%;
+    margin-top: 10px;
     @media screen and (min-width: $tabwidth) {
       width: 60%;
       float: left;
@@ -241,7 +295,7 @@
       @include flexbox-wrap(wrap);
     }
     >.column-1 {
-      width: 80%;
+      width: 100%;
       margin: 0 auto 10px auto;
       @media screen and (min-width: $tabwidth) {
         @include flexbox-flex(1, 1, auto);
@@ -255,8 +309,15 @@
         min-width: 250px;
         margin: 0;
       }
+      @media screen and (min-width: 1200px) {
+        padding: 0 20px 0 0;
+      }
       >.row-1 {
-        margin: 0 0 10px 0;
+        margin: 0 auto 10px auto;
+        width: 100%;
+        @media screen and (min-width: $mobileportraitwidth) {
+          width: 80%;
+        }
         @media screen and (min-width: $tabwidth) {
           @include flexbox-flex(0, 1, auto);
           width: 100%;
@@ -272,6 +333,9 @@
       }
       >.row-2 {
         background-color: $color__scn-blue;
+        background-position: 90% 85%;
+        background-repeat: no-repeat;
+        background-size: 50px 50px;
         color: white;
         font-size: 13px;
         @media screen and (min-width: $tabwidth) {
@@ -290,28 +354,35 @@
           }
           .position {
             font-weight: 800;
+            padding: 20px 20px 5px 20px;
           }
           .phone {
             font-weight: 600;
+            padding: 0 20px;
           }
           .fax {
             font-weight: 600;
+            padding: 0 20px;
           }
           .font-awesome-icons {
+            padding: 5px 20px 20px 20px;
+            font-size: 20px;
             a {
+              color: white;
+              text-decoration: none;
             }
             .fa-envelope {
 
             }
             .fa-linkedin {
-
+              margin-left: 5px;
             }
           }
         }
       }
     }
     >.column-2 {
-      width: 80%;
+      width: 100%;
       margin: 0 auto 10px auto;
       @media screen and (min-width: $tabwidth) {
         @include flexbox-flex(1, 1, auto);
@@ -322,18 +393,54 @@
       }
       @media screen and (min-width: 1200px) {
         width: 40%;
+        padding: 0 40px 0 0;
+      }
+      .copy, .certifications, .education, .fun-fact {
+        font-size: 13px;
+        margin-bottom: 10px;
+        &:last-child {
+          margin:0;
+        }
+      }
+      .certifications, .education, .fun-fact {
+        header {
+          h2 {
+            font-size: 12px;
+            font-weight: 800;
+          }
+        }
+        ul {
+          margin: 0;
+          padding: 0 0 0 25px;
+          li {
+            margin: 0;
+            padding: 0;
+            list-style-type: square;
+          }
+        }
+      }
+      .copy {
+      }
+      .certifications {
+
+      }
+      .education {
+
+      }
+      .fun-fact {
+
       }
     }
     >.column-3 {
-      width: 80%;
+      width: 100%;
       margin: 0 auto;
       @media screen and (min-width: $tabwidth) {
         @include flexbox-flex(1, 1, auto);
         width: 0;
-        padding: 0 20px 0 0;
+        padding: 0;
         border-top: 10px solid white;
         margin: 0;
-        min-width: 200px;
+        min-width: 160px;
       }
       header {
         h2 {
@@ -343,31 +450,48 @@
           text-transform: uppercase;
         }
       }
-      .member {
-        background-position: center;
-        background-size: cover;
-        width: 90px;
-        height: 90px;
-        margin: 0 5px;
-
-        a {
+      > .wrapper {
+        width: 100%;
+        @media screen and (min-width: $tabwidth) {
           @include flexbox;
           @include flexbox-align-content(center);
           @include flexbox-align-items(center);
-          @include flexbox-justify(center);
-          @include flexbox-direction(column)
-          @include flexbox-wrap(nowrap);
-          text-decoration: none;
-          height: 100%;
-          &:hover {
-            background-color: rgba(28,101,177,0.65);
+          @include flexbox-justify(flex-start);
+          @include flexbox-wrap(wrap);
+        }
+        .member {
+          float: left;
+          background-position: center;
+          background-size: cover;
+          width: 70px;
+          height: 70px;
+          margin: 0 5px;
+          max-width: 160px;
+          @media screen and (min-width: $tabwidth) {
+            @include flexbox-flex(1, 0, auto);
+            float: none;
           }
-          .first-name, .last-name {
-            @include flexbox-flex(0, 0, auto);
-            color: white;
-            font-size: 11px;
-            font-weight: 600;
-            text-align: center;
+          a {
+            @include flexbox;
+            @include flexbox-align-content(center);
+            @include flexbox-align-items(center);
+            @include flexbox-justify(center);
+            @include flexbox-direction(column);
+            @include flexbox-wrap(nowrap);
+            text-decoration: none;
+            height: 100%;
+            &:hover {
+              background-color: rgba(28, 101, 177, 0.65);
+            }
+            .first-name, .last-name {
+              color: white;
+              font-size: 11px;
+              font-weight: 600;
+              text-align: center;
+              @media screen and (min-width: $tabwidth) {
+                @include flexbox-flex(0, 0, auto);
+              }
+            }
           }
         }
       }

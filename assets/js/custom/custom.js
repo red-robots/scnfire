@@ -112,7 +112,7 @@ jQuery(document).ready(function ($) {
     new WOW().init();
 
     /*custom menu */
-    $('li.menu-item-has-children').each(function () {
+    $('#main-sidebar li.menu-item-has-children, #home-navigation li.menu-item-has-children').each(function () {
         var $this = $(this);
         var $sub_menu = $this.children('.sub-menu');
         if ($sub_menu.find("a.active").length > 0) {
@@ -137,6 +137,16 @@ jQuery(document).ready(function ($) {
                 }
             }
         });
+    });
+
+    $('#main-sidebar .hamburger').click(function(){
+       if($('#main-sidebar >.wrapper >.wrapper').hasClass("toggled-on")){
+           $('#main-sidebar >.wrapper >.wrapper').removeClass("toggled-on");
+           $('#colophon').removeClass("toggled-on");
+       } else {
+           $('#main-sidebar >.wrapper >.wrapper').addClass("toggled-on");
+           $('#colophon').addClass("toggled-on");
+       }
     });
 
 });// END #####################################    END

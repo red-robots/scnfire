@@ -22,6 +22,7 @@
 						<a href="<?php bloginfo( 'url' ); ?>"><img src="<?php echo get_template_directory_uri()."/images/logo.jpg";?>" alt="logo"></a>
 					</div>
 				<?php } ?>
+				<img class="hamburger" src="<?php echo get_stylesheet_directory_uri(); ?>/images/+.png" alt="plus icon">
 			</div><!-- wrapper -->
 		</header><!-- #masthead -->
 		<div class="wrapper">
