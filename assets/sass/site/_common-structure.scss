@@ -255,6 +255,10 @@ h1, h2, h3 {
                   a {
                     font-weight: 600;
                     font-size: 13px;
+                    &.active, &:hover {
+                      font-weight: 800;
+                      font-size: 13px;
+                    }
                   }
                 }
               }
