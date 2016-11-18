@@ -79,7 +79,7 @@ jQuery(document).ready(function ($) {
             // options
             itemSelector: '.is-item',
             masonry: {
-                gutter: 3
+                gutter: 5
             }
         });
     });

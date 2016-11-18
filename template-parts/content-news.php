@@ -67,7 +67,7 @@
 		<section class="news wrapper">
 			<?php while($query->have_posts()):$query->the_post();?>
 				<?php $dates = get_field("dates");?>
-				<div class="news clear-bottom">
+				<div class="news">
 					<a href="<?php echo get_the_permalink();?>">
 						<div class="row-1">
 							<div class="column-1">
