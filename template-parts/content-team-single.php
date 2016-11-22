@@ -23,7 +23,7 @@
 		</div><!--.link-->
 	<?php endif; ?>
 	<div class="row-1">
-		<div class="column-1">
+		<section class="column-1">
 			<?php $phone = get_field( "phone" );
 			$fax         = get_field( "fax" );
 			$email       = get_field( "email" );
@@ -61,8 +61,8 @@
 					<?php endif;//if for font awesome icons?>
 				</div><!--.wrapper-->
 			</div><!--.row-2-->
-		</div><!--.column-1-->
-		<div class="column-2">
+		</section><!--.column-1-->
+		<section class="column-2">
 			<?php $certifications_header_text = get_field( "certifications_header_text", 62 );
 			$education_header_text            = get_field( "education_header_text", 62 );
 			$fun_fact_header_text             = get_field( "fun_fact_header_text", 62 );
@@ -110,7 +110,7 @@
 					</ul>
 				</div>
 			<?php endif;//if fun fact?>
-		</div><!--.column-2-->
+		</section><!--.column-2-->
 		<?php $args = array(
 			'post_type'      => "team",
 			"posts_per_page" => 8,
@@ -119,7 +119,7 @@
 		);
 		$query      = new WP_Query( $args );
 		if ( $query->have_posts() ): ?>
-			<div class="column-3 other-team-members clear-bottom">
+			<aside class="column-3 other-team-members clear-bottom">
 				<?php $other_text = get_field( "team_other_text", 62 );
 				if ( $other_text ):?>
 					<header>
@@ -147,7 +147,7 @@
 						</div><!--.news-->
 					<?php endwhile; ?>
 				</div><!--.wrapper-->
-			</div><!--.recent-news-->
+			</aside><!--.recent-news-->
 			<?php wp_reset_postdata(); endif; ?>
 	</div><!--.row-1-->
 </article><!-- #post-## -->

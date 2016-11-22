@@ -56,7 +56,7 @@
 					<?php endforeach; ?>
 				</ul>
 			</div><!--#flexslider-->
-			<div class="overlay">
+			<section class="overlay">
 				<img class="plus-icon" src="<?php echo get_stylesheet_directory_uri(); ?>/images/+.png" alt="plus icon">
 				<div class="info">
 					<div class="row-1">
@@ -84,11 +84,11 @@
 						     alt="close icon">
 					</div><!--.row-2-->
 				</div><!--.info-overlay-->
-			</div><!--.overlay-->
+			</section><!--.overlay-->
 			<a class="flex-prev" href="#">Prev</a>
 			<a class="flex-next" href="#">Next</a>
 		</div><!--.slider.wrapper-->
-		<div id="carousel" class="flexslider-nav">
+		<nav id="carousel" class="flexslider-nav">
 			<ul class="slides">
 				<?php foreach ( $images as $image ): ?>
 					<li>
@@ -96,6 +96,6 @@
 					</li>
 				<?php endforeach; ?>
 			</ul>
-		</div><!--.flexslider-nav-->
+		</nav><!--.flexslider-nav-->
 	<?php endif;//endif for images?>
 </article><!-- #post-## -->

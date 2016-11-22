@@ -31,7 +31,7 @@
 		);
 		$query      = new WP_Query( $args );
 		if ( $query->have_posts() ): ?>
-			<div class="recent-news">
+			<section class="recent-news">
 				<?php $recent_text = get_field( "news_recent_text", 32 );
 				if ( $recent_text ):?>
 					<header>
@@ -55,9 +55,9 @@
 						</a>
 					</div><!--.news-->
 				<?php endwhile; ?>
-			</div><!--.recent-news-->
+			</section><!--.recent-news-->
 		<?php wp_reset_postdata(); endif; ?>
-		<div class="copy">
+		<section class="copy">
 			<?php $dates = get_field( "dates" );
 			if ( $dates ):?>
 				<div class="dates">
@@ -65,6 +65,6 @@
 				</div><!--.dates-->
 			<?php endif; ?>
 			<?php the_content(); ?>
-		</div><!--.copy-->
+		</section><!--.copy-->
 	</div><!--.row-1-->
 </article><!-- #post-## -->

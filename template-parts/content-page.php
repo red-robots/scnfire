@@ -15,8 +15,8 @@
         <h1><?php the_title(); ?></h1>
 	</header>
 	<?php if(get_the_content()):?>
-		<div class="copy">
+		<section class="copy">
 			<?php the_content();?>
-		</div><!--.copy-->
+		</section><!--.copy-->
 	<?php endif;//if for get the content?>
 </article><!-- #post-## -->
