@@ -85,7 +85,6 @@ function build_taxonomies() {
 			'hierarchical' => true, // true = acts like categories false = acts like tags
 			'label' => 'Project Type',
 			'query_var' => true,
-			'rewrite' => true ,
 			'show_admin_column' => true,
 			'public' => true,
 			'rewrite' => array( 'slug' => 'project-type' ),
