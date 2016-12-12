@@ -9,9 +9,7 @@ get_header(); ?>
 		<main id="main" class="site-main clear-bottom" role="main">
 			<?php
             get_sidebar();
-			if ( have_posts() ) : the_post();
-				get_template_part( 'template-parts/content', 'portfolio' );
-			endif; // End of the loop.
+			get_template_part( 'template-parts/content', 'portfolio' );
 			?>
 		</main><!-- #main -->
 	</div><!-- #primary -->
