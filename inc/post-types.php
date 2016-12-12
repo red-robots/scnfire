@@ -87,7 +87,7 @@ function build_taxonomies() {
 			'query_var' => true,
 			'show_admin_column' => true,
 			'public' => true,
-			'rewrite' => array( 'slug' => 'project-type','with_front'=> true ),
+			'rewrite' => array( 'slug' => 'project-type', 'hierarchical'=>true ),
 			'_builtin' => true
 		) );
 
