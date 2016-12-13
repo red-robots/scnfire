@@ -115,6 +115,27 @@
   }
 }
 
+.template-team {
+  .pagi-post {
+    width: 100%;
+    .navigation {
+      margin: 45px 0;
+      text-align: center;
+      ul {
+        li {
+          display: inline-block;
+          a {
+            background-color: $color__scn-grey;
+            color: white;
+            &:hover, &.active {
+              background-color: $color__scn-blue;
+            }
+          }
+        }
+      }
+    }
+  }
+}
 .template-news, .template-portfolio {
   .news-cat {
     margin-bottom: 20px;
@@ -164,10 +185,6 @@
   }
   .pagi-post {
     width: 100%;
-    @media screen and (min-width: $tabwidth) {
-      width: 60%;
-      float: left;
-    }
     .navigation {
       margin: 45px 0;
       text-align: center;

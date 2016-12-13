@@ -1461,6 +1461,11 @@ h1,h2,h3{font-weight:800;margin:0;text-transform:uppercase}
 .template-about #about-navigation ul li a,.template-team #about-navigation ul li a{text-decoration:none;color:#959595;font-weight:600;font-size:10px}
 .template-about #about-navigation ul li a.active,.template-about #about-navigation ul li a:hover,.template-team #about-navigation ul li a.active,.template-team #about-navigation ul li a:hover{color:#404040}
 .template-about .copy,.template-team .copy{margin:20px 0 5px 0}
+.template-team .pagi-post{width:100%}
+.template-team .pagi-post .navigation{margin:45px 0;text-align:center}
+.template-team .pagi-post .navigation ul li{display:inline-block}
+.template-team .pagi-post .navigation ul li a{background-color:#959595;color:white}
+.template-team .pagi-post .navigation ul li a:hover,.template-team .pagi-post .navigation ul li a.active{background-color:#1c65b1}
 .template-news .news-cat,.template-portfolio .news-cat{margin-bottom:20px}
 .template-news .news-cat ul,.template-portfolio .news-cat ul{text-align:left}
 .template-news .portfolio-cat,.template-portfolio .portfolio-cat{margin-bottom:0}
@@ -1474,8 +1479,7 @@ h1,h2,h3{font-weight:800;margin:0;text-transform:uppercase}
 @media screen and (min-width:700px){.template-news .news-cat ul li a,.template-news .portfolio-cat ul li a,.template-portfolio .news-cat ul li a,.template-portfolio .portfolio-cat ul li a{font-size:10px}
 }.template-news .news-cat ul li a.active,.template-news .news-cat ul li a:hover,.template-news .portfolio-cat ul li a.active,.template-news .portfolio-cat ul li a:hover,.template-portfolio .news-cat ul li a.active,.template-portfolio .news-cat ul li a:hover,.template-portfolio .portfolio-cat ul li a.active,.template-portfolio .portfolio-cat ul li a:hover{color:#404040}
 .template-news .pagi-post,.template-portfolio .pagi-post{width:100%}
-@media screen and (min-width:700px){.template-news .pagi-post,.template-portfolio .pagi-post{width:60%;float:left}
-}.template-news .pagi-post .navigation,.template-portfolio .pagi-post .navigation{margin:45px 0;text-align:center}
+.template-news .pagi-post .navigation,.template-portfolio .pagi-post .navigation{margin:45px 0;text-align:center}
 .template-news .pagi-post .navigation ul li,.template-portfolio .pagi-post .navigation ul li{display:inline-block}
 .template-news .pagi-post .navigation ul li a,.template-portfolio .pagi-post .navigation ul li a{background-color:#959595;color:white}
 .template-news .pagi-post .navigation ul li a:hover,.template-news .pagi-post .navigation ul li a.active,.template-portfolio .pagi-post .navigation ul li a:hover,.template-portfolio .pagi-post .navigation ul li a.active{background-color:#1c65b1}

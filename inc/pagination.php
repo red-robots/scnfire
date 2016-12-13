@@ -3,9 +3,6 @@
 
 function pagi_posts_nav($query) {
 
-	if( is_singular() )
-		return;
-
 	global $wp_query;
 	$hold_query = $wp_query;
 	if($query!==null){
