@@ -57,7 +57,9 @@
   }
 }
 #content #main {
-  .template-page, .template-about, .template-team, .template-team-single, .template-news, .template-news-single, .template-portfolio {
+  .template-page, .template-about, .template-team,
+  .template-team-single, .template-news, .template-news-single,
+  .template-portfolio, .template-sitemap, .error-404 {
     padding: 20px;
     @media screen and (min-width: $tabwidth) {
       padding: 0 4% 0 1%;

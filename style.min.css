@@ -1375,6 +1375,8 @@ h1,h2,h3{font-weight:800;margin:0;text-transform:uppercase}
 .copy h3{font-size:15px}
 .copy ul,.copy ol{padding:0;margin:0 0 10px 10px;font-size:inherit}
 .copy ul li,.copy ol li{margin:0 0 0 20px;font-size:inherit;padding:0;list-style-type:square}
+.copy ul li a,.copy ol li a{color:#404040;text-decoration:none}
+.copy ul li a:hover,.copy ol li a:hover{color:#1c65b1}
 .copy ul li ul.sub-menu,.copy ol li ul.sub-menu{margin:0}
 .clear{clear:both}
 .clear-bottom:after{clear:both;content:"";display:block}
@@ -1431,12 +1433,12 @@ h1,h2,h3{font-weight:800;margin:0;text-transform:uppercase}
 #main #main-sidebar footer>.wrapper>.row-2 ul li:first-child a:before{display:none}
 #main #main-sidebar footer>.wrapper>.row-2 ul li a{text-decoration:none;color:#959595;font-weight:400;font-size:10px}
 #main #main-sidebar footer>.wrapper>.row-2 ul li a:before{content:"|";display:inline-block;margin:0 5px}
-#main article.two-column{width:100%}
-@media screen and (min-width:700px){#main article.two-column{float:right;width:70%;-webkit-box-flex:0 1 auto;-webkit-flex:0 1 auto;-ms-flex:0 1 auto;flex:0 1 auto}
-}#main article.two-column:after{content:"";display:block;padding:2.5px 0;width:100%}
-#main article.two-column .logo-bg{display:none}
-@media screen and (min-width:700px){#main article.two-column .logo-bg{margin:5px auto 30px 0;width:36.1%;min-width:220px;display:block}
-}@media screen and (min-width:1200px){#main article.two-column .logo-bg{margin:5px auto 70px 0}
+#main>article.two-column,#main section.two-column{width:100%}
+@media screen and (min-width:700px){#main>article.two-column,#main section.two-column{float:right;width:70%;-webkit-box-flex:0 1 auto;-webkit-flex:0 1 auto;-ms-flex:0 1 auto;flex:0 1 auto}
+}#main>article.two-column:after,#main section.two-column:after{content:"";display:block;padding:2.5px 0;width:100%}
+#main>article.two-column .logo-bg,#main section.two-column .logo-bg{display:none}
+@media screen and (min-width:700px){#main>article.two-column .logo-bg,#main section.two-column .logo-bg{margin:5px auto 30px 0;width:36.1%;min-width:220px;display:block}
+}@media screen and (min-width:1200px){#main>article.two-column .logo-bg,#main section.two-column .logo-bg{margin:5px auto 70px 0}
 }.template-index{background-size:cover}
 @media screen and (max-width:700px){.template-index{background-image:none !important}
 }@media screen and (min-width:700px){.template-index{display:-webkit-box;display:-ms-flexbox;display:-webkit-flex;display:flex;-webkit-align-content:stretch;-ms-flex-line-pack:stretch;align-content:stretch;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-justify-content:flex-end;-webkit-box-pack:end;-ms-flex-pack:end;justify-content:flex-end;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;background-position:center}
@@ -1449,10 +1451,10 @@ h1,h2,h3{font-weight:800;margin:0;text-transform:uppercase}
 }.template-index .home-navigation ul li a.active,.template-index .home-navigation ul li a:hover{border-left:5px solid #1c65b1;color:#1c65b1}
 @media screen and (min-width:700px){.template-index .home-navigation ul li a.active,.template-index .home-navigation ul li a:hover{background-color:white}
 }.template-index .home-navigation ul li .sub-menu{display:none}
-#content #main .template-page,#content #main .template-about,#content #main .template-team,#content #main .template-team-single,#content #main .template-news,#content #main .template-news-single,#content #main .template-portfolio{padding:20px}
-@media screen and (min-width:700px){#content #main .template-page,#content #main .template-about,#content #main .template-team,#content #main .template-team-single,#content #main .template-news,#content #main .template-news-single,#content #main .template-portfolio{padding:0 4% 0 1%}
-}#content #main .template-page>header h1,#content #main .template-about>header h1,#content #main .template-team>header h1,#content #main .template-team-single>header h1,#content #main .template-news>header h1,#content #main .template-news-single>header h1,#content #main .template-portfolio>header h1{font-size:25px;line-height:1.2}
-@media screen and (min-width:700px){#content #main .template-page>header h1,#content #main .template-about>header h1,#content #main .template-team>header h1,#content #main .template-team-single>header h1,#content #main .template-news>header h1,#content #main .template-news-single>header h1,#content #main .template-portfolio>header h1{font-size:50px}
+#content #main .template-page,#content #main .template-about,#content #main .template-team,#content #main .template-team-single,#content #main .template-news,#content #main .template-news-single,#content #main .template-portfolio,#content #main .template-sitemap,#content #main .error-404{padding:20px}
+@media screen and (min-width:700px){#content #main .template-page,#content #main .template-about,#content #main .template-team,#content #main .template-team-single,#content #main .template-news,#content #main .template-news-single,#content #main .template-portfolio,#content #main .template-sitemap,#content #main .error-404{padding:0 4% 0 1%}
+}#content #main .template-page>header h1,#content #main .template-about>header h1,#content #main .template-team>header h1,#content #main .template-team-single>header h1,#content #main .template-news>header h1,#content #main .template-news-single>header h1,#content #main .template-portfolio>header h1,#content #main .template-sitemap>header h1,#content #main .error-404>header h1{font-size:25px;line-height:1.2}
+@media screen and (min-width:700px){#content #main .template-page>header h1,#content #main .template-about>header h1,#content #main .template-team>header h1,#content #main .template-team-single>header h1,#content #main .template-news>header h1,#content #main .template-news-single>header h1,#content #main .template-portfolio>header h1,#content #main .template-sitemap>header h1,#content #main .error-404>header h1{font-size:50px}
 }.template-about #about-navigation{margin-bottom:20px}
 .template-team #about-navigation{margin-bottom:10px}
 .template-about #about-navigation ul,.template-team #about-navigation ul{margin:0;padding:0;text-align:left;line-height:1.2}
