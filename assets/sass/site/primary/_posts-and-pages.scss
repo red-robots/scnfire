@@ -523,12 +523,16 @@
             height: 100%;
             &:hover {
               background-color: rgba(28, 101, 177, 0.65);
+              .first-name, .last-name {
+                display: block;
+              }
             }
             .first-name, .last-name {
               color: white;
               font-size: 11px;
               font-weight: 600;
               text-align: center;
+              display: none;
               @media screen and (min-width: $tabwidth) {
                 @include flexbox-flex(0, 0, auto);
               }
