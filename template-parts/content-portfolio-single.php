@@ -60,6 +60,10 @@
 				<img class="plus-icon" src="<?php echo get_stylesheet_directory_uri(); ?>/images/+.png" alt="plus icon">
 				<div class="info">
 					<div class="row-1">
+						<img class="close-icon" src="<?php echo get_stylesheet_directory_uri(); ?>/images/details-x.png"
+						     alt="close icon">
+					</div><!--.row-1-->
+					<div class="row-2">
 						<?php if ( $square_footage && $square_footage_header_text ): ?>
 							<div class="square-footage copy">
 								<header><h2><?php echo $square_footage_header_text; ?></h2></header>
@@ -78,10 +82,6 @@
 								<?php echo $our_involvement; ?>
 							</div><!--.our-involvement-->
 						<?php endif; ?>
-					</div><!--.row-1-->
-					<div class="row-2">
-						<img class="close-icon" src="<?php echo get_stylesheet_directory_uri(); ?>/images/details-x.png"
-						     alt="close icon">
 					</div><!--.row-2-->
 				</div><!--.info-overlay-->
 			</section><!--.overlay-->

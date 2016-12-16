@@ -48,6 +48,7 @@ jQuery(document).ready(function ($) {
         e.preventDefault();
         $('.flex-direction-nav .flex-prev').click();
     });
+
     $('.slider.wrapper .overlay .plus-icon').click(function(){
         $('.slider.wrapper .overlay .info').css({
             "display":"flex"

@@ -352,14 +352,14 @@ h1, h2, h3 {
   > article.two-column, section.two-column {
     width: 100%;
     @media screen and (min-width: $tabwidth) {
-      float: right;
       width: 70%;
       @include flexbox-flex(0, 1, auto);
     }
     &:after {
+      @include flexbox-flex(0,1,auto);
       content: "";
       display: block;
-      padding: 2.5px 0;
+      padding: 10px 0;
       width: 100%;
     }
     .logo-bg {

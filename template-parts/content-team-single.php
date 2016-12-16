@@ -64,9 +64,11 @@
 		</section><!--.column-1-->
 		<section class="column-2">
 			<?php $certifications_header_text = get_field( "certifications_header_text", 62 );
+			$professional_affiliations_header_text = get_field( "professional_affiliations_header_text", 62 );
 			$education_header_text            = get_field( "education_header_text", 62 );
 			$fun_fact_header_text             = get_field( "fun_fact_header_text", 62 );
 			$certifications                   = get_field( "certifications" );
+			$professional_affiliations        = get_field( "professional_affiliations" );
 			$education                        = get_field( "education" );
 			$fun_fact                         = get_field( "fun_fact" ); ?>
 			<?php if ( get_the_content() ): ?>
@@ -74,6 +76,18 @@
 					<?php the_content(); ?>
 				</div><!--.copy-->
 			<?php endif;//if for get the content?>
+			<?php if ( $education ): ?>
+				<div class="education">
+					<?php if ( $education_header_text ): ?>
+						<header><h2><?php echo $education_header_text; ?></h2></header>
+					<?php endif;//if certifications header text?>
+					<ul>
+						<?php foreach ( $education as $row ): ?>
+							<li><?php echo $row['achievement']; ?></li>
+						<?php endforeach; ?>
+					</ul>
+				</div><!--.education-->
+			<?php endif;//if for education?>
 			<?php if ( $certifications ): ?>
 				<div class="certifications">
 					<?php if ( $certifications_header_text ): ?>
@@ -86,14 +100,14 @@
 					</ul>
 				</div><!--.certifications-->
 			<?php endif;//if for certifications?>
-			<?php if ( $education ): ?>
-				<div class="education">
-					<?php if ( $education_header_text ): ?>
-					<header><h2><?php echo $education_header_text; ?></h2></header>
+			<?php if ( $professional_affiliations ): ?>
+				<div class="professional-affiliations">
+					<?php if ( $professional_affiliations_header_text ): ?>
+						<header><h2><?php echo $professional_affiliations_header_text; ?></h2></header>
 					<?php endif;//if certifications header text?>
 					<ul>
-						<?php foreach ( $education as $row ): ?>
-							<li><?php echo $row['achievement']; ?></li>
+						<?php foreach ( $professional_affiliations as $row ): ?>
+							<li><?php echo $row['affiliation']; ?></li>
 						<?php endforeach; ?>
 					</ul>
 				</div><!--.education-->
