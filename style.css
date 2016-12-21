@@ -6280,10 +6280,10 @@ h1, h2, h3 {
         margin: 0 10px 0 0; } }
     @media screen and (min-width: 700px) {
       .template-team-single > .row-1 > .column-1 > .row-2 > .wrapper {
-        -webkit-box-flex: 0 0 auto;
-        -webkit-flex: 0 0 auto;
-        -ms-flex: 0 0 auto;
-        flex: 0 0 auto; } }
+        -webkit-box-flex: 0 1 auto;
+        -webkit-flex: 0 1 auto;
+        -ms-flex: 0 1 auto;
+        flex: 0 1 auto; } }
     .template-team-single > .row-1 > .column-1 > .row-2 > .wrapper .position {
       font-weight: 800;
       padding: 20px 20px 5px 20px; }

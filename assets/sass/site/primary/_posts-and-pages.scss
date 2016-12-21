@@ -398,7 +398,7 @@
         }
         >.wrapper {
           @media screen and (min-width: $tabwidth) {
-            @include flexbox-flex(0, 0, auto);
+            @include flexbox-flex(0, 1, auto);
           }
           .position {
             font-weight: 800;
