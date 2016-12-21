@@ -316,7 +316,7 @@
               }
             }
             > .column-2 {
-              @include flexbox-flex(0, 0, auto);
+              @include flexbox-flex(0, 1, auto);
               min-width: 30px;
               width: 30px;
             }
@@ -542,7 +542,7 @@
               text-align: center;
               display: none;
               @media screen and (min-width: $tabwidth) {
-                @include flexbox-flex(0, 0, auto);
+                @include flexbox-flex(0, 1, auto);
               }
             }
           }
@@ -618,7 +618,7 @@
               }
             }
             > .column-2 {
-              @include flexbox-flex(0, 0, auto);
+              @include flexbox-flex(0, 1, auto);
               min-width: 20px;
               width: 20px;
             }
