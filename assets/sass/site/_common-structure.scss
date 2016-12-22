@@ -292,18 +292,12 @@ h1, h2, h3 {
           }
         }
         > .row-2 {
-           line-height: 1.2;
-           a {
-             display: inline-block;
-             font-weight: 600;
-             font-size: 13px;
-             color: $color__scn-grey;
-             text-decoration: none;
-             text-transform: uppercase;
-             &:hover {
-               color: $color__scn-blue;
-             }
-           }
+          line-height: 1.2;
+          font-weight: 600;
+          font-size: 13px;
+          color: $color__scn-grey;
+          text-transform: uppercase;
+          text-align: left;
          }
         > .row-3 {
           ul {

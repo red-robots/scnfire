@@ -65,7 +65,7 @@
 #content #main {
   .template-page, .template-about, .template-team,
   .template-team-single, .template-news, .template-news-single,
-  .template-portfolio, .template-sitemap, .error-404 {
+  .template-portfolio, .template-sitemap, .error-404, .template-contact {
     padding: 20px;
     @media screen and (min-width: $tabwidth) {
       padding: 0 4% 0 1%;
@@ -82,7 +82,7 @@
   }
 }
 #content #main {
-  .template-page, .template-about, .template-sitemap, .error-404 {
+  .template-page, .template-about, .template-sitemap, .error-404, .template-contact {
     @media screen and (min-width: $tabwidth) {
       padding: 0 6% 0 1%;
     }
@@ -809,6 +809,30 @@
     width: 85%;
     @media screen and (min-width: $tabwidth) {
       display: block;
+    }
+  }
+}
+.template-contact {
+  >.row-1 {
+    >.column-1 {
+      width: 100%;
+      @media screen and (min-width: $tabwidth) {
+        float: left;
+        width: 60%;
+      }
+    }
+    >.column-2 {
+      width: 100%;
+      margin: 20px 0 0 0;
+      @media screen and (min-width: $tabwidth) {
+        float: left;
+        width: 40%;
+        margin: 0;
+      }
+      iframe {
+        margin: 0 auto;
+        display: block;
+      }
     }
   }
 }

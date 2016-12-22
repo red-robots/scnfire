@@ -13,10 +13,9 @@
 		    </div><!--.site-title-->
 	    <?php endif;?>
         <?php $visit_text = get_field("visit_text","option");
-        $visit_link = get_field("visit_link","option");
-        if($visit_text&&$visit_link):?>
+        if($visit_text):?>
             <div class="row-2">
-                <a href="<?php echo $visit_link;?>" target="_blank"><?php echo $visit_text;?></a>
+                <?php echo $visit_text;?>
             </div><!-- .row-1-->
         <?php endif;?>
         <nav class="row-3" role="navigation clear-bottom">

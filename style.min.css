@@ -1424,9 +1424,7 @@ h1,h2,h3{font-weight:800;margin:0;text-transform:uppercase}
 #main #main-sidebar footer>.wrapper{padding-left:15px}
 #main #main-sidebar footer>.wrapper>.row-1{line-height:1.6}
 #main #main-sidebar footer>.wrapper>.row-1 a{display:inline-block;font-weight:800;font-size:15px;color:#1c65b1;text-decoration:none;text-transform:uppercase}
-#main #main-sidebar footer>.wrapper>.row-2{line-height:1.2}
-#main #main-sidebar footer>.wrapper>.row-2 a{display:inline-block;font-weight:600;font-size:13px;color:#959595;text-decoration:none;text-transform:uppercase}
-#main #main-sidebar footer>.wrapper>.row-2 a:hover{color:#1c65b1}
+#main #main-sidebar footer>.wrapper>.row-2{line-height:1.2;font-weight:600;font-size:13px;color:#959595;text-transform:uppercase;text-align:left}
 #main #main-sidebar footer>.wrapper>.row-3 ul{margin:0;padding:0;text-align:left}
 #main #main-sidebar footer>.wrapper>.row-3 ul li{margin:0;padding:0;display:block;float:left;list-style-type:none;line-height:1}
 #main #main-sidebar footer>.wrapper>.row-3 ul li:first-child a{display:inline-block}
@@ -1455,11 +1453,11 @@ h1,h2,h3{font-weight:800;margin:0;text-transform:uppercase}
 }.template-index .home-navigation ul li a.active,.template-index .home-navigation ul li a:hover{border-left:5px solid #1c65b1;color:#1c65b1}
 @media screen and (min-width:700px){.template-index .home-navigation ul li a.active,.template-index .home-navigation ul li a:hover{background-color:white}
 }.template-index .home-navigation ul li .sub-menu{display:none}
-#content #main .template-page,#content #main .template-about,#content #main .template-team,#content #main .template-team-single,#content #main .template-news,#content #main .template-news-single,#content #main .template-portfolio,#content #main .template-sitemap,#content #main .error-404{padding:20px}
-@media screen and (min-width:700px){#content #main .template-page,#content #main .template-about,#content #main .template-team,#content #main .template-team-single,#content #main .template-news,#content #main .template-news-single,#content #main .template-portfolio,#content #main .template-sitemap,#content #main .error-404{padding:0 4% 0 1%}
-}#content #main .template-page>header h1,#content #main .template-about>header h1,#content #main .template-team>header h1,#content #main .template-team-single>header h1,#content #main .template-news>header h1,#content #main .template-news-single>header h1,#content #main .template-portfolio>header h1,#content #main .template-sitemap>header h1,#content #main .error-404>header h1{font-size:25px;line-height:1.2}
-@media screen and (min-width:700px){#content #main .template-page>header h1,#content #main .template-about>header h1,#content #main .template-team>header h1,#content #main .template-team-single>header h1,#content #main .template-news>header h1,#content #main .template-news-single>header h1,#content #main .template-portfolio>header h1,#content #main .template-sitemap>header h1,#content #main .error-404>header h1{font-size:50px}
-}@media screen and (min-width:700px){#content #main .template-page,#content #main .template-about,#content #main .template-sitemap,#content #main .error-404{padding:0 6% 0 1%}
+#content #main .template-page,#content #main .template-about,#content #main .template-team,#content #main .template-team-single,#content #main .template-news,#content #main .template-news-single,#content #main .template-portfolio,#content #main .template-sitemap,#content #main .error-404,#content #main .template-contact{padding:20px}
+@media screen and (min-width:700px){#content #main .template-page,#content #main .template-about,#content #main .template-team,#content #main .template-team-single,#content #main .template-news,#content #main .template-news-single,#content #main .template-portfolio,#content #main .template-sitemap,#content #main .error-404,#content #main .template-contact{padding:0 4% 0 1%}
+}#content #main .template-page>header h1,#content #main .template-about>header h1,#content #main .template-team>header h1,#content #main .template-team-single>header h1,#content #main .template-news>header h1,#content #main .template-news-single>header h1,#content #main .template-portfolio>header h1,#content #main .template-sitemap>header h1,#content #main .error-404>header h1,#content #main .template-contact>header h1{font-size:25px;line-height:1.2}
+@media screen and (min-width:700px){#content #main .template-page>header h1,#content #main .template-about>header h1,#content #main .template-team>header h1,#content #main .template-team-single>header h1,#content #main .template-news>header h1,#content #main .template-news-single>header h1,#content #main .template-portfolio>header h1,#content #main .template-sitemap>header h1,#content #main .error-404>header h1,#content #main .template-contact>header h1{font-size:50px}
+}@media screen and (min-width:700px){#content #main .template-page,#content #main .template-about,#content #main .template-sitemap,#content #main .error-404,#content #main .template-contact{padding:0 6% 0 1%}
 }.template-about #about-navigation{margin-bottom:20px}
 .template-team #about-navigation{margin-bottom:10px}
 .template-about #about-navigation ul,.template-team #about-navigation ul{margin:0;padding:0;text-align:left;line-height:1.2}
@@ -1597,7 +1595,12 @@ h1,h2,h3{font-weight:800;margin:0;text-transform:uppercase}
 .template-portfolio-single .slider.wrapper .flex-next{position:absolute;top:50%;right:0;-webkit-transform:translateY(-50%);-ms-transform:translateY(-50%);transform:translateY(-50%);background-color:#1c65b1;padding:8px 10px;display:block;color:white;text-decoration:none;font-size:16px;font-weight:800;z-index:3}
 .template-portfolio-single #carousel{display:none;margin:0 auto;width:85%}
 @media screen and (min-width:700px){.template-portfolio-single #carousel{display:block}
-}.blog .format-aside .entry-title,.archive .format-aside .entry-title{display:none}
+}.template-contact>.row-1>.column-1{width:100%}
+@media screen and (min-width:700px){.template-contact>.row-1>.column-1{float:left;width:60%}
+}.template-contact>.row-1>.column-2{width:100%;margin:20px 0 0 0}
+@media screen and (min-width:700px){.template-contact>.row-1>.column-2{float:left;width:40%;margin:0}
+}.template-contact>.row-1>.column-2 iframe{margin:0 auto;display:block}
+.blog .format-aside .entry-title,.archive .format-aside .entry-title{display:none}
 .comment-content a{word-wrap:break-word}
 .bypostauthor{display:block}
 .infinite-scroll .posts-navigation,.infinite-scroll.neverending .site-footer{display:none}
