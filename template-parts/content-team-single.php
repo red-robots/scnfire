@@ -47,7 +47,7 @@
 						<div class="phone">(p) <?php echo $phone; ?></div><!--.phone-->
 					<?php endif;//if for phone?>
 					<?php if ( $fax ): ?>
-						<div class="fax">(f) <?php echo $fax; ?></div><!--.fax-->
+						<div class="fax <?php if(!$email && !$linkedin) echo "no-below";?>">(f) <?php echo $fax; ?></div><!--.fax-->
 					<?php endif;//if for fax?>
 					<?php if ( $email || $linkedin ): ?>
 						<div class="font-awesome-icons">
@@ -127,7 +127,7 @@
 		</section><!--.column-2-->
 		<?php $args = array(
 			'post_type'      => "team",
-			"posts_per_page" => 8,
+			"posts_per_page" => -1,
 			"order"          => "ASC",
 			"orderby"        => "rand"
 		);

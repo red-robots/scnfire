@@ -22,7 +22,7 @@
 	<?php $paged= $paged === 0?1:$paged;
 	$args = array(
 		'post_type'      => "team",
-		"posts_per_page" => 8,
+		"posts_per_page" => -1,
 		"orderby"=>'menu_order',
 		"order"=>'ASC',
 		"paged"=>$paged
