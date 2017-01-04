@@ -16,7 +16,7 @@ get_header(); ?>
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main clear-bottom" role="main">
-		    <?php $post = get_post(6);
+		    <?php $post = get_post(67);
             setup_postdata($post);
             get_sidebar("home");
             get_template_part( 'template-parts/content', 'index' );?>
