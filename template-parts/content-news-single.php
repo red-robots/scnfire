@@ -14,10 +14,10 @@
 	<header>
 		<h1><?php the_title(); ?></h1>
 	</header>
-	<?php $back_text = get_field( "news_back_text", 32); ?>
-	<?php if ( $back_text && get_post( 32 ) ): ?>
+	<?php $back_text = get_field( "news_back_text", 72); ?>
+	<?php if ( $back_text && get_post( 72 ) ): ?>
 		<div class="link">
-			<a href="<?php echo get_the_permalink( 32 ); ?>">
+			<a href="<?php echo get_the_permalink( 72 ); ?>">
 				<?php echo $back_text; ?>
 			</a>
 		</div><!--.link-->
@@ -32,7 +32,7 @@
 		$query      = new WP_Query( $args );
 		if ( $query->have_posts() ): ?>
 			<aside class="recent-news">
-				<?php $recent_text = get_field( "news_recent_text", 32 );
+				<?php $recent_text = get_field( "news_recent_text", 72 );
 				if ( $recent_text ):?>
 					<header>
 						<h2><?php echo $recent_text; ?></h2>
