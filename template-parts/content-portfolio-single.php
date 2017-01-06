@@ -10,9 +10,9 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class( "template-portfolio-single" ); ?>>
-	<?php $square_footage_header_text = get_field( "square_footage_header_text", 26 );
-	$project_description_header_text  = get_field( "project_description_header_text", 26 );
-	$our_involvement_header_text      = get_field( "our_involvement_header_text", 26 );
+	<?php $square_footage_header_text = get_field( "square_footage_header_text", 69 );
+	$project_description_header_text  = get_field( "project_description_header_text", 69 );
+	$our_involvement_header_text      = get_field( "our_involvement_header_text", 69 );
 	$location                         = get_field( "location" );
 	$images                           = get_field( "gallery" );
 	$our_involvement                  = get_field( "our_involvement" );
@@ -29,8 +29,8 @@
 				$terms = get_the_terms( $post->ID,'project_type');
 				if ( ! is_wp_error( $terms ) && is_array( $terms ) && ! empty( $terms ) ):
 						echo get_term_link($terms[0]);
-					elseif(get_post(26)):
-						echo get_the_permalink(26);
+					elseif(get_post(69)):
+						echo get_the_permalink(69);
 					endif;
 				?>">
 					<img class="close-icon" src="<?php echo get_stylesheet_directory_uri(); ?>/images/x.png"
