@@ -34,7 +34,7 @@
 				<?php $image = get_field("image");
 				$position = get_field("position");?>
 				<div class="member is-item" <?php if ( $image ):
-					echo 'style="background-image: url(' . $image['url'] . ');"';
+					echo 'style="background-image: url(' . $image['sizes']['large'] . ');"';
 				endif; ?>>
 					<a href="<?php echo get_the_permalink(); ?>">
 						<div class="row-1 clear-bottom">
