@@ -71,7 +71,7 @@
 				$location = get_field( "location" );
 				$images   = get_field( "gallery" ); ?>
 				<div class="portfolio is-item" <?php if ( $images && count( $images ) > 0 ):
-					echo 'style="background-image: url(' . $images[0]['url'] . ');"';
+					echo 'style="background-image: url(' . $images[0]['sizes']['large'] . ');"';
 				endif; ?>>
 					<a href="<?php echo get_the_permalink(); ?>">
 						<div class="row-1 clear-bottom">
