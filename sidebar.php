@@ -26,9 +26,11 @@
 			</div><!-- wrapper -->
 		</header><!-- #masthead -->
 		<div class="wrapper">
-			<nav id="site-navigation" class="main-navigation" role="navigation">
-				<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
-			</nav><!-- #site-navigation -->
+            <div class="inner-wrapper">
+                <nav id="site-navigation" class="main-navigation" role="navigation">
+                    <?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
+                </nav><!-- #site-navigation -->
+            </div><!--.inner-wrapper-->
 		</div><!--.wrapper-->
 	</div><!--.wrapper-->
 	<?php get_sidebar( "footer" ); ?>

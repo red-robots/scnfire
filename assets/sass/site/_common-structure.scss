@@ -57,9 +57,11 @@ h1, h2, h3 {
     }
   }
 }
+
 .clear {
-  clear:both;
+  clear: both;
 }
+
 .clear-bottom {
   &:after {
     clear: both;
@@ -124,34 +126,36 @@ h1, h2, h3 {
       padding: 5px 0;
     }
     &.home-sidebar {
-      >.wrapper {
+      > .wrapper {
         > .wrapper {
-          display: block;
-          > .row-1 {
-            .tag {
-              font-size: 25px;
-              font-weight: 800;
-              text-transform: uppercase;
-              line-height: 1.2;
-              @media screen and (min-width: $tabwidth) {
-                font-size: 35px;
-              }
-              @media screen and (min-width: 1200px) {
-                font-size: 52px;
-              }
-            }
-            .sub-1 {
-              font-size: 15px;
-              font-weight: 600;
-              @media screen and (min-width: $tabwidth) {
+          @include flexbox;
+          > .inner-wrapper {
+            > .row-1 {
+              .tag {
                 font-size: 25px;
+                font-weight: 800;
+                text-transform: uppercase;
+                line-height: 1.2;
+                @media screen and (min-width: $tabwidth) {
+                  font-size: 35px;
+                }
+                @media screen and (min-width: 1200px) {
+                  font-size: 52px;
+                }
               }
-            }
-            .sub-2 {
-              font-size: 15px;
-              font-weight: 600;
-              @media screen and (min-width: $tabwidth) {
-                font-size: 25px;
+              .sub-1 {
+                font-size: 15px;
+                font-weight: 600;
+                @media screen and (min-width: $tabwidth) {
+                  font-size: 25px;
+                }
+              }
+              .sub-2 {
+                font-size: 15px;
+                font-weight: 600;
+                @media screen and (min-width: $tabwidth) {
+                  font-size: 25px;
+                }
               }
             }
           }
@@ -178,7 +182,7 @@ h1, h2, h3 {
         @media screen and (min-width: 1200px) {
           margin: 0 0 70px 0;
         }
-        >.wrapper {
+        > .wrapper {
           @include flexbox;
           @include flexbox-align-content(center);
           @include flexbox-align-items(center);
@@ -208,55 +212,66 @@ h1, h2, h3 {
       }
       > .wrapper {
         display: none;
-        padding-left: 15px;
-        border-left: 40px solid $color__scn-blue;
+        background-color: $color__scn-blue;
+        @include flexbox-align-content(stretch);
+        @include flexbox-align-items(stretch);
+        @include flexbox-justify(flex-end);
+        @include flexbox-wrap(nowrap);
+        @include flexbox-direction(row);
         @media screen and (min-width: $tabwidth) {
+          @include flexbox;
+          width: 100%;
           @include flexbox-flex(1, 1, auto);
-          display: block;
         }
         &.toggled-on {
-          display: block;
+          @include flexbox;
         }
-        #site-navigation {
-          width: 100%;
-          ul {
-            margin: 0;
-            line-height: 1.2;
-            padding: 20px 0 0 15px;
-            @media screen and (min-width: 1200px) {
-              padding: 40px 0 0 30px;
-            }
-            li {
-              padding: 0 0 15px 0;
+        > .inner-wrapper {
+          @include flexbox-flex(0, 1, auto);
+          width: 87.8%;
+          padding-left: 15px;
+          background-color: white;
+          #site-navigation {
+            width: 100%;
+            ul {
               margin: 0;
-              list-style-type: none;
+              line-height: 1.2;
+              padding: 20px 0 0 15px;
               @media screen and (min-width: 1200px) {
-                padding: 0 0 20px 0;
+                padding: 40px 0 0 30px;
               }
-              a {
-                display: inline-block;
-                font-weight: 800;
-                font-size: 18px;
-                text-transform: uppercase;
-                text-decoration: none;
-                color: $color__text-main;
-                padding: 5px 10px 0 0;
-                line-height: 1.6;
-                &.active, &:hover {
-                  color: $color__scn-blue;
-                  border-right: 5px solid $color__scn-blue;
+              li {
+                padding: 0 0 15px 0;
+                margin: 0;
+                list-style-type: none;
+                @media screen and (min-width: 1200px) {
+                  padding: 0 0 20px 0;
                 }
-              }
-              .sub-menu {
-                display: none;
-                padding: 0;
-                li {
-                  padding: 0 0 10px 20px;
-                  a {
-                    font-weight: 600;
-                    font-size: 13px;
-                    &.active, &:hover {
-                      font-weight: 800;
+                a {
+                  display: inline-block;
+                  font-weight: 800;
+                  font-size: 18px;
+                  text-transform: uppercase;
+                  text-decoration: none;
+                  color: $color__text-main;
+                  padding: 5px 10px 0 0;
+                  line-height: 1.6;
+                  &.active, &:hover {
+                    color: $color__scn-blue;
+                    border-right: 5px solid $color__scn-blue;
+                  }
+                }
+                .sub-menu {
+                  display: none;
+                  padding: 0;
+                  li {
+                    padding: 0 0 10px 20px;
+                    a {
+                      font-weight: 600;
+                      font-size: 13px;
+                      &.active, &:hover {
+                        font-weight: 800;
+                      }
                     }
                   }
                 }
@@ -269,7 +284,6 @@ h1, h2, h3 {
     footer {
       width: 100%;
       display: none;
-      border-left: 40px solid $color__scn-blue;
       @media screen and (min-width: $tabwidth) {
         @include flexbox-align-self(flex-end);
         @include flexbox-flex(0, 1, auto);
@@ -279,62 +293,74 @@ h1, h2, h3 {
         display: block;
       }
       > .wrapper {
-        padding-left: 15px;
-        > .row-1 {
-          line-height: 1.6;
-          a {
-            display: inline-block;
-            font-weight: 800;
-            font-size: 15px;
-            color: $color__scn-blue;
-            text-decoration: none;
-            text-transform: uppercase;
+        background-color:  $color__scn-blue;
+        @include flexbox;
+        @include flexbox-align-content(stretch);
+        @include flexbox-align-items(stretch);
+        @include flexbox-justify(flex-end);
+        @include flexbox-wrap(nowrap);
+        @include flexbox-direction(row);
+        >.inner-wrapper {
+          @include flexbox-flex(0,1,auto);
+          padding-left: 15px;
+          background-color: white;
+          width: 87.8%;
+          > .row-1 {
+            line-height: 1.6;
+            a {
+              display: inline-block;
+              font-weight: 800;
+              font-size: 15px;
+              color: $color__scn-blue;
+              text-decoration: none;
+              text-transform: uppercase;
+            }
           }
-        }
-        > .row-2 {
-          line-height: 1.2;
-          font-weight: 600;
-          font-size: 13px;
-          color: $color__scn-grey;
-          text-transform: uppercase;
-          text-align: left;
-         }
-        > .row-3 {
-          ul {
-            margin: 0;
-            padding: 0;
+          > .row-2 {
+            line-height: 1.2;
+            font-weight: 600;
+            font-size: 13px;
+            color: $color__scn-grey;
+            text-transform: uppercase;
             text-align: left;
-            li {
+          }
+          > .row-3 {
+            ul {
               margin: 0;
               padding: 0;
-              display: block;
-              float: left;
-              list-style-type: none;
-              line-height: 1;
-              &:first-child {
-                a {
-                  display: inline-block;
-                  &:before {
-                    display: none;
+              text-align: left;
+              li {
+                margin: 0;
+                padding: 0;
+                display: block;
+                float: left;
+                list-style-type: none;
+                line-height: 1;
+                &:first-child {
+                  a {
+                    display: inline-block;
+                    &:before {
+                      display: none;
+                    }
                   }
                 }
-              }
-              a {
-                text-decoration: none;
-                color: $color__scn-grey;
-                font-weight: 400;
-                font-size: 10px;
-                @media screen and (min-width: 1400px) {
-                  font-size: 13px;
-                }
-                &:before {
-                  content: "|";
-                  display: inline-block;
-                  margin: 0 5px;
+                a {
+                  text-decoration: none;
                   color: $color__scn-grey;
-                }
-                &:hover {
-                  color: $color__scn-blue;
+                  font-weight: 400;
+                  font-size: 10px;
+                  @media screen and (min-width: 1400px) {
+                    font-size: 13px;
+                  }
+                  &:before {
+                    content: "|";
+                    display: inline-block;
+                    margin: 0 5px;
+                    color: $color__scn-grey;
+                  }
+                  &:hover {
+                    color: $color__scn-blue;
+                  }
                 }
               }
             }
@@ -350,7 +376,7 @@ h1, h2, h3 {
       @include flexbox-flex(0, 1, auto);
     }
     &:after {
-      @include flexbox-flex(0,1,auto);
+      @include flexbox-flex(0, 1, auto);
       content: "";
       display: block;
       padding: 10px 0;

@@ -22,7 +22,7 @@
     }
   }
   .home-navigation {
-    @include flexbox-flex(0,1,auto);
+    @include flexbox-flex(0, 1, auto);
     margin: auto 0 auto auto;
     ul {
       margin: 20px 0 20px 20px;
@@ -62,6 +62,7 @@
     }
   }
 }
+
 #content #main {
   .template-page, .template-about, .template-team,
   .template-team-single, .template-news, .template-news-single,
@@ -82,6 +83,7 @@
     }
   }
 }
+
 #content #main {
   .template-page, .template-about, .template-sitemap, .error-404, .template-contact {
     @media screen and (min-width: $tabwidth) {
@@ -89,16 +91,19 @@
     }
   }
 }
+
 .template-about {
   #about-navigation {
     margin-bottom: 20px;
   }
 }
+
 .template-team {
   #about-navigation {
     margin-bottom: 0;
   }
 }
+
 .template-about, .template-team {
   #about-navigation {
     ul {
@@ -116,7 +121,7 @@
         }
         a {
           text-decoration: none;
-          color: $color__scn-grey;
+          color: lightgrey;
           font-weight: 600;
           font-size: 13px;
           &.active, &:hover {
@@ -152,6 +157,7 @@
     }
   }
 }
+
 .template-news, .template-portfolio {
   .news-cat {
     margin-bottom: 20px;
@@ -183,7 +189,7 @@
         }
         a {
           text-decoration: none;
-          color: $color__scn-grey;
+          color: lightgrey;
           font-weight: 600;
           font-size: 13px;
           &.active, &:hover {
@@ -306,7 +312,7 @@
 }
 
 .template-news {
-  >.wrapper {
+  > .wrapper {
     .news.wrapper {
       width: 100%;
       margin-top: 10px;
@@ -327,37 +333,38 @@
           &:hover {
             color: $color__scn-blue;
           }
-          > .row-1 {
-            @include flexbox;
-            @include flexbox-align-content(stretch);
-            @include flexbox-align-items(stretch);
-            @include flexbox-justify(flex-start);
-            @include flexbox-wrap(nowrap);
-            > .column-1 {
-              @include flexbox-flex(0, 1, auto);
-              margin-right: 20px;
-              header {
-                h2 {
-                  font-size: 13px;
-                  font-weight: 600;
-                  text-transform: uppercase;
-                }
-              }
-              .dates {
+        }
+        >.row-1, a > .row-1 {
+          @include flexbox;
+          @include flexbox-align-content(stretch);
+          @include flexbox-align-items(stretch);
+          @include flexbox-justify(flex-start);
+          @include flexbox-wrap(nowrap);
+          > .column-1 {
+            @include flexbox-flex(0, 1, auto);
+            margin-right: 20px;
+            header {
+              h2 {
                 font-size: 13px;
+                font-weight: 600;
+                text-transform: uppercase;
               }
             }
-            > .column-2 {
-              @include flexbox-flex(0, 1, auto);
-              min-width: 30px;
-              width: 30px;
+            .dates {
+              font-size: 13px;
             }
+          }
+          > .column-2 {
+            @include flexbox-flex(0, 1, auto);
+            min-width: 30px;
+            width: 30px;
           }
         }
       }
     }
   }
 }
+
 .template-team-single {
   .link {
     margin-bottom: 10px;
@@ -374,7 +381,7 @@
       @include flexbox-justify(center);
       @include flexbox-wrap(wrap);
     }
-    >.column-1 {
+    > .column-1 {
       width: 100%;
       margin: 0 auto 10px auto;
       @media screen and (min-width: $tabwidth) {
@@ -392,7 +399,7 @@
       @media screen and (min-width: 1200px) {
         padding: 0 20px 0 0;
       }
-      >.row-1 {
+      > .row-1 {
         margin: 0 auto 10px auto;
         width: 100%;
         @media screen and (min-width: $mobileportraitwidth) {
@@ -411,7 +418,7 @@
           display: block;
         }
       }
-      >.row-2 {
+      > .row-2 {
         background-color: $color__scn-blue;
         background-position: 90% 85%;
         background-repeat: no-repeat;
@@ -428,7 +435,7 @@
           border-top: 10px solid white;
           margin: 0 10px 0 0;
         }
-        >.wrapper {
+        > .wrapper {
           @media screen and (min-width: $tabwidth) {
             @include flexbox-flex(0, 1, auto);
           }
@@ -464,7 +471,7 @@
         }
       }
     }
-    >.column-2 {
+    > .column-2 {
       width: 100%;
       margin: 0 auto 10px auto;
       @media screen and (min-width: $tabwidth) {
@@ -482,7 +489,7 @@
         font-size: 13px;
         margin-bottom: 10px;
         &:last-child {
-          margin:0;
+          margin: 0;
         }
       }
       .certifications, .education, .professional-affiliations, .fun-fact {
@@ -514,7 +521,7 @@
 
       }
     }
-    >.column-3 {
+    > .column-3 {
       width: 100%;
       margin: 0 auto;
       @media screen and (min-width: $tabwidth) {
@@ -589,6 +596,7 @@
     }
   }
 }
+
 .template-news-single {
   .link {
     margin-bottom: 20px;
@@ -750,6 +758,7 @@
         z-index: 1;
         width: 38px;
         height: 38px;
+        cursor: pointer;
       }
       .info {
         bottom: 0;
@@ -788,6 +797,7 @@
             margin: 0 0 0 auto;
             width: 38px;
             height: 38px;
+            cursor: pointer;
           }
         }
         > .row-2 {
@@ -841,25 +851,47 @@
       z-index: 3;
     }
   }
-  #carousel {
-    display: none;
-    margin: 0 auto;
+  .carousel-wrapper {
     width: 85%;
-    @media screen and (min-width: $tabwidth) {
-      display: block;
+    margin: 0 auto;
+    .first-slide {
+      background-color: $color__scn-blue;
+      color: white;
+      font-size: 15px;
+      text-align: center;
+      height: 70px;
+      width: 70px;
+      padding: 15px 0;
+      margin: 5px 5px 0 0;
+      overflow: hidden;
+      cursor: pointer;
+      float: left;
+    }
+    #carousel {
+      display: none;
+      margin: 0;
+      float: left;
+      max-width: calc(100% - 75px);
+      @media screen and (min-width: $tabwidth) {
+        display: block;
+      }
+      li {
+        cursor: pointer;
+      }
     }
   }
 }
+
 .template-contact {
-  >.row-1 {
-    >.column-1 {
+  > .row-1 {
+    > .column-1 {
       width: 100%;
       @media screen and (min-width: $tabwidth) {
         float: left;
         width: 60%;
       }
     }
-    >.column-2 {
+    > .column-2 {
       width: 100%;
       margin: 20px 0 0 0;
       @media screen and (min-width: $tabwidth) {

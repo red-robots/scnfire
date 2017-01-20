@@ -13,6 +13,7 @@
 	<?php $square_footage_header_text = get_field( "square_footage_header_text", 26 );
 	$project_description_header_text  = get_field( "project_description_header_text", 26 );
 	$our_involvement_header_text      = get_field( "our_involvement_header_text", 26 );
+	$first_slide_text  = get_field("first_slide_text",26);
 	$location                         = get_field( "location" );
 	$images                           = get_field( "gallery" );
 	$our_involvement                  = get_field( "our_involvement" );
@@ -88,14 +89,21 @@
 			<a class="flex-prev" href="#">Prev</a>
 			<a class="flex-next" href="#">Next</a>
 		</div><!--.slider.wrapper-->
-		<nav id="carousel" class="flexslider-nav">
-			<ul class="slides">
-				<?php foreach ( $images as $image ): ?>
-					<li>
-						<img src="<?php echo $image['sizes']['thumbnail']; ?>" alt="<?php echo $image['alt']; ?>">
-					</li>
-				<?php endforeach; ?>
-			</ul>
-		</nav><!--.flexslider-nav-->
+        <div class="carousel-wrapper clear-bottom">
+			<?php if($first_slide_text):?>
+                <div class="first-slide">
+					<?php echo $first_slide_text;?>
+                </div>
+			<?php endif;?>
+            <nav id="carousel" class="flexslider-nav">
+                <ul class="slides">
+                    <?php foreach ( $images as $image ): ?>
+                        <li>
+                            <img src="<?php echo $image['sizes']['thumbnail']; ?>" alt="<?php echo $image['alt']; ?>">
+                        </li>
+                    <?php endforeach; ?>
+                </ul>
+            </nav><!--.flexslider-nav-->
+        </div><!--.carousel-wrapper-->
 	<?php endif;//endif for images?>
 </article><!-- #post-## -->

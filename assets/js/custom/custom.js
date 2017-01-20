@@ -23,6 +23,7 @@ jQuery(document).ready(function ($) {
      *	Flexslider
      *
      ------------------------------------*/
+    $('#carousel, #flexslider').imagesLoaded(function () {
         $('#carousel').flexslider({
             animation: "slide",
             controlNav: false,
@@ -30,6 +31,7 @@ jQuery(document).ready(function ($) {
             slideshow: false,
             itemWidth: 70,
             itemMargin: 5,
+            move: 1,
             asNavFor: '#flexslider'
         });
         $('#flexslider').flexslider({
@@ -40,6 +42,7 @@ jQuery(document).ready(function ($) {
             smoothHeight: true,
             sync: "#carousel"
         });
+    });
     $('.slider.wrapper >.flex-next').click(function (e) {
         e.preventDefault();
         $('.flex-direction-nav .flex-next').click();
@@ -51,12 +54,26 @@ jQuery(document).ready(function ($) {
 
     $('.slider.wrapper .overlay .plus-icon').click(function(){
         $('.slider.wrapper .overlay .info').css({
-            "display":"flex"
+            "display":"flex",
+            "display": "-webkit-box",
+            "display": "-moz-box",
+            "display": "-ms-flexbox",
+            "display": "-webkit-flex",
+
         });
     });
     $('.slider.wrapper .overlay .close-icon').click(function(){
         $('.slider.wrapper .overlay .info').css({
             "display":"none"
+        });
+    });
+    $('.carousel-wrapper .first-slide').click(function(){
+        $('.slider.wrapper .overlay .info').css({
+            "display":"flex",
+            "display": "-webkit-box",
+            "display": "-moz-box",
+            "display": "-ms-flexbox",
+            "display": "-webkit-flex",
         });
     });
     /*
