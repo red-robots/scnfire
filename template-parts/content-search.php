@@ -1,30 +1,26 @@
 <?php
 /**
- * Template part for displaying results in search pages.
+ * Template part for displaying search.php.
  *
- * @link https://codex.wordpress.org/Template_Hierarchy
- *
- * @package ACStarter
  */
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
-
-		<?php if ( 'post' === get_post_type() ) : ?>
-		<div class="entry-meta">
-			<?php acstarter_posted_on(); ?>
-		</div><!-- .entry-meta -->
-		<?php endif; ?>
-	</header><!-- .entry-header -->
-
-	<div class="entry-summary">
-		<?php the_excerpt(); ?>
-	</div><!-- .entry-summary -->
-
-	<footer class="entry-footer">
-		<?php acstarter_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
+<article id="post-<?php the_ID(); ?>" <?php post_class( "template-search two-column" ); ?>>
+	<?php get_template_part( '/template-parts/form', "search" ); ?>
+    <img src="<?php echo get_template_directory_uri() . "/images/logo-bg.png"; ?>" class="logo-bg">
+    <header>
+        <h1>Search</h1>
+    </header>
+    <div class="copy">
+        <p><?php esc_html_e( 'Click on one of the links below!', 'acstarter' ); ?></p>
+    </div><!--.copy-->
+    <div class="wrapper">
+		<?php while ( have_posts() ):the_post(); ?>
+            <div class="item">
+                <h2><a href="<?php echo get_the_permalink(); ?>"><?php the_title(); ?></a></h2>
+            </div>
+		<?php endwhile; ?>
+    </div><!--.wrapper-->
+	<?php get_footer( 'content' ); ?>
 </article><!-- #post-## -->

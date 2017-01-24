@@ -9,15 +9,17 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class("template-sitemap two-column"); ?>>
-	<img src="<?php echo get_template_directory_uri()."/images/logo-bg.png";?>" class="logo-bg">
-	<header>
+<article id="post-<?php the_ID(); ?>" <?php post_class( "template-sitemap two-column" ); ?>>
+	<?php get_template_part('/template-parts/form',"search");?>
+    <img src="<?php echo get_template_directory_uri() . "/images/logo-bg.png"; ?>" class="logo-bg">
+    <header>
         <h1><?php the_title(); ?></h1>
-	</header>
-		<section class="copy">
-			<?php the_content();?>
-			<nav class="sitemap">
-				<?php wp_nav_menu( array( 'theme_location' => 'sitemap' ) ); ?>
-			</nav>
-		</section><!--.copy-->
+    </header>
+    <section class="copy">
+		<?php the_content(); ?>
+        <nav class="sitemap">
+			<?php wp_nav_menu( array( 'theme_location' => 'sitemap' ) ); ?>
+        </nav>
+    </section><!--.copy-->
+	<?php get_footer( 'content' ); ?>
 </article><!-- #post-## -->

@@ -19,5 +19,6 @@ $alt = $slider[$index]['image']['alt']; ?>
     <?php endif;?>
     <nav id="home-navigation" class="home-navigation" role="navigation">
         <?php wp_nav_menu(array('theme_location' => 'primary', 'menu_id' => 'primary-menu')); ?>
+        <?php get_template_part('/template-parts/form',"search");?>
     </nav><!-- #site-navigation -->
 </article><!-- #post-## -->
