@@ -7,13 +7,11 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class("template-team two-column"); ?>>
+	<?php get_template_part('/template-parts/form',"search");?>
 	<img src="<?php echo get_template_directory_uri()."/images/logo-bg.png";?>" class="logo-bg">
 	<header>
         <h1><?php the_title(); ?></h1>
 	</header>
-    <nav id="about-navigation" class="about-navigation" role="navigation">
-        <?php wp_nav_menu(array('theme_location' => 'aboutsub' )); ?>
-    </nav><!-- #about-navigation -->
 	<?php if(get_the_content()):?>
 		<div class="copy">
 			<?php the_content();?>
@@ -54,4 +52,5 @@
 			<?php pagi_posts_nav( $query ); ?>
 		</nav>
 	<?php wp_reset_postdata(); endif;//if for have posts?>
+	<?php get_footer('content');?>
 </article><!-- #post-## -->

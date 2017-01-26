@@ -7,6 +7,7 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class( "template-news two-column" ); ?>>
+	<?php get_template_part('/template-parts/form',"search");?>
 	<img src="<?php echo get_template_directory_uri() . "/images/logo-bg.png"; ?>" class="logo-bg">
 	<?php $post = get_post( 72 );
 	setup_postdata( $post ); ?>
@@ -46,7 +47,11 @@
 			"category__not_in" => array( 1 ),
 			"paged"            => $paged
 		);
+		$events_flag = false;
 		if ( $category_name !== null && ! empty( $category_name ) ):
+            if(strcmp($category_name,'events')===0):
+                $events_flag = true;
+		    endif;
 			$args['tax_query'] =
 				array(
 					array(
@@ -56,7 +61,10 @@
 					),
 				);
 		elseif ( ! is_wp_error( $terms ) && is_array( $terms ) && ! empty( $terms ) ):
-			$args['tax_query'] =
+			if(strcmp($terms[0]->slug,'events')===0):
+				$events_flag = true;
+			endif;
+            $args['tax_query'] =
 				array(
 					array(
 						'taxonomy' => 'category',
@@ -71,7 +79,9 @@
 				<?php while ( $query->have_posts() ):$query->the_post(); ?>
 					<?php $dates = get_field( "dates" ); ?>
 					<div class="news">
-						<a href="<?php echo get_the_permalink(); ?>">
+                        <?php if(!$events_flag):?>
+						    <a href="<?php echo get_the_permalink(); ?>">
+                            <?php endif;?>
 							<div class="row-1">
 								<div class="column-1">
 									<header>
@@ -81,12 +91,16 @@
 										<div class="dates"><?php echo $dates; ?></div>
 									<?php endif; ?>
 								</div><!--.column-1-->
-								<div class="column-2">
-									<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/+.png"
-									     alt="plus icon">
-								</div><!--.column-2-->
+                                    <div class="column-2">
+	                                    <?php if(!$events_flag):?>
+                                        <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/+.png"
+                                             alt="plus icon">
+	                                    <?php endif;?>
+                                    </div><!--.column-2-->
 							</div><!--.row-1-->
-						</a>
+							    <?php if(!$events_flag):?>
+						    </a>
+                        <?php endif;?>
 					</div><!--.news-->
 				<?php endwhile; ?>
 			</section><!--.news .wrapper-->
@@ -95,4 +109,5 @@
 			</nav>
 			<?php wp_reset_postdata(); endif;//if for have posts?>
 	</div><!--.wrapper-->
+	<?php get_footer('content');?>
 </article><!-- #post-## -->

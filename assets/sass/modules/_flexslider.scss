@@ -130,7 +130,7 @@
 .flex-direction-nav a {
   text-decoration: none;
   display: block;
-  width: 40px;
+  width: 29px;
   height: 40px;
   margin: -20px 0 0;
   position: absolute;
@@ -167,7 +167,7 @@
 
 .flex-direction-nav .flex-prev {
   display: none;
-  left: 10px;
+  left: -110px;
 }
 
 #carousel .flex-direction-nav .flex-next {
@@ -176,7 +176,7 @@
 
 .flex-direction-nav .flex-next {
   display: none;
-  right: 10px;
+  right: -35px;
   text-align: right;
 }
 

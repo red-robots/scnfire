@@ -14,6 +14,7 @@ get_header(); ?>
 			<?php
 			get_sidebar();?>
 			<section class="error-404 two-column">
+				<?php get_template_part('/template-parts/form',"search");?>
 				<img src="<?php echo get_template_directory_uri()."/images/logo-bg.png";?>" class="logo-bg">
 				<header>
 					<h1><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'acstarter' ); ?></h1>
@@ -25,6 +26,7 @@ get_header(); ?>
 						<?php wp_nav_menu( array( 'theme_location' => 'sitemap' ) ); ?>
 					</nav>
 				</div><!-- .copy -->
+				<?php get_footer('content');?>
 			</section><!-- .error-404 -->
 
 		</main><!-- #main -->

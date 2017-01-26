@@ -13,32 +13,43 @@
 	<?php $square_footage_header_text = get_field( "square_footage_header_text", 69 );
 	$project_description_header_text  = get_field( "project_description_header_text", 69 );
 	$our_involvement_header_text      = get_field( "our_involvement_header_text", 69 );
+	$first_slide_text  = get_field("first_slide_text",69);
 	$location                         = get_field( "location" );
 	$images                           = get_field( "gallery" );
 	$our_involvement                  = get_field( "our_involvement" );
 	$project_description              = get_field( "project_description" );
-	$square_footage                   = get_field( "square_footage" ); ?>
+	$square_footage                   = get_field( "square_footage" );
+	$type_from = isset($_GET['type_from'])?sanitize_text_field($_GET['type_from']):null; ?>
 	<header>
 		<div class="row-1">
 			<div class="logo">
 				<a href="<?php bloginfo( 'url' ); ?>"><img
 						src="<?php echo get_template_directory_uri() . "/images/logo.jpg"; ?>" alt="logo"></a>
 			</div>
-			<div class="close-box">
-				<a href="<?php
-				$terms = get_the_terms( $post->ID,'project_type');
-				if ( ! is_wp_error( $terms ) && is_array( $terms ) && ! empty( $terms ) ):
-						echo get_term_link($terms[0]);
-					elseif(get_post(69)):
-						echo get_the_permalink(69);
-					endif;
-				?>">
-					<img class="close-icon" src="<?php echo get_stylesheet_directory_uri(); ?>/images/x.png"
-				     alt="close icon">
-				</a>
-			</div><!--.close-box-->
+            <div class="wrapper">
+	            <?php get_template_part('/template-parts/form',"search");?>
+                <div class="close-box">
+                    <a href="<?php
+                    if($type_from):
+                        echo get_term_link($type_from,"project_type");
+                    else :
+                        $terms = get_the_terms( $post->ID,'project_type');
+                        if ( ! is_wp_error( $terms ) && is_array( $terms ) && ! empty( $terms ) ):
+                            echo get_term_link($terms[0]);
+                        elseif(get_post(69)):
+                            echo get_the_permalink(69);
+                        endif;
+                    endif;?>">
+                        <img class="close-icon" src="<?php echo get_stylesheet_directory_uri(); ?>/images/x.png"
+                         alt="close icon">
+                    </a>
+                </div><!--.close-box-->
+            </div><!--.wrapper-->
 		</div><!--.row-1-->
 		<div class="row-2">
+            <div class="mobile-search">
+			    <?php get_template_part('/template-parts/form',"search");?>
+            </div><!--.mobile-search-->
 			<h1><?php the_title(); ?></h1>
 			<?php if ( $location ): ?>
 				<div class="location"><?php echo $location; ?></div><!--.location-->
@@ -88,14 +99,22 @@
 			<a class="flex-prev" href="#">Prev</a>
 			<a class="flex-next" href="#">Next</a>
 		</div><!--.slider.wrapper-->
-		<nav id="carousel" class="flexslider-nav">
-			<ul class="slides">
-				<?php foreach ( $images as $image ): ?>
-					<li>
-						<img src="<?php echo $image['sizes']['thumbnail']; ?>" alt="<?php echo $image['alt']; ?>">
-					</li>
-				<?php endforeach; ?>
-			</ul>
-		</nav><!--.flexslider-nav-->
+        <div class="carousel-wrapper clear-bottom">
+			<?php if($first_slide_text):?>
+                <div class="first-slide">
+					<?php echo $first_slide_text;?>
+                </div>
+			<?php endif;?>
+            <nav id="carousel" class="flexslider-nav">
+                <ul class="slides">
+                    <?php foreach ( $images as $image ): ?>
+                        <li>
+                            <img src="<?php echo $image['sizes']['thumbnail']; ?>" alt="<?php echo $image['alt']; ?>">
+                        </li>
+                    <?php endforeach; ?>
+                </ul>
+            </nav><!--.flexslider-nav-->
+        </div><!--.carousel-wrapper-->
 	<?php endif;//endif for images?>
+	<?php get_footer('content');?>
 </article><!-- #post-## -->
