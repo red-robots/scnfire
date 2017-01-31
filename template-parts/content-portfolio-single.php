@@ -14,6 +14,7 @@
 	$project_description_header_text  = get_field( "project_description_header_text", 69 );
 	$our_involvement_header_text      = get_field( "our_involvement_header_text", 69 );
 	$first_slide_text  = get_field("first_slide_text",69);
+	$back_text  = get_field("back_text",69);
 	$location                         = get_field( "location" );
 	$images                           = get_field( "gallery" );
 	$our_involvement                  = get_field( "our_involvement" );
@@ -27,7 +28,21 @@
 						src="<?php echo get_template_directory_uri() . "/images/logo.jpg"; ?>" alt="logo"></a>
 			</div>
             <div class="wrapper">
-	            <?php get_template_part('/template-parts/form',"search");?>
+                <div class="copy">
+                    <a href="<?php
+	                if($type_from):
+		                echo get_term_link($type_from,"project_type");
+	                else :
+		                $terms = get_the_terms( $post->ID,'project_type');
+		                if ( ! is_wp_error( $terms ) && is_array( $terms ) && ! empty( $terms ) ):
+			                echo get_term_link($terms[0]);
+		                elseif(get_post(69)):
+			                echo get_the_permalink(69);
+		                endif;
+	                endif;?>">
+                        <?php echo $back_text;?>
+                    </a>
+                </div><!--.copy-->
                 <div class="close-box">
                     <a href="<?php
                     if($type_from):
@@ -40,16 +55,12 @@
                             echo get_the_permalink(69);
                         endif;
                     endif;?>">
-                        <img class="close-icon" src="<?php echo get_stylesheet_directory_uri(); ?>/images/x.png"
-                         alt="close icon">
+                        <i class="fa fa-close"></i>
                     </a>
                 </div><!--.close-box-->
             </div><!--.wrapper-->
 		</div><!--.row-1-->
 		<div class="row-2">
-            <div class="mobile-search">
-			    <?php get_template_part('/template-parts/form',"search");?>
-            </div><!--.mobile-search-->
 			<h1><?php the_title(); ?></h1>
 			<?php if ( $location ): ?>
 				<div class="location"><?php echo $location; ?></div><!--.location-->
