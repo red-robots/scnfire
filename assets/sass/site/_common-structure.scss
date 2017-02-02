@@ -376,90 +376,32 @@ h1, h2, h3 {
       width: 70%;
       @include flexbox-flex(0, 1, auto);
     }
+    &:before {
+      content: "";
+      display: block;
+      padding: 5px 0 0 0;
+      width: 100%;
+    }
     &:after {
-      @include flexbox-flex(0, 1, auto);
       content: "";
       display: block;
       padding: 10px 0;
       width: 100%;
     }
-    .logo-bg {
-      display: none;
-      @media screen and (min-width: $tabwidth) {
-        margin: 5px auto 30px 0;
-        width: 36.1%;
-        min-width: $size__sidebar-min-width*.8;
-        display: block;
-      }
-      @media screen and (min-width: 1200px) {
-        margin: 5px auto 70px 0;
-      }
-    }
   }
 }
 .footer.sitemapbw {
-  margin: 10px 0 0 0;
+  margin: 30px 0 0 0;
   text-align: center;
   @media screen and (min-width: $tabwidth) {
     text-align: right;
   }
-  > .form-search {
-    display: block;
-    margin: 0 auto 10px auto;
-    @media screen and (min-width: $tabwidth) {
-      display: inline-block;
-      margin: 0 10px 10px 0;
-    }
-    form {
-      display: table;
-      margin: 0 auto;
-      @media screen and (min-width: $tabwidth) {
-        margin: 0 0 0 auto;
-      }
-      input[type=text] {
-        width: 60%;
-        display: inline-block;
-        margin: 0;
-        color: $color__scn-blue;
-        border: 1px solid $color__scn-blue;
-        font-size: 15px;
-        @media screen and (min-width: $tabwidth) {
-          max-width: 200px;
-        }
-        &::-webkit-input-placeholder {
-          color: $color__scn-blue;
-        }
-        &:-ms-input-placeholder {
-          color: $color__scn-blue;
-        }
-        &::-moz-placeholder {
-          color: $color__scn-blue;
-        }
-        &:-moz-placeholder {
-          color: $color__scn-blue;
-        }
-      }
-      input[type=submit] {
-        display: inline-block;
-        width: 35%;
-        max-width: 100px;
-        font-size: 15px;
-        line-height: 1.5;
-        padding: 3px;
-        border: 1px solid $color__scn-blue;
-        background-color: $color__scn-blue;
-        color: white;
-        box-shadow: none;
-        text-shadow: none;
-      }
-    }
-  }
   > div {
     display: block;
-    margin: 0 auto 10px auto;
+    margin: 0 auto;
     @media screen and (min-width: $tabwidth) {
       display: inline-block;
-      margin: 0 10px 10px 0;
+      margin: 0 0 10px 0;
       vertical-align: middle;
     }
     > ul {

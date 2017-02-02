@@ -162,10 +162,93 @@
 #content #main {
   .template-page, .template-about, .template-team,
   .template-team-single, .template-news, .template-news-single,
-  .template-portfolio, .template-sitemap, .error-404, .template-contact, .template-none, .template-search {
-    padding: 20px;
+  .template-portfolio, .template-sitemap, .error-404, .template-contact, .template-none
+  , .template-search, .template-sitemap {
+    padding: 0 20px 20px 20px;
     @media screen and (min-width: $tabwidth) {
       padding: 0 4% 0 1%;
+    }
+    > .form-search {
+      @include flexbox;
+      @include flexbox-align-content(center);
+      @include flexbox-align-items(center);
+      @include flexbox-justify(center);
+      @include flexbox-wrap(nowrap);
+      @include flexbox-direction(row);
+      width: 100%;
+      margin: 0 0 20px 0;
+      @media screen and (min-width: $tabwidth) {
+        position: absolute;
+        top: 5px;
+        right: 10px;
+        @include flexbox-justify(flex-end);
+      }
+      form {
+        display: none;
+        &.toggled-on {
+          display: block;
+          @include flexbox-flex(0,1,auto);
+        }
+        input[type=text] {
+          width: 60%;
+          display: inline-block;
+          margin: 0;
+          color: $color__scn-blue;
+          border: 1px solid $color__scn-blue;
+          font-size: 15px;
+          @media screen and (min-width: $tabwidth) {
+            max-width: 200px;
+          }
+          &::-webkit-input-placeholder {
+            color: $color__scn-blue;
+          }
+          &:-ms-input-placeholder {
+            color: $color__scn-blue;
+          }
+          &::-moz-placeholder {
+            color: $color__scn-blue;
+          }
+          &:-moz-placeholder {
+            color: $color__scn-blue;
+          }
+        }
+        input[type=submit] {
+          display: inline-block;
+          width: 35%;
+          max-width: 100px;
+          font-size: 15px;
+          line-height: 1.5;
+          padding: 3px;
+          border: 1px solid $color__scn-blue;
+          background-color: $color__scn-blue;
+          color: white;
+          box-shadow: none;
+          text-shadow: none;
+        }
+      }
+      .search-icon {
+        @include flexbox-flex(0,0,auto);
+        display: block;
+        line-height: 1;
+        width: 30.5px;
+        height: 30.5px;
+        font-size: 15px;
+        color: white;
+        background-color: $color__scn-blue;
+        padding: 7.5px 8px;
+      }
+    }
+    .logo-bg {
+      display: none;
+      @media screen and (min-width: $tabwidth) {
+        margin: 0 auto 30px 0;
+        width: 38.09%;
+        min-width: $size__sidebar-min-width*.8;
+        display: block;
+      }
+      @media screen and (min-width: 1200px) {
+        margin: 0 auto 70px 0;
+      }
     }
     > header {
       margin-bottom: 20px;
@@ -812,19 +895,28 @@
         margin: 0 3.5% 0 0;
         max-width: 30px;
         @media screen and (min-width: $tabwidth) {
+          margin: 0 calc(7% - 40.5px) 0 0;
           width: 50%;
           max-width: 50%;
+          @include flexbox;
+          @include flexbox-align-content(center);
+          @include flexbox-align-items(center);
+          @include flexbox-justify(flex-end);
+          @include flexbox-wrap(nowrap);
+          @include flexbox-direction(row);
         }
         .copy {
           display: none;
           @media screen and (min-width: $tabwidth) {
             display: inline-block;
-            width: calc(100% - 25px);
             margin: 0;
             padding: 0 10px 0 0;
             text-align: right;
             font-size: 15px;
             line-height: 1;
+          }
+          &.toggled-on {
+            display: none;
           }
           a {
             color: $color__text-main;
@@ -843,13 +935,152 @@
             vertical-align: middle;
             font-size: 20px;
           }
+          &.toggled-on {
+            display: none;
+          }
           a {
             color: $color__text-main;
           }
         }
+        > .form-search {
+          display: none;
+          @media screen and (min-width: $tabwidth) {
+            @include flexbox-justify(flex-end);
+            @include flexbox;
+            @include flexbox-align-content(center);
+            @include flexbox-align-items(center);
+            @include flexbox-wrap(nowrap);
+            @include flexbox-direction(row);
+            margin: 0 0 0 10px;
+          }
+          form {
+            display: none;
+            &.toggled-on {
+              display: block;
+              @include flexbox-flex(0,1,auto);
+            }
+            input[type=text] {
+              width: 60%;
+              display: inline-block;
+              margin: 0;
+              color: $color__scn-blue;
+              border: 1px solid $color__scn-blue;
+              font-size: 15px;
+              @media screen and (min-width: $tabwidth) {
+                max-width: 200px;
+              }
+              &::-webkit-input-placeholder {
+                color: $color__scn-blue;
+              }
+              &:-ms-input-placeholder {
+                color: $color__scn-blue;
+              }
+              &::-moz-placeholder {
+                color: $color__scn-blue;
+              }
+              &:-moz-placeholder {
+                color: $color__scn-blue;
+              }
+            }
+            input[type=submit] {
+              display: inline-block;
+              width: 35%;
+              max-width: 100px;
+              font-size: 15px;
+              line-height: 1.5;
+              padding: 3px;
+              border: 1px solid $color__scn-blue;
+              background-color: $color__scn-blue;
+              color: white;
+              box-shadow: none;
+              text-shadow: none;
+            }
+          }
+          .search-icon {
+            @include flexbox-flex(0,0,auto);
+            display: block;
+            line-height: 1;
+            width: 30.5px;
+            height: 30.5px;
+            font-size: 15px;
+            color: white;
+            background-color: $color__scn-blue;
+            padding: 7.5px 8px;
+          }
+        }
       }
     }
-    > .row-2 {
+    >.row-2 {
+      margin: 20px 0;
+      @media screen and (min-width: $tabwidth) {
+        display: none;
+      }
+      > .form-search {
+        @include flexbox-justify(center);
+        @include flexbox;
+        @include flexbox-align-content(center);
+        @include flexbox-align-items(center);
+        @include flexbox-wrap(nowrap);
+        @include flexbox-direction(row);
+        width: 100%;
+        padding: 0 20px;
+        form {
+          display: none;
+          &.toggled-on {
+            display: block;
+            @include flexbox-flex(0,1,auto);
+          }
+          input[type=text] {
+            width: 60%;
+            display: inline-block;
+            margin: 0;
+            color: $color__scn-blue;
+            border: 1px solid $color__scn-blue;
+            font-size: 15px;
+            @media screen and (min-width: $tabwidth) {
+              max-width: 200px;
+            }
+            &::-webkit-input-placeholder {
+              color: $color__scn-blue;
+            }
+            &:-ms-input-placeholder {
+              color: $color__scn-blue;
+            }
+            &::-moz-placeholder {
+              color: $color__scn-blue;
+            }
+            &:-moz-placeholder {
+              color: $color__scn-blue;
+            }
+          }
+          input[type=submit] {
+            display: inline-block;
+            width: 35%;
+            max-width: 100px;
+            font-size: 15px;
+            line-height: 1.5;
+            padding: 3px;
+            border: 1px solid $color__scn-blue;
+            background-color: $color__scn-blue;
+            color: white;
+            box-shadow: none;
+            text-shadow: none;
+          }
+        }
+        .search-icon {
+          @include flexbox-flex(0,0,auto);
+          display: block;
+          line-height: 1;
+          width: 30.5px;
+          height: 30.5px;
+          font-size: 15px;
+          color: white;
+          background-color: $color__scn-blue;
+          padding: 7.5px 8px;
+        }
+      }
+    }
+    > .row-3 {
       width: 80%;
       margin: 20px auto 0 auto;
       h1 {
@@ -1012,7 +1243,7 @@
     }
   }
   .footer.sitemapbw {
-    margin: 10px auto 0 auto;
+    margin: 30px auto 0 auto;
     width: 85%;
   }
 }

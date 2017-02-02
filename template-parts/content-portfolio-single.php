@@ -58,14 +58,18 @@
                         <i class="fa fa-close"></i>
                     </a>
                 </div><!--.close-box-->
+	            <?php get_template_part('/template-parts/form',"search");?>
             </div><!--.wrapper-->
 		</div><!--.row-1-->
-		<div class="row-2">
+        <div class="row-2">
+	        <?php get_template_part('/template-parts/form',"search");?>
+        </div><!--.row-2-->
+		<div class="row-3">
 			<h1><?php the_title(); ?></h1>
 			<?php if ( $location ): ?>
 				<div class="location"><?php echo $location; ?></div><!--.location-->
 			<?php endif;//endif for location?>
-		</div><!--.row-2-->
+		</div><!--.row-3-->
 	</header>
 	<?php if ( $images && count( $images ) > 0 ): ?>
 		<div class="slider wrapper">
