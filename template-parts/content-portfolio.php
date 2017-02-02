@@ -7,6 +7,7 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class( "template-portfolio two-column" ); ?>>
+	<?php get_template_part('/template-parts/form',"search");?>
 	<img src="<?php echo get_template_directory_uri() . "/images/logo-bg.png"; ?>" class="logo-bg">
 	<?php $post = get_post( 69 );
 	setup_postdata( $post ); ?>
