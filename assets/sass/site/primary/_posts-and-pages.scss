@@ -163,7 +163,7 @@
   .template-page, .template-about, .template-team,
   .template-team-single, .template-news, .template-news-single,
   .template-portfolio, .template-sitemap, .error-404, .template-contact, .template-none
-  , .template-search, .template-sitemap {
+  , .template-search, .template-sitemap, .template-awards {
     padding: 0 20px 20px 20px;
     @media screen and (min-width: $tabwidth) {
       padding: 0 4% 0 1%;
@@ -270,7 +270,37 @@
     }
   }
 }
-
+.template-awards {
+  .wrapper.two-column {
+    &:after {
+      clear:both;
+      content: "";
+      display: block;
+    }
+    > .col-1 {
+      margin: 0 0 20px 0;
+      @media screen and (min-width: $tabwidth) {
+        width: 70%;
+        float: left;
+        margin: 0;
+      }
+    }
+    > .col-2 {
+      @media screen and (min-width: $tabwidth) {
+        width: 30%;
+        float: left;
+      }
+      img {
+        display: block;
+        width: 100%;
+        margin: 0 0 10px 0;
+        &:last-child {
+          margin: 0;
+        }
+      }
+    }
+  }
+}
 .template-about {
   #about-navigation {
     margin-bottom: 20px;
@@ -1185,32 +1215,38 @@
       }
     }
     .flex-prev {
-      position: absolute;
-      top: 50%;
-      left: 0;
-      @include translateY(-50%);
-      background-color: $color__scn-blue;
-      padding: 8px 10px;
-      display: block;
-      color: white;
-      text-decoration: none;
-      font-size: 16px;
-      font-weight: 800;
-      z-index: 3;
+      display: none;
+      @media screen and (min-width: $tabwidth) {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        @include translateY(-50%);
+        background-color: $color__scn-blue;
+        padding: 8px 10px;
+        display: block;
+        color: white;
+        text-decoration: none;
+        font-size: 16px;
+        font-weight: 800;
+        z-index: 3;
+      }
     }
     .flex-next {
-      position: absolute;
-      top: 50%;
-      right: 0;
-      @include translateY(-50%);
-      background-color: $color__scn-blue;
-      padding: 8px 10px;
-      display: block;
-      color: white;
-      text-decoration: none;
-      font-size: 16px;
-      font-weight: 800;
-      z-index: 3;
+      display: none;
+      @media screen and (min-width: $tabwidth) {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        @include translateY(-50%);
+        background-color: $color__scn-blue;
+        padding: 8px 10px;
+        display: block;
+        color: white;
+        text-decoration: none;
+        font-size: 16px;
+        font-weight: 800;
+        z-index: 3;
+      }
     }
   }
   .carousel-wrapper {
@@ -1229,17 +1265,25 @@
       cursor: pointer;
       float: left;
     }
-    #carousel {
-      display: none;
-      margin: 0;
+    .slide {
       float: left;
-      max-width: calc(100% - 75px);
-      @media screen and (min-width: $tabwidth) {
+      margin: 5px 5px 0 0;
+      overflow: hidden;
+      cursor: pointer;
+      height: 70px;
+      width: 70px;
+      img {
+        width: 100%;
         display: block;
       }
-      li {
-        cursor: pointer;
-      }
+    }
+  }
+  .description-anchor {
+    width: 85%;
+    margin: 20px auto 0 auto;
+    display: block;
+    @media screen and (min-width: $tabwidth) {
+      display: none;
     }
   }
   .footer.sitemapbw {

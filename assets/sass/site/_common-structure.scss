@@ -164,7 +164,7 @@ h1, h2, h3 {
     }
     > .wrapper {
       @media screen and (min-width: $tabwidth) {
-        @include flexbox-flex(1, 1, auto);
+        @include flexbox-flex(1, 0, auto);
         @include flexbox;
         @include flexbox-align-content(stretch);
         @include flexbox-align-items(flex-start);
@@ -329,13 +329,17 @@ h1, h2, h3 {
               margin: 0;
               padding: 0;
               text-align: left;
+              &:after {
+                clear:both;
+                content: "";
+                display: block;
+              }
               li {
                 margin: 0;
                 padding: 0;
                 display: block;
                 float: left;
                 list-style-type: none;
-                line-height: 1;
                 &:first-child {
                   a {
                     display: inline-block;

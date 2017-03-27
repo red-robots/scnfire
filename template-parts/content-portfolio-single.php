@@ -120,16 +120,30 @@
 					<?php echo $first_slide_text;?>
                 </div>
 			<?php endif;?>
-            <nav id="carousel" class="flexslider-nav">
-                <ul class="slides">
-                    <?php foreach ( $images as $image ): ?>
-                        <li>
-                            <img src="<?php echo $image['sizes']['thumbnail']; ?>" alt="<?php echo $image['alt']; ?>">
-                        </li>
-                    <?php endforeach; ?>
-                </ul>
-            </nav><!--.flexslider-nav-->
+            <?php foreach ( $images as $image ): ?>
+                <div class="slide">
+                    <img src="<?php echo $image['sizes']['thumbnail']; ?>" alt="<?php echo $image['alt']; ?>">
+                </div>
+            <?php endforeach; ?>
         </div><!--.carousel-wrapper-->
 	<?php endif;//endif for images?>
+    <?php if(($square_footage &&$square_footage_header_text )||
+             ( $project_description && $project_description_header_text )||
+             ( $our_involvement && $our_involvement_header_text )):?>
+        <div class="description-anchor copy">
+            <?php if ( $square_footage && $square_footage_header_text ): ?>
+                <header><h2><?php echo $square_footage_header_text; ?></h2></header>
+                <p><?php echo $square_footage; ?></p>
+            <?php endif; ?>
+            <?php if ( $project_description && $project_description_header_text ): ?>
+                <header><h2><?php echo $project_description_header_text; ?></h2></header>
+                <?php echo $project_description; ?>
+            <?php endif; ?>
+            <?php if ( $our_involvement && $our_involvement_header_text ): ?>
+                <header><h2><?php echo $our_involvement_header_text; ?></h2></header>
+                <?php echo $our_involvement; ?>
+            <?php endif; ?>
+        </div><!--.description-anchor-->
+    <?php endif;?>
 	<?php get_footer('content');?>
 </article><!-- #post-## -->

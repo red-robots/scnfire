@@ -77,11 +77,16 @@
 		if ( $query->have_posts() ):?>
 			<section class="news wrapper">
 				<?php while ( $query->have_posts() ):$query->the_post(); ?>
-					<?php $dates = get_field( "dates" ); ?>
+					<?php $dates = get_field( "dates" );
+					$external_link = get_field("external_link");?>
 					<div class="news">
-                        <?php if(!$events_flag):?>
-						    <a href="<?php echo get_the_permalink(); ?>">
-                            <?php endif;?>
+                        <?php if($external_link):?>
+                            <a href="<?php echo $external_link;?>" target="_blank">
+                        <?php else:
+                            if(!$events_flag):?>
+                                <a href="<?php echo get_the_permalink(); ?>">
+                            <?php endif;
+                        endif;?>
 							<div class="row-1">
 								<div class="column-1">
 									<header>
@@ -91,14 +96,14 @@
 										<div class="dates"><?php echo $dates; ?></div>
 									<?php endif; ?>
 								</div><!--.column-1-->
-                                    <div class="column-2">
-	                                    <?php if(!$events_flag):?>
-                                        <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/+.png"
-                                             alt="plus icon">
-	                                    <?php endif;?>
-                                    </div><!--.column-2-->
+                                <div class="column-2">
+                                    <?php if(!$events_flag || $external_link):?>
+                                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/+.png"
+                                         alt="plus icon">
+                                    <?php endif;?>
+                                </div><!--.column-2-->
 							</div><!--.row-1-->
-							    <?php if(!$events_flag):?>
+                        <?php if(!$events_flag || $external_link):?>
 						    </a>
                         <?php endif;?>
 					</div><!--.news-->
