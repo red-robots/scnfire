@@ -56,7 +56,7 @@
 								<a href="mailto:<?php echo $email; ?>"><i class="fa fa-envelope"></i></a>
 							<?php endif;//if for email?>
 							<?php if ( $linkedin ): ?>
-								<a href="<?php echo $linkedin; ?>"><i class="fa fa-linkedin"></i></a>
+								<a href="<?php echo $linkedin; ?>" target="_blank"><i class="fa fa-linkedin"></i></a>
 							<?php endif;//if for linkedin?>
 						</div><!--.font-awesome-icons-->
 					<?php endif;//if for font awesome icons?>
