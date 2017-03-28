@@ -1,7 +1,9 @@
 @charset "UTF-8";
 /*!
-Theme Name: SCN Law
-Author: Fritz Healy
+Theme Name: ACStarter
+Theme URI: http://austincrane.me/
+Author: Austin Crane
+Author URI: http://austincrane.me/
 Description: Description
 Version: 1.0.0
 License: GNU General Public License v2 or later
@@ -5611,28 +5613,28 @@ h1, h2, h3 {
     display: -webkit-flex;
     display: flex; }
     #main #main-sidebar.home-sidebar > .wrapper > .wrapper > .inner-wrapper > .row-1 .tag {
-      font-size: 25px;
+      font-size: 24px;
       font-weight: 800;
       text-transform: uppercase;
       line-height: 1.2; }
-      @media screen and (min-width: 700px) {
+      @media screen and (min-width: 900px) {
         #main #main-sidebar.home-sidebar > .wrapper > .wrapper > .inner-wrapper > .row-1 .tag {
-          font-size: 35px; } }
+          font-size: 28px; } }
       @media screen and (min-width: 1200px) {
         #main #main-sidebar.home-sidebar > .wrapper > .wrapper > .inner-wrapper > .row-1 .tag {
-          font-size: 52px; } }
+          font-size: 37px; } }
     #main #main-sidebar.home-sidebar > .wrapper > .wrapper > .inner-wrapper > .row-1 .sub-1 {
       font-size: 15px;
       font-weight: 600; }
       @media screen and (min-width: 700px) {
         #main #main-sidebar.home-sidebar > .wrapper > .wrapper > .inner-wrapper > .row-1 .sub-1 {
-          font-size: 25px; } }
+          font-size: 20px; } }
     #main #main-sidebar.home-sidebar > .wrapper > .wrapper > .inner-wrapper > .row-1 .sub-2 {
       font-size: 15px;
       font-weight: 600; }
       @media screen and (min-width: 700px) {
         #main #main-sidebar.home-sidebar > .wrapper > .wrapper > .inner-wrapper > .row-1 .sub-2 {
-          font-size: 25px; } }
+          font-size: 20px; } }
   @media screen and (min-width: 700px) {
     #main #main-sidebar > .wrapper {
       -webkit-box-flex: 1 0 auto;

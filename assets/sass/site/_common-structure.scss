@@ -132,29 +132,29 @@ h1, h2, h3 {
           > .inner-wrapper {
             > .row-1 {
               .tag {
-                font-size: 25px;
+                font-size: 24px;
                 font-weight: 800;
                 text-transform: uppercase;
                 line-height: 1.2;
-                @media screen and (min-width: $tabwidth) {
-                  font-size: 35px;
+                @media screen and (min-width: $midwidth) {
+                  font-size: 28px;
                 }
-                @media screen and (min-width: 1200px) {
-                  font-size: 52px;
+                @media screen and (min-width: $deskwidth) {
+                  font-size: 37px;
                 }
               }
               .sub-1 {
                 font-size: 15px;
                 font-weight: 600;
                 @media screen and (min-width: $tabwidth) {
-                  font-size: 25px;
+                  font-size: 20px;
                 }
               }
               .sub-2 {
                 font-size: 15px;
                 font-weight: 600;
                 @media screen and (min-width: $tabwidth) {
-                  font-size: 25px;
+                  font-size: 20px;
                 }
               }
             }
