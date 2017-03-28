@@ -28,6 +28,7 @@
 		$sub_1     = get_field( "sub_heading_1" );
 		$sub_2     = get_field( "sub_heading_2" ); ?>
 		<div class="wrapper">
+            <div class="bar"></div><!--.bar-->
             <div class="inner-wrapper">
                 <?php if ( $tag || $sub_1 || $sub_2 ): ?>
                     <div class="row-1">
