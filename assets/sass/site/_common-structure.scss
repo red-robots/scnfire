@@ -212,7 +212,6 @@ h1, h2, h3 {
       }
       > .wrapper {
         display: none;
-        background-color: $color__scn-blue;
         @include flexbox-align-content(stretch);
         @include flexbox-align-items(stretch);
         @include flexbox-justify(flex-end);
@@ -226,11 +225,14 @@ h1, h2, h3 {
         &.toggled-on {
           @include flexbox;
         }
+        >.bar {
+          width: 12.2%;
+          background-color: $color__scn-blue;
+        }
         > .inner-wrapper {
           @include flexbox-flex(0, 1, auto);
           width: 87.8%;
           padding-left: 15px;
-          background-color: white;
           #site-navigation {
             width: 100%;
             ul {
@@ -300,6 +302,10 @@ h1, h2, h3 {
         @include flexbox-justify(flex-end);
         @include flexbox-wrap(nowrap);
         @include flexbox-direction(row);
+        >.bar {
+          width: 12.2%;
+          background-color: $color__scn-blue;
+        }
         >.inner-wrapper {
           @include flexbox-flex(0,1,auto);
           padding-left: 15px;

@@ -26,6 +26,7 @@
 			</div><!-- wrapper -->
 		</header><!-- #masthead -->
 		<div class="wrapper">
+            <div class="bar"></div><!--.bar-->
             <div class="inner-wrapper">
                 <nav id="site-navigation" class="main-navigation" role="navigation">
                     <?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>

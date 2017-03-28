@@ -6,6 +6,7 @@
 ?>
 <footer id="colophon" class="site-footer clear-bottom" role="contentinfo">
     <div class="wrapper">
+        <div class="bar"></div><!--.bar-->
         <div class="inner-wrapper">
             <?php $site_name = get_field("site_name","option");
             if($site_name):?>
