@@ -88,7 +88,13 @@
                             <?php endif;
                         endif;?>
 							<div class="row-1">
-								<div class="column-1">
+                                <div class="column-1">
+									<?php if(!$events_flag || $external_link):?>
+                                        <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/+.png"
+                                             alt="plus icon">
+									<?php endif;?>
+                                </div><!--.column-2-->
+								<div class="column-2">
 									<header>
 										<h2><?php echo get_the_title(); ?></h2>
 									</header>
@@ -96,12 +102,6 @@
 										<div class="dates"><?php echo $dates; ?></div>
 									<?php endif; ?>
 								</div><!--.column-1-->
-                                <div class="column-2">
-                                    <?php if(!$events_flag || $external_link):?>
-                                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/+.png"
-                                         alt="plus icon">
-                                    <?php endif;?>
-                                </div><!--.column-2-->
 							</div><!--.row-1-->
                         <?php if(!$events_flag || $external_link):?>
 						    </a>
