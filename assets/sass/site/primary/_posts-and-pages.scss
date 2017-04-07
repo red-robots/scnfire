@@ -551,7 +551,12 @@
           @include flexbox-wrap(nowrap);
           > .column-1 {
             @include flexbox-flex(0, 1, auto);
-            margin-right: 20px;
+            min-width: 30px;
+            width: 30px;
+          }
+          > .column-2 {
+            @include flexbox-flex(0, 1, auto);
+            margin-left: 20px;
             header {
               h2 {
                 font-size: 13px;
@@ -563,11 +568,7 @@
               font-size: 13px;
             }
           }
-          > .column-2 {
-            @include flexbox-flex(0, 1, auto);
-            min-width: 30px;
-            width: 30px;
-          }
+
         }
       }
     }
@@ -815,22 +816,25 @@
     }
   }
   > .row-1 {
+    margin: 0 0 30px 0;
     @include flexbox;
     @include flexbox-align-content(stretch);
     @include flexbox-align-items(stretch);
     @include flexbox-justify(flex-start);
     @include flexbox-wrap(wrap);
-    @media screen and (min-width: $tabwidth) {
-      display: block;
+    @include flexbox-direction(column);
+    @media screen and (min-width: $midwidth) {
+      @include flexbox-wrap(nowrap);
+      @include flexbox-direction(row);
     }
     .recent-news {
-      margin: 0;
       order: 2;
-      @media screen and (min-width: $tabwidth) {
-        float: right;
+      width: 100%;
+      @media screen and (min-width: $midwidth) {
+        @include flexbox-flex(0,0,auto);
         width: 30%;
         min-width: 250px;
-        margin: 0 0 30px 60px;
+        margin: 0 0 0 60px;
       }
       > header {
         margin-bottom: 10px;
@@ -858,7 +862,7 @@
             @include flexbox-align-items(stretch);
             @include flexbox-justify(flex-start);
             @include flexbox-wrap(nowrap);
-            @media screen and (min-width: $tabwidth) {
+            @media screen and (min-width: $midwidth) {
               @include flexbox-justify(space-between);
             }
             > .column-1 {
@@ -884,8 +888,10 @@
     .copy {
       order: 1;
       margin: 0 0 30px 0;
-      @media screen and (min-width: $tabwidth) {
-        margin: 0;
+      width: 100%;
+      @media screen and (min-width: $midwidth) {
+        @include flexbox-flex(0,1,auto);
+        width: calc(70% - 60px);
       }
       .dates {
         font-weight: 600;
