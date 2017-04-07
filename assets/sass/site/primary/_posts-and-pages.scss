@@ -104,6 +104,18 @@
         font-size: 15px;
         width: 100%;
         max-width: 200px;
+        &::-webkit-input-placeholder {
+          color: $color__scn-blue;
+        }
+        &:-ms-input-placeholder {
+          color: $color__scn-blue;
+        }
+        &::-moz-placeholder {
+          color: $color__scn-blue;
+        }
+        &:-moz-placeholder {
+          color: $color__scn-blue;
+        }
         @media screen and (min-width: $tabwidth) {
           display: inline-block;
           border: 1px solid white;
@@ -123,18 +135,6 @@
           }
         }
 
-        &::-webkit-input-placeholder {
-          color: $color__scn-blue;
-        }
-        &:-ms-input-placeholder {
-          color: $color__scn-blue;
-        }
-        &::-moz-placeholder {
-          color: $color__scn-blue;
-        }
-        &:-moz-placeholder {
-          color: $color__scn-blue;
-        }
       }
       input[type=submit] {
         font-size: 15px;
