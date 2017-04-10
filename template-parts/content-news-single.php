@@ -28,8 +28,17 @@
 			'post_type'        => "post",
 			"posts_per_page"   => 5,
 			"category__not_in" => array( 1 ),
+            "orderby"=>"menu_order",
 			"order"=>"ASC"
 		);
+		$terms = get_the_terms(get_the_ID(),'category');
+		if(!is_wp_error($terms)&&is_array($terms) && !empty($terms)):
+            $args['tax_query']= array(array(
+                    'taxonomy'=>'category',
+                    'field'=>'term_id',
+                    'terms'=>$terms[0]->term_id
+            ));
+        endif;
 		$query      = new WP_Query( $args );
 		if ( $query->have_posts() ): ?>
 			<aside class="recent-news">
