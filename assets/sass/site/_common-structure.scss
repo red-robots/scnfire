@@ -163,6 +163,7 @@ h1, h2, h3 {
       }
     }
     > .wrapper {
+      max-width: 100%;
       @media screen and (min-width: $tabwidth) {
         @include flexbox-flex(1, 0, auto);
         @include flexbox;
