@@ -43,6 +43,16 @@ function mytheme_favicon() {
 } 
 add_action('wp_head', 'mytheme_favicon');
 
+function bella_ga(){
+  if(function_exists('acf_add_options_page')){
+    $ga = get_field("google_analytics","option");
+    if($ga){
+      echo $ga;
+    }
+  }
+}
+add_action('wp_head', 'bella_ga');
+
 /*-------------------------------------
 	Adds Options page for ACF.
 ---------------------------------------*/
