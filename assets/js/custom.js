@@ -23,8 +23,8 @@ jQuery(document).ready(function ($) {
      *	Flexslider
      *
      ------------------------------------*/
-    $('#carousel, #flexslider').imagesLoaded(function () {
-        $('#carousel').flexslider({
+    $('.carousel-wrapper, #flexslider').imagesLoaded(function () {
+        /*$('#carousel').flexslider({
             animation: "slide",
             controlNav: false,
             animationLoop: false,
@@ -33,15 +33,20 @@ jQuery(document).ready(function ($) {
             itemMargin: 5,
             move: 1,
             asNavFor: '#flexslider'
-        });
+        });*/
         $('#flexslider').flexslider({
             animation: "slide",
             controlNav: false,
             animationLoop: false,
             slideshow: false,
             smoothHeight: true,
-            sync: "#carousel"
+            /*sync: "#carousel"*/
         });
+    });
+    var $car_slides = $('.carousel-wrapper .slide')
+    $car_slides.click(function(e){
+       var index = $car_slides.index($(this));
+       $('#flexslider').flexslider(index);
     });
     $('.slider.wrapper >.flex-next').click(function (e) {
         e.preventDefault();
@@ -53,14 +58,17 @@ jQuery(document).ready(function ($) {
     });
 
     $('.slider.wrapper .overlay .plus-icon').click(function(){
-        $('.slider.wrapper .overlay .info').css({
-            "display":"flex",
-            "display": "-webkit-box",
-            "display": "-moz-box",
-            "display": "-ms-flexbox",
-            "display": "-webkit-flex",
-
-        });
+        if(window.innerWidth >= 700) {
+            $('.slider.wrapper .overlay .info').css({
+                "display": "flex",
+                "display": "-webkit-box",
+                "display": "-moz-box",
+                "display": "-ms-flexbox",
+                "display": "-webkit-flex",
+            });
+        } else {
+            $(window).scrollTop($('.description-anchor').offset().top);
+        }
     });
     $('.slider.wrapper .overlay .close-icon').click(function(){
         $('.slider.wrapper .overlay .info').css({
@@ -68,13 +76,18 @@ jQuery(document).ready(function ($) {
         });
     });
     $('.carousel-wrapper .first-slide').click(function(){
-        $('.slider.wrapper .overlay .info').css({
-            "display":"flex",
-            "display": "-webkit-box",
-            "display": "-moz-box",
-            "display": "-ms-flexbox",
-            "display": "-webkit-flex",
-        });
+
+        if(window.innerWidth >= 700) {
+            $('.slider.wrapper .overlay .info').css({
+                "display":"flex",
+                "display": "-webkit-box",
+                "display": "-moz-box",
+                "display": "-ms-flexbox",
+                "display": "-webkit-flex",
+            });
+        } else {
+            $(window).scrollTop($('.description-anchor').offset().top);
+        }
     });
     /*
      *
@@ -158,13 +171,24 @@ jQuery(document).ready(function ($) {
     });
 
     $('#main-sidebar .hamburger').click(function(){
-       if($('#main-sidebar >.wrapper >.wrapper').hasClass("toggled-on")){
-           $('#main-sidebar >.wrapper >.wrapper').removeClass("toggled-on");
-           $('#colophon').removeClass("toggled-on");
-       } else {
-           $('#main-sidebar >.wrapper >.wrapper').addClass("toggled-on");
-           $('#colophon').addClass("toggled-on");
-       }
+        if($('#main-sidebar >.wrapper >.wrapper').hasClass("toggled-on")){
+            $('#main-sidebar >.wrapper >.wrapper').removeClass("toggled-on");
+            $('#colophon').removeClass("toggled-on");
+        } else {
+            $('#main-sidebar >.wrapper >.wrapper').addClass("toggled-on");
+            $('#colophon').addClass("toggled-on");
+        }
+    });
+    $('.form-search > .search-icon').click(function(){
+        if($('.form-search > form').hasClass("toggled-on")){
+            $('.form-search > form').removeClass("toggled-on");
+            $('.template-portfolio-single > header > .row-1 >.wrapper .copy,' +
+                '.template-portfolio-single > header > .row-1 >.wrapper .close-box').removeClass("toggled-on");
+        } else {
+            $('.form-search > form').addClass("toggled-on");
+            $('.template-portfolio-single > header > .row-1 >.wrapper .copy,' +
+                '.template-portfolio-single > header > .row-1 >.wrapper .close-box').addClass("toggled-on");
+        }
     });
 
 });// END #####################################    END

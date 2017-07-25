@@ -132,29 +132,29 @@ h1, h2, h3 {
           > .inner-wrapper {
             > .row-1 {
               .tag {
-                font-size: 25px;
+                font-size: 24px;
                 font-weight: 800;
                 text-transform: uppercase;
                 line-height: 1.2;
-                @media screen and (min-width: $tabwidth) {
-                  font-size: 35px;
+                @media screen and (min-width: $midwidth) {
+                  font-size: 28px;
                 }
-                @media screen and (min-width: 1200px) {
-                  font-size: 52px;
+                @media screen and (min-width: $deskwidth) {
+                  font-size: 37px;
                 }
               }
               .sub-1 {
                 font-size: 15px;
                 font-weight: 600;
                 @media screen and (min-width: $tabwidth) {
-                  font-size: 25px;
+                  font-size: 20px;
                 }
               }
               .sub-2 {
                 font-size: 15px;
                 font-weight: 600;
                 @media screen and (min-width: $tabwidth) {
-                  font-size: 25px;
+                  font-size: 20px;
                 }
               }
             }
@@ -163,8 +163,9 @@ h1, h2, h3 {
       }
     }
     > .wrapper {
+      max-width: 100%;
       @media screen and (min-width: $tabwidth) {
-        @include flexbox-flex(1, 1, auto);
+        @include flexbox-flex(1, 0, auto);
         @include flexbox;
         @include flexbox-align-content(stretch);
         @include flexbox-align-items(flex-start);
@@ -212,7 +213,6 @@ h1, h2, h3 {
       }
       > .wrapper {
         display: none;
-        background-color: $color__scn-blue;
         @include flexbox-align-content(stretch);
         @include flexbox-align-items(stretch);
         @include flexbox-justify(flex-end);
@@ -226,11 +226,14 @@ h1, h2, h3 {
         &.toggled-on {
           @include flexbox;
         }
+        >.bar {
+          width: 12.2%;
+          background-color: $color__scn-blue;
+        }
         > .inner-wrapper {
           @include flexbox-flex(0, 1, auto);
           width: 87.8%;
           padding-left: 15px;
-          background-color: white;
           #site-navigation {
             width: 100%;
             ul {
@@ -300,6 +303,10 @@ h1, h2, h3 {
         @include flexbox-justify(flex-end);
         @include flexbox-wrap(nowrap);
         @include flexbox-direction(row);
+        >.bar {
+          width: 12.2%;
+          background-color: $color__scn-blue;
+        }
         >.inner-wrapper {
           @include flexbox-flex(0,1,auto);
           padding-left: 15px;
@@ -329,13 +336,17 @@ h1, h2, h3 {
               margin: 0;
               padding: 0;
               text-align: left;
+              &:after {
+                clear:both;
+                content: "";
+                display: block;
+              }
               li {
                 margin: 0;
                 padding: 0;
                 display: block;
                 float: left;
                 list-style-type: none;
-                line-height: 1;
                 &:first-child {
                   a {
                     display: inline-block;
@@ -376,113 +387,62 @@ h1, h2, h3 {
       width: 70%;
       @include flexbox-flex(0, 1, auto);
     }
+    &:before {
+      content: "";
+      display: block;
+      padding: 5px 0 0 0;
+      width: 100%;
+    }
     &:after {
-      @include flexbox-flex(0, 1, auto);
       content: "";
       display: block;
       padding: 10px 0;
       width: 100%;
     }
-    >.form-search {
-      display: block;
-      width: 100%;
-      margin: 0 0 20px 0;
-      @media screen and (min-width: $tabwidth) {
-        position: absolute;
-        top: 10px;
-        right: 7%;
-        width: auto;
-        margin: 0;
-      }
-      form {
-        margin: 0 auto;
-        input[type=text] {
-          width: 60%;
-          display: inline-block;
-          margin: 0;
-          color: $color__scn-blue;
-          border: 1px solid $color__scn-blue;
-          font-size: 15px;
-          @media screen and (min-width: $tabwidth) {
-            width: 200px;
-          }
-          &::-webkit-input-placeholder {
-            color: $color__scn-blue;
-          }
-          &:-ms-input-placeholder {
-            color: $color__scn-blue;
-          }
-          &::-moz-placeholder {
-            color: $color__scn-blue;
-          }
-          &:-moz-placeholder {
-            color: $color__scn-blue;
-          }
-        }
-        input[type=submit] {
-          display: inline-block;
-          width: 35%;
-          max-width: 100px;
-          font-size: 15px;
-          line-height: 1.5;
-          padding: 3px;
-          border: 1px solid $color__scn-blue;
-          background-color: white;
-          color:  $color__scn-blue;
-          box-shadow: none;
-          text-shadow: none;
-          @media screen and (min-width: $tabwidth) {
-            width: 100px;
-          }
-        }
-      }
-    }
-    .logo-bg {
-      display: none;
-      @media screen and (min-width: $tabwidth) {
-        margin: 5px auto 30px 0;
-        width: 36.1%;
-        min-width: $size__sidebar-min-width*.8;
-        display: block;
-      }
-      @media screen and (min-width: 1200px) {
-        margin: 5px auto 70px 0;
-      }
-    }
   }
 }
 .footer.sitemapbw {
-  margin: 30px 0;
-  ul {
-    bottom: 10px;
-    right: 10%;
-    position: absolute;
-    margin: 0;
-    padding: 0;
-    li {
+  margin: 30px 0 0 0;
+  text-align: center;
+  @media screen and (min-width: $tabwidth) {
+    text-align: right;
+  }
+  > div {
+    display: block;
+    margin: 0 auto;
+    @media screen and (min-width: $tabwidth) {
+      display: inline-block;
+      margin: 0 0 10px 0;
+      vertical-align: middle;
+    }
+    > ul {
       margin: 0;
       padding: 0;
-      display: inline-block;
-      &:first-child {
-        a {
-          &:before {
-            display: none;
+      li {
+        margin: 0;
+        padding: 0;
+        display: inline-block;
+        &:first-child {
+          a {
+            &:before {
+              display: none;
+            }
           }
         }
-      }
-      a {
-        text-decoration: none;
-        font-size: 13px;
-        color: $color__scn-blue;
-        &:hover {
-          font-weight: 700;
-        }
-        &:before {
-          content: "|";
-          display: inline-block;
-          margin: 0 5px 0 3px;
-          padding: 0;
-          font-weight: 500;
+        a {
+          text-decoration: none;
+          font-size: 13px;
+          color: $color__scn-blue;
+          &:hover {
+            font-weight: 700;
+          }
+          &:before {
+            content: "|";
+            display: inline-block;
+            margin: 0 5px 0 3px;
+            padding: 0;
+            font-weight: 500;
+          }
         }
       }
     }

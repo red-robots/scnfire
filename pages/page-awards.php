@@ -1,10 +1,6 @@
 <?php
 /**
- * Template Name: Sitemap
- *
- * @link https://codex.wordpress.org/Template_Hierarchy
- *
- * @package ACStarter
+ * Template Name: Awards
  */
 
 get_header(); ?>
@@ -14,7 +10,7 @@ get_header(); ?>
 			<?php
             get_sidebar();
 			if ( have_posts() ) : the_post();
-				get_template_part( 'template-parts/content', 'sitemap' );
+				get_template_part( 'template-parts/content', 'awards' );
 			endif; // End of the loop.
 			?>
 		</main><!-- #main -->

@@ -10,10 +10,11 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class( "template-portfolio-single" ); ?>>
-	<?php $square_footage_header_text = get_field( "square_footage_header_text", 26 );
-	$project_description_header_text  = get_field( "project_description_header_text", 26 );
-	$our_involvement_header_text      = get_field( "our_involvement_header_text", 26 );
-	$first_slide_text  = get_field("first_slide_text",26);
+	<?php $square_footage_header_text = get_field( "square_footage_header_text", 69 );
+	$project_description_header_text  = get_field( "project_description_header_text", 69 );
+	$our_involvement_header_text      = get_field( "our_involvement_header_text", 69 );
+	$first_slide_text  = get_field("first_slide_text",69);
+	$back_text  = get_field("back_text",69);
 	$location                         = get_field( "location" );
 	$images                           = get_field( "gallery" );
 	$our_involvement                  = get_field( "our_involvement" );
@@ -27,7 +28,21 @@
 						src="<?php echo get_template_directory_uri() . "/images/logo.jpg"; ?>" alt="logo"></a>
 			</div>
             <div class="wrapper">
-	            <?php get_template_part('/template-parts/form',"search");?>
+                <div class="copy">
+                    <a href="<?php
+	                if($type_from):
+		                echo get_term_link($type_from,"project_type");
+	                else :
+		                $terms = get_the_terms( $post->ID,'project_type');
+		                if ( ! is_wp_error( $terms ) && is_array( $terms ) && ! empty( $terms ) ):
+			                echo get_term_link($terms[0]);
+		                elseif(get_post(69)):
+			                echo get_the_permalink(69);
+		                endif;
+	                endif;?>">
+                        <?php echo $back_text;?>
+                    </a>
+                </div><!--.copy-->
                 <div class="close-box">
                     <a href="<?php
                     if($type_from):
@@ -36,25 +51,25 @@
                         $terms = get_the_terms( $post->ID,'project_type');
                         if ( ! is_wp_error( $terms ) && is_array( $terms ) && ! empty( $terms ) ):
                             echo get_term_link($terms[0]);
-                        elseif(get_post(26)):
-                            echo get_the_permalink(26);
+                        elseif(get_post(69)):
+                            echo get_the_permalink(69);
                         endif;
                     endif;?>">
-                        <img class="close-icon" src="<?php echo get_stylesheet_directory_uri(); ?>/images/x.png"
-                         alt="close icon">
+                        <i class="fa fa-close"></i>
                     </a>
                 </div><!--.close-box-->
+	            <?php get_template_part('/template-parts/form',"search");?>
             </div><!--.wrapper-->
 		</div><!--.row-1-->
-		<div class="row-2">
-            <div class="mobile-search">
-			    <?php get_template_part('/template-parts/form',"search");?>
-            </div><!--.mobile-search-->
+        <div class="row-2">
+	        <?php get_template_part('/template-parts/form',"search");?>
+        </div><!--.row-2-->
+		<div class="row-3">
 			<h1><?php the_title(); ?></h1>
 			<?php if ( $location ): ?>
 				<div class="location"><?php echo $location; ?></div><!--.location-->
 			<?php endif;//endif for location?>
-		</div><!--.row-2-->
+		</div><!--.row-3-->
 	</header>
 	<?php if ( $images && count( $images ) > 0 ): ?>
 		<div class="slider wrapper">
@@ -105,16 +120,30 @@
 					<?php echo $first_slide_text;?>
                 </div>
 			<?php endif;?>
-            <nav id="carousel" class="flexslider-nav">
-                <ul class="slides">
-                    <?php foreach ( $images as $image ): ?>
-                        <li>
-                            <img src="<?php echo $image['sizes']['thumbnail']; ?>" alt="<?php echo $image['alt']; ?>">
-                        </li>
-                    <?php endforeach; ?>
-                </ul>
-            </nav><!--.flexslider-nav-->
+            <?php foreach ( $images as $image ): ?>
+                <div class="slide">
+                    <img src="<?php echo $image['sizes']['thumbnail']; ?>" alt="<?php echo $image['alt']; ?>">
+                </div>
+            <?php endforeach; ?>
         </div><!--.carousel-wrapper-->
 	<?php endif;//endif for images?>
+    <?php if(($square_footage &&$square_footage_header_text )||
+             ( $project_description && $project_description_header_text )||
+             ( $our_involvement && $our_involvement_header_text )):?>
+        <div class="description-anchor copy">
+            <?php if ( $square_footage && $square_footage_header_text ): ?>
+                <header><h2><?php echo $square_footage_header_text; ?></h2></header>
+                <p><?php echo $square_footage; ?></p>
+            <?php endif; ?>
+            <?php if ( $project_description && $project_description_header_text ): ?>
+                <header><h2><?php echo $project_description_header_text; ?></h2></header>
+                <?php echo $project_description; ?>
+            <?php endif; ?>
+            <?php if ( $our_involvement && $our_involvement_header_text ): ?>
+                <header><h2><?php echo $our_involvement_header_text; ?></h2></header>
+                <?php echo $our_involvement; ?>
+            <?php endif; ?>
+        </div><!--.description-anchor-->
+    <?php endif;?>
 	<?php get_footer('content');?>
 </article><!-- #post-## -->

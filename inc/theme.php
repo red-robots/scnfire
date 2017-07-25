@@ -32,16 +32,26 @@ add_filter('login_headerurl','loginpage_custom_link');
 	Favicon.
 ---------------------------------------*/
 function mytheme_favicon() { 
- echo '<link rel="apple-touch-icon" sizes="76x76" href="'.get_bloginfo('url').'/wp-content/themes/scnfire/images/favicons/apple-touch-icon.png">
-<link rel="icon" type="image/png" href="'.get_bloginfo('url').'/wp-content/themes/scnfire/images/favicons/favicon-32x32.png" sizes="32x32">
-<link rel="icon" type="image/png" href="'.get_bloginfo('url').'/wp-content/themes/scnfire/images/favicons/favicon-16x16.png" sizes="16x16">
-<link rel="manifest" href="'.get_bloginfo('url').'/wp-content/themes/scnfire/images/favicons/manifest.json">
-<link rel="mask-icon" href="'.get_bloginfo('url').'/wp-content/themes/scnfire/images/favicons/safari-pinned-tab.svg" color="#5bbad5">
-<link rel="shortcut icon" href="'.get_bloginfo('url').'/wp-content/themes/scnfire/images/favicons/favicon.ico">
-<meta name="msapplication-config" content="'.get_bloginfo('url').'/wp-content/themes/scnfire/images/favicons/browserconfig.xml">
+ echo '<link rel="apple-touch-icon" sizes="76x76" href="'.get_bloginfo('url').'/bw/wp-content/themes/scnfire/images/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" href="'.get_bloginfo('url').'/bw/wp-content/themes/scnfire/images/favicons/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="'.get_bloginfo('url').'/bw/wp-content/themes/scnfire/images/favicons/favicon-16x16.png" sizes="16x16">
+<link rel="manifest" href="'.get_bloginfo('url').'/bw/wp-content/themes/scnfire/images/favicons/manifest.json">
+<link rel="mask-icon" href="'.get_bloginfo('url').'/bw/wp-content/themes/scnfire/images/favicons/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="'.get_bloginfo('url').'/bw/wp-content/themes/scnfire/images/favicons/favicon.ico">
+<meta name="msapplication-config" content="'.get_bloginfo('url').'/bw/wp-content/themes/scnfire/images/favicons/browserconfig.xml">
 <meta name="theme-color" content="#ffffff">';
 } 
 add_action('wp_head', 'mytheme_favicon');
+
+function bella_ga(){
+  if(function_exists('acf_add_options_page')){
+    $ga = get_field("google_analytics","option");
+    if($ga){
+      echo $ga;
+    }
+  }
+}
+add_action('wp_head', 'bella_ga');
 
 /*-------------------------------------
 	Adds Options page for ACF.

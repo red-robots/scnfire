@@ -7,7 +7,7 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class( "template-search two-column" ); ?>>
-	<?php get_template_part( '/template-parts/form', "search" ); ?>
+	<?php get_template_part('/template-parts/form',"search");?>
     <img src="<?php echo get_template_directory_uri() . "/images/logo-bg.png"; ?>" class="logo-bg">
     <header>
         <h1>Search</h1>
