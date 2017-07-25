@@ -15,10 +15,10 @@
 	<header>
 		<h1><?php the_title(); ?></h1>
 	</header>
-	<?php $back_text = get_field( "team_back_text", 62 ); ?>
-	<?php if ( $back_text && get_post( 62 ) ): ?>
+	<?php $back_text = get_field( "team_back_text", 76 ); ?>
+	<?php if ( $back_text && get_post( 76 ) ): ?>
 		<div class="link">
-			<a href="<?php echo get_the_permalink( 62 ); ?>">
+			<a href="<?php echo get_the_permalink( 76 ); ?>">
 				<?php echo $back_text; ?>
 			</a>
 		</div><!--.link-->
@@ -35,7 +35,7 @@
 				<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>">
 			</div>
 			<div class="row-2" <?php
-			$watermark = get_field( "watermark", 62 );
+			$watermark = get_field( "watermark", 76 );
 			if ( $watermark ):
 				echo 'style="background-image: url(' . $watermark['url'] . ');"';
 			endif;
@@ -64,10 +64,10 @@
 			</div><!--.row-2-->
 		</section><!--.column-1-->
 		<section class="column-2">
-			<?php $certifications_header_text = get_field( "certifications_header_text", 62 );
-			$professional_affiliations_header_text = get_field( "professional_affiliations_header_text", 62 );
-			$education_header_text            = get_field( "education_header_text", 62 );
-			$fun_fact_header_text             = get_field( "fun_fact_header_text", 62 );
+			<?php $certifications_header_text = get_field( "certifications_header_text", 76 );
+			$professional_affiliations_header_text = get_field( "professional_affiliations_header_text", 76 );
+			$education_header_text            = get_field( "education_header_text", 76 );
+			$fun_fact_header_text             = get_field( "fun_fact_header_text", 76 );
 			$certifications                   = get_field( "certifications" );
 			$professional_affiliations        = get_field( "professional_affiliations" );
 			$education                        = get_field( "education" );
@@ -135,7 +135,7 @@
 		$query      = new WP_Query( $args );
 		if ( $query->have_posts() ): ?>
 			<aside class="column-3 other-team-members clear-bottom">
-				<?php $other_text = get_field( "team_other_text", 62 );
+				<?php $other_text = get_field( "team_other_text", 76 );
 				if ( $other_text ):?>
 					<header>
 						<h2><?php echo $other_text; ?></h2>
