@@ -774,7 +774,7 @@
             float: none;
           }
           @media screen and (min-width: $deskwidth) {
-            @include flexbox-flex(1, 0, auto);
+            
           }
           a {
             @include flexbox;
